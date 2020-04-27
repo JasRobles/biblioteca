@@ -39,7 +39,7 @@ namespace AdminLabrary.formularios.principales
         }
         private void CargaDratos()
         {
-            using (BibliotecaEntities1 db = new BibliotecaEntities1())
+            using (BibliotecaEntities3 db = new BibliotecaEntities3())
             {
                 var lista = from li in db.Libros
                             from au in db.Autores

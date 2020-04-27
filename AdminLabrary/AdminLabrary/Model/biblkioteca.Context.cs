@@ -13,10 +13,10 @@ namespace AdminLabrary.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BibliotecaEntities1 : DbContext
+    public partial class BibliotecaEntities3 : DbContext
     {
-        public BibliotecaEntities1()
-            : base("name=BibliotecaEntities1")
+        public BibliotecaEntities3()
+            : base("name=BibliotecaEntities3")
         {
         }
     

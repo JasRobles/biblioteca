@@ -25,7 +25,7 @@ namespace AdminLabrary.formularios.principales
         }
         private void CargarDatos()
         {
-            using (BibliotecaEntities1 db = new BibliotecaEntities1())
+            using (BibliotecaEntities3 db = new BibliotecaEntities3())
             {
                 var lista = from ad in db.Administradores
                             from lec in db.Lectores

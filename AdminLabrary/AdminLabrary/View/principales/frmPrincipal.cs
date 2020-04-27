@@ -79,22 +79,31 @@ namespace AdminLabrary.formularios.principales
             
         }
 
-        
 
+        int Boton = 0;
         private void btnMaximizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-            btnMaximizar.Visible = true;
-            btnMinimizar.Visible = true;
+            if (Boton == 0)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                btnMaximizar.Visible = true;
+                btnMinimizar.Visible = true;
+                Boton = 1;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                btnMinimizar.Visible = true;
+                btnMaximizar.Visible = true;
+                Boton = 0;
+            }
 
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
 
         {
-            this.WindowState = FormWindowState.Normal;
-            btnMinimizar.Visible = true;
-            btnMaximizar.Visible = true;
+          
             
         }
 
@@ -144,7 +153,7 @@ namespace AdminLabrary.formularios.principales
         private void btnCategoria_Click(object sender, EventArgs e)
         {
 
-            MostrarPanel(new frmCategoria());
+            MostrarPanel(new frmCat());
             
         }
 
@@ -169,6 +178,23 @@ namespace AdminLabrary.formularios.principales
         private void btnAutor_Click(object sender, EventArgs e)
         {
             MostrarPanel(new frmAutor());
+        }
+
+        int botonO = 0;
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            if (botonO == 0)
+            {
+                PanelMenu.Hide();
+                botonO = 1;
+           
+            }
+            else
+            {
+                PanelMenu.Show();
+                botonO = 0;
+            }
+
         }
     }
 

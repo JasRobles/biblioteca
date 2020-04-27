@@ -12,9 +12,9 @@ using AdminLabrary.Model;
 
 namespace AdminLabrary.formularios.principales
 {
-    public partial class frmCategoria : Form
+    public partial class frmCat : Form
     {
-        public frmCategoria()
+        public frmCat()
         {
             InitializeComponent();
         }
@@ -25,11 +25,12 @@ namespace AdminLabrary.formularios.principales
         }
         private void CargarDatos()
         {
-            using (BibliotecaEntities1 db= new BibliotecaEntities1())
+            using (BibliotecaEntities3 db= new BibliotecaEntities3())
             {
                 var lista = from cat in db.Categorias
                             select new {ID = cat.Id_categoria,Categoria =cat.Categoria };
-                dgvCategoria.DataSource = lista.ToList();
+                dgvCat.DataSource = lista.ToList();
+                
             }
 
         }

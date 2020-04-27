@@ -110,40 +110,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Administradores.cs">
-      <DependentUpon>Biblioteca1.tt</DependentUpon>
+      <DependentUpon>biblkioteca.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Alquileres.cs">
-      <DependentUpon>Biblioteca1.tt</DependentUpon>
+      <DependentUpon>biblkioteca.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Autores.cs">
-      <DependentUpon>Biblioteca1.tt</DependentUpon>
+      <DependentUpon>biblkioteca.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Biblioteca1.Context.cs">
+    <Compile Include="Model\biblkioteca.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Biblioteca1.Context.tt</DependentUpon>
+      <DependentUpon>biblkioteca.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Biblioteca1.cs">
+    <Compile Include="Model\biblkioteca.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Biblioteca1.tt</DependentUpon>
+      <DependentUpon>biblkioteca.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Biblioteca1.Designer.cs">
+    <Compile Include="Model\biblkioteca.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Biblioteca1.edmx</DependentUpon>
+      <DependentUpon>biblkioteca.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Categorias.cs">
-      <DependentUpon>Biblioteca1.tt</DependentUpon>
+      <DependentUpon>biblkioteca.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Editoriales.cs">
-      <DependentUpon>Biblioteca1.tt</DependentUpon>
+      <DependentUpon>biblkioteca.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Lectores.cs">
-      <DependentUpon>Biblioteca1.tt</DependentUpon>
+      <DependentUpon>biblkioteca.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Libros.cs">
-      <DependentUpon>Biblioteca1.tt</DependentUpon>
+      <DependentUpon>biblkioteca.tt</DependentUpon>
     </Compile>
     <Compile Include="View\principales\frmAdministradores.cs">
       <SubType>Form</SubType>
@@ -232,12 +232,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\Biblioteca1.edmx">
+    <EntityDeploy Include="Model\biblkioteca.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Biblioteca1.Designer.cs</LastGenOutput>
+      <LastGenOutput>biblkioteca.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\Biblioteca1.edmx.diagram">
-      <DependentUpon>Biblioteca1.edmx</DependentUpon>
+    <None Include="Model\biblkioteca.edmx.diagram">
+      <DependentUpon>biblkioteca.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -302,15 +302,15 @@
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\Biblioteca1.Context.tt">
+    <Content Include="Model\biblkioteca.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Biblioteca1.edmx</DependentUpon>
-      <LastGenOutput>Biblioteca1.Context.cs</LastGenOutput>
+      <DependentUpon>biblkioteca.edmx</DependentUpon>
+      <LastGenOutput>biblkioteca.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\Biblioteca1.tt">
+    <Content Include="Model\biblkioteca.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Biblioteca1.edmx</DependentUpon>
-      <LastGenOutput>Biblioteca1.cs</LastGenOutput>
+      <DependentUpon>biblkioteca.edmx</DependentUpon>
+      <LastGenOutput>biblkioteca.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

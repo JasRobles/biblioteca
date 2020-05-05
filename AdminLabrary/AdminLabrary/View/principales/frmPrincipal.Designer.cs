@@ -35,6 +35,7 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblUsuarioARecibir = new System.Windows.Forms.Label();
             this.PanelBarraTitulo = new System.Windows.Forms.Panel();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.pPrincipal = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PictureBox5 = new System.Windows.Forms.PictureBox();
@@ -52,15 +53,14 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnPrestamos = new System.Windows.Forms.Button();
             this.btnAutor = new System.Windows.Forms.Button();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.PanelMenu = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.PanelBarraTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.pPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.PanelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,6 +148,19 @@
             this.PanelBarraTitulo.TabIndex = 3;
             this.PanelBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBarraTitulo_Paint);
             this.PanelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBarraTitulo_MouseDown);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.BackColor = System.Drawing.Color.Maroon;
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(3, 1);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(32, 33);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMenu.TabIndex = 15;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // pPrincipal
             // 
@@ -381,19 +394,6 @@
             this.btnAutor.UseVisualStyleBackColor = true;
             this.btnAutor.Click += new System.EventHandler(this.btnAutor_Click);
             // 
-            // btnMenu
-            // 
-            this.btnMenu.BackColor = System.Drawing.Color.Maroon;
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(3, 1);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(32, 33);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMenu.TabIndex = 15;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
@@ -437,10 +437,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.PanelBarraTitulo.ResumeLayout(false);
             this.PanelBarraTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.pPrincipal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.PanelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -456,6 +456,7 @@
         internal System.Windows.Forms.Panel PanelBarraTitulo;
         private System.Windows.Forms.Panel pPrincipal;
         internal System.Windows.Forms.PictureBox pictureBox1;
+        internal System.Windows.Forms.PictureBox btnMenu;
         internal System.Windows.Forms.PictureBox PictureBox5;
         internal System.Windows.Forms.Panel Panel10;
         internal System.Windows.Forms.Button btnEditorial;
@@ -471,7 +472,6 @@
         internal System.Windows.Forms.Panel panel6;
         internal System.Windows.Forms.Button btnPrestamos;
         internal System.Windows.Forms.Button btnAutor;
-        internal System.Windows.Forms.PictureBox btnMenu;
         internal System.Windows.Forms.Panel PanelMenu;
     }
 }

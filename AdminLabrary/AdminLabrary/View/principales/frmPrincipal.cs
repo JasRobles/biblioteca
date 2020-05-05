@@ -173,6 +173,8 @@ namespace AdminLabrary.formularios.principales
         private void btnPrestamos_Click(object sender, EventArgs e)
         {
             MostrarPanel(new frmPrestamos());
+            PanelMenu.Hide();
+
         }
 
         private void btnAutor_Click(object sender, EventArgs e)

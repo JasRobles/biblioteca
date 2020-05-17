@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdminLabrary.Model;
+using AdminLabrary.View.insertUpdateDelete;
 
 namespace AdminLabrary.formularios.principales
 {
@@ -24,19 +25,70 @@ namespace AdminLabrary.formularios.principales
         {
             CargarDatos();
         }
-        private void CargarDatos()
+        public void CargarDatos()
         {
-            using (BibliotecaEntities3 db = new BibliotecaEntities3())
+            using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
                 var lista = from lec in db.Lectores
                             select new
                             {
                                 ID = lec.Id_Lector,Nombre=lec.Nombres, Apellidos = lec.Apellidos
-                                ,Carnet = lec.Carnet
+                                
                             };
                 dgvLectores.DataSource = lista.ToList();
             }
 
+        }
+
+        frmNuevoLector nuevo = new frmNuevoLector();
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            nuevo.limpiar();
+            nuevo.btnEditar.Enabled = false;
+            nuevo.btnGuardar.Enabled = true;
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            nuevo.ShowDialog();
+        }
+
+        private void seleccionar()
+        {
+            string id = dgvLectores.CurrentRow.Cells[0].Value.ToString();
+            string nombre = dgvLectores.CurrentRow.Cells[1].Value.ToString();
+            string apellido = dgvLectores.CurrentRow.Cells[2].Value.ToString();
+            nuevo.ID = id;
+            nuevo.txtNombre.Text = nombre;
+            nuevo.txtApellidos.Text = apellido;
+        }
+
+        private void dgvLectores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            seleccionar();
+            nuevo.btnGuardar.Enabled = false;
+            nuevo.btnEliminar.Enabled = false;
+            nuevo.btnEditar.Enabled = true;
+            btnEliminar.Enabled = false;
+            btnEditar.Enabled = false;
+            nuevo.ShowDialog();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            seleccionar();
+            nuevo.btnEliminar.Enabled = true;
+            nuevo.btnEditar.Enabled = false;
+            nuevo.btnGuardar.Enabled = false;
+            nuevo.txtNombre.Enabled = false;
+            nuevo.txtApellidos.Enabled = false; 
+            nuevo.ShowDialog();
         }
     }
 }

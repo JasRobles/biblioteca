@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BibliotecaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BibliotecaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Administradores">
           <Key>
             <PropertyRef Name="Id_Admin" />
@@ -59,7 +59,6 @@
           <Property Name="Id_Lector" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombres" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Apellidos" Type="varchar" MaxLength="50" />
-          <Property Name="Carnet" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="Libros">
           <Key>
@@ -211,8 +210,7 @@
             <End Role="Libros" EntitySet="Libros" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BibliotecaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -224,7 +222,7 @@
           <Property Name="Usuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Contraseña" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Id_Lector" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Lectores" Relationship="Self.FK__Administr__Id_Le__48CFD27E" FromRole="Administradores" ToRole="Lectores" />
+          <NavigationProperty Name="Lectore" Relationship="Self.FK__Administr__Id_Le__48CFD27E" FromRole="Administradores" ToRole="Lectores" />
           <NavigationProperty Name="Alquileres" Relationship="Self.FK__Alquilere__Entre__4316F928" FromRole="Administradores" ToRole="Alquileres" />
           <NavigationProperty Name="Alquileres1" Relationship="Self.FK__Alquilere__Recib__440B1D61" FromRole="Administradores" ToRole="Alquileres" />
         </EntityType>
@@ -240,10 +238,10 @@
           <Property Name="fecha_prevista_de_entrega" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="fecha_de_entrega" Type="DateTime" Precision="0" />
           <Property Name="Recibido" Type="Int32" />
-          <NavigationProperty Name="Administradores" Relationship="Self.FK__Alquilere__Entre__4316F928" FromRole="Alquileres" ToRole="Administradores" />
-          <NavigationProperty Name="Administradores1" Relationship="Self.FK__Alquilere__Recib__440B1D61" FromRole="Alquileres" ToRole="Administradores" />
-          <NavigationProperty Name="Lectores" Relationship="Self.FK__Alquilere__Id_Le__47DBAE45" FromRole="Alquileres" ToRole="Lectores" />
-          <NavigationProperty Name="Libros" Relationship="Self.FK__Alquilere__Id_li__49C3F6B7" FromRole="Alquileres" ToRole="Libros" />
+          <NavigationProperty Name="Administradore" Relationship="Self.FK__Alquilere__Entre__4316F928" FromRole="Alquileres" ToRole="Administradores" />
+          <NavigationProperty Name="Administradore1" Relationship="Self.FK__Alquilere__Recib__440B1D61" FromRole="Alquileres" ToRole="Administradores" />
+          <NavigationProperty Name="Lectore" Relationship="Self.FK__Alquilere__Id_Le__47DBAE45" FromRole="Alquileres" ToRole="Lectores" />
+          <NavigationProperty Name="Libro" Relationship="Self.FK__Alquilere__Id_li__49C3F6B7" FromRole="Alquileres" ToRole="Libros" />
         </EntityType>
         <EntityType Name="Autores">
           <Key>
@@ -260,7 +258,7 @@
             <PropertyRef Name="Id_categoria" />
           </Key>
           <Property Name="Id_categoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Categoria" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Categoria1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Libros" Relationship="Self.FK__Libros__Id_categ__45F365D3" FromRole="Categorias" ToRole="Libros" />
         </EntityType>
         <EntityType Name="Editoriales">
@@ -280,7 +278,6 @@
           <Property Name="Id_Lector" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Carnet" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Administradores" Relationship="Self.FK__Administr__Id_Le__48CFD27E" FromRole="Lectores" ToRole="Administradores" />
           <NavigationProperty Name="Alquileres" Relationship="Self.FK__Alquilere__Id_Le__47DBAE45" FromRole="Lectores" ToRole="Alquileres" />
         </EntityType>
@@ -297,13 +294,13 @@
           <Property Name="Id_Editorial" Type="Int32" Nullable="false" />
           <Property Name="Id_categoria" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Alquileres" Relationship="Self.FK__Alquilere__Id_li__49C3F6B7" FromRole="Libros" ToRole="Alquileres" />
-          <NavigationProperty Name="Autores" Relationship="Self.FK__Libros__Id_autor__46E78A0C" FromRole="Libros" ToRole="Autores" />
-          <NavigationProperty Name="Categorias" Relationship="Self.FK__Libros__Id_categ__45F365D3" FromRole="Libros" ToRole="Categorias" />
-          <NavigationProperty Name="Editoriales" Relationship="Self.FK__Libros__Id_Edito__44FF419A" FromRole="Libros" ToRole="Editoriales" />
+          <NavigationProperty Name="Autore" Relationship="Self.FK__Libros__Id_autor__46E78A0C" FromRole="Libros" ToRole="Autores" />
+          <NavigationProperty Name="Categoria" Relationship="Self.FK__Libros__Id_categ__45F365D3" FromRole="Libros" ToRole="Categorias" />
+          <NavigationProperty Name="Editoriale" Relationship="Self.FK__Libros__Id_Edito__44FF419A" FromRole="Libros" ToRole="Editoriales" />
         </EntityType>
         <Association Name="FK__Administr__Id_Le__48CFD27E">
-          <End Role="Lectores" Type="Self.Lectores" Multiplicity="1" />
-          <End Role="Administradores" Type="Self.Administradores" Multiplicity="*" />
+          <End Role="Lectores" Type="BibliotecaModel.Lectores" Multiplicity="1" />
+          <End Role="Administradores" Type="BibliotecaModel.Administradores" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Lectores">
               <PropertyRef Name="Id_Lector" />
@@ -314,8 +311,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Alquilere__Entre__4316F928">
-          <End Role="Administradores" Type="Self.Administradores" Multiplicity="1" />
-          <End Role="Alquileres" Type="Self.Alquileres" Multiplicity="*" />
+          <End Role="Administradores" Type="BibliotecaModel.Administradores" Multiplicity="1" />
+          <End Role="Alquileres" Type="BibliotecaModel.Alquileres" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Administradores">
               <PropertyRef Name="Id_Admin" />
@@ -326,8 +323,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Alquilere__Recib__440B1D61">
-          <End Role="Administradores" Type="Self.Administradores" Multiplicity="0..1" />
-          <End Role="Alquileres" Type="Self.Alquileres" Multiplicity="*" />
+          <End Role="Administradores" Type="BibliotecaModel.Administradores" Multiplicity="0..1" />
+          <End Role="Alquileres" Type="BibliotecaModel.Alquileres" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Administradores">
               <PropertyRef Name="Id_Admin" />
@@ -338,8 +335,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Alquilere__Id_Le__47DBAE45">
-          <End Role="Lectores" Type="Self.Lectores" Multiplicity="1" />
-          <End Role="Alquileres" Type="Self.Alquileres" Multiplicity="*" />
+          <End Role="Lectores" Type="BibliotecaModel.Lectores" Multiplicity="1" />
+          <End Role="Alquileres" Type="BibliotecaModel.Alquileres" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Lectores">
               <PropertyRef Name="Id_Lector" />
@@ -350,8 +347,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Alquilere__Id_li__49C3F6B7">
-          <End Role="Libros" Type="Self.Libros" Multiplicity="1" />
-          <End Role="Alquileres" Type="Self.Alquileres" Multiplicity="*" />
+          <End Role="Libros" Type="BibliotecaModel.Libros" Multiplicity="1" />
+          <End Role="Alquileres" Type="BibliotecaModel.Alquileres" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Libros">
               <PropertyRef Name="Id_libro" />
@@ -362,8 +359,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Libros__Id_autor__46E78A0C">
-          <End Role="Autores" Type="Self.Autores" Multiplicity="1" />
-          <End Role="Libros" Type="Self.Libros" Multiplicity="*" />
+          <End Role="Autores" Type="BibliotecaModel.Autores" Multiplicity="1" />
+          <End Role="Libros" Type="BibliotecaModel.Libros" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Autores">
               <PropertyRef Name="Id_autor" />
@@ -374,8 +371,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Libros__Id_categ__45F365D3">
-          <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
-          <End Role="Libros" Type="Self.Libros" Multiplicity="*" />
+          <End Role="Categorias" Type="BibliotecaModel.Categorias" Multiplicity="1" />
+          <End Role="Libros" Type="BibliotecaModel.Libros" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categorias">
               <PropertyRef Name="Id_categoria" />
@@ -386,8 +383,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Libros__Id_Edito__44FF419A">
-          <End Role="Editoriales" Type="Self.Editoriales" Multiplicity="1" />
-          <End Role="Libros" Type="Self.Libros" Multiplicity="*" />
+          <End Role="Editoriales" Type="BibliotecaModel.Editoriales" Multiplicity="1" />
+          <End Role="Libros" Type="BibliotecaModel.Libros" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Editoriales">
               <PropertyRef Name="Id_Editorial" />
@@ -397,14 +394,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BibliotecaEntities3" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Administradores" EntityType="Self.Administradores" />
-          <EntitySet Name="Alquileres" EntityType="Self.Alquileres" />
-          <EntitySet Name="Autores" EntityType="Self.Autores" />
-          <EntitySet Name="Categorias" EntityType="Self.Categorias" />
-          <EntitySet Name="Editoriales" EntityType="Self.Editoriales" />
-          <EntitySet Name="Lectores" EntityType="Self.Lectores" />
-          <EntitySet Name="Libros" EntityType="Self.Libros" />
+        <EntityContainer Name="BibliotecaEntities4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administradores" EntityType="BibliotecaModel.Administradores" />
+          <EntitySet Name="Alquileres" EntityType="BibliotecaModel.Alquileres" />
+          <EntitySet Name="Autores" EntityType="BibliotecaModel.Autores" />
+          <EntitySet Name="Categorias" EntityType="BibliotecaModel.Categorias" />
+          <EntitySet Name="Editoriales" EntityType="BibliotecaModel.Editoriales" />
+          <EntitySet Name="Lectores" EntityType="BibliotecaModel.Lectores" />
+          <EntitySet Name="Libros" EntityType="BibliotecaModel.Libros" />
           <AssociationSet Name="FK__Administr__Id_Le__48CFD27E" Association="Self.FK__Administr__Id_Le__48CFD27E">
             <End Role="Lectores" EntitySet="Lectores" />
             <End Role="Administradores" EntitySet="Administradores" />
@@ -443,7 +440,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BibliotecaModelStoreContainer" CdmEntityContainer="BibliotecaEntities3">
+        <EntityContainerMapping StorageEntityContainer="BibliotecaModelStoreContainer" CdmEntityContainer="BibliotecaEntities4">
           <EntitySetMapping Name="Administradores">
             <EntityTypeMapping TypeName="BibliotecaModel.Administradores">
               <MappingFragment StoreEntitySet="Administradores">
@@ -482,7 +479,7 @@
             <EntityTypeMapping TypeName="BibliotecaModel.Categorias">
               <MappingFragment StoreEntitySet="Categorias">
                 <ScalarProperty Name="Id_categoria" ColumnName="Id_categoria" />
-                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Categoria1" ColumnName="Categoria" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -502,7 +499,6 @@
                 <ScalarProperty Name="Id_Lector" ColumnName="Id_Lector" />
                 <ScalarProperty Name="Nombres" ColumnName="Nombres" />
                 <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
-                <ScalarProperty Name="Carnet" ColumnName="Carnet" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -534,7 +530,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />

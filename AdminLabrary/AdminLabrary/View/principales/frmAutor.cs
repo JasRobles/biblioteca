@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdminLabrary.Model;
-
+using AdminLabrary.View.insertUpdateDelete;
 
 namespace AdminLabrary.formularios.principales
 {
@@ -22,14 +22,14 @@ namespace AdminLabrary.formularios.principales
         private void FpAutor_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            
 
-          
+
+
         }
 
-        private void CargarDatos()
+        public void CargarDatos()
         {
-            using (BibliotecaEntities3 db = new BibliotecaEntities3())
+            using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
                 var lista = from autores in db.Autores
                             select new
@@ -46,6 +46,66 @@ namespace AdminLabrary.formularios.principales
 
         }
 
-       
+        public static frmAutores autor = new frmAutores();
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            autor.btnGuardar.Enabled = true;
+            autor.btnEditar.Enabled = false;
+            autor.btnEliminar.Enabled = false;
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            autor.ShowDialog();
+
+        }
+
+        private void dgvAutores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+        }
+
+        void seleccionar()
+        {
+            string id = dgvAutores.CurrentRow.Cells[0].Value.ToString();
+            string nombre = dgvAutores.CurrentRow.Cells[1].Value.ToString();
+            string fecha = dgvAutores.CurrentRow.Cells[2].Value.ToString();
+            string nacionalidad = dgvAutores.CurrentRow.Cells[3].Value.ToString();
+            autor.txtNacionalidad.Text = nacionalidad;
+            autor.txtNombre.Text = nombre;
+            autor.dtpFecha.Text = fecha;
+            autor.ID = int.Parse(id);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            seleccionar();
+            autor.btnGuardar.Enabled = false;
+            autor.btnEliminar.Enabled = false;
+            autor.btnEditar.Enabled = true;
+            btnEliminar.Enabled = false;
+            btnEditar.Enabled = false;
+            autor.ShowDialog();
+        }
+
+        private void dgvAutores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            seleccionar();
+            autor.btnGuardar.Enabled = false;
+            autor.btnEliminar.Enabled = true;
+            autor.btnEditar.Enabled = false;
+            autor.dtpFecha.Enabled = false;
+            autor.txtNacionalidad.Enabled = false;
+            autor.txtNombre.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnEditar.Enabled = false;
+            autor.ShowDialog();
+        }
     }
 }

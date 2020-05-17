@@ -39,7 +39,7 @@ namespace AdminLabrary.formularios.principales
         }
         private void CargaDratos()
         {
-            using (BibliotecaEntities3 db = new BibliotecaEntities3())
+            using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
                 var lista = from li in db.Libros
                             from au in db.Autores
@@ -51,7 +51,7 @@ namespace AdminLabrary.formularios.principales
                             select new 
                             { ID = li.Id_libro, Nombre = li.Nombre,
                                 Cantidad =li.cantidad,Año=li.Año,Numero_edicion =li.Numero_edicion,
-                                Autor = au.Nombre,Editorial = ed.Editorial,Categoria = ca.Categoria
+                                Autor = au.Nombre,Editorial = ed.Editorial,Categoria = ca.Categoria1
                             };
 
                 dgvLibros.DataSource = lista.ToList();

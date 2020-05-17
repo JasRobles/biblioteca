@@ -23,9 +23,9 @@ namespace AdminLabrary.Model
         public Nullable<System.DateTime> fecha_de_entrega { get; set; }
         public Nullable<int> Recibido { get; set; }
     
-        public virtual Administradores Administradores { get; set; }
-        public virtual Administradores Administradores1 { get; set; }
-        public virtual Lectores Lectores { get; set; }
-        public virtual Libros Libros { get; set; }
+        public virtual Administradores Administradore { get; set; }
+        public virtual Administradores Administradore1 { get; set; }
+        public virtual Lectores Lectore { get; set; }
+        public virtual Libros Libro { get; set; }
     }
 }

@@ -48,7 +48,7 @@ namespace AdminLabrary.formularios.principales
 
         public void MostrarPanel(Form Panel)
         {
-            if (activeForm != null) activeForm.Close();
+            if (activeForm != null)
             activeForm = Panel;
             Panel.TopLevel = false;
             Panel.FormBorderStyle = FormBorderStyle.None;
@@ -56,14 +56,15 @@ namespace AdminLabrary.formularios.principales
             pPrincipal.Controls.Add(Panel);
             pPrincipal.Tag = Panel;
             Panel.BringToFront();
-            Panel.Show();
+            Panel.Show(); 
         }
 
-      
+
+        public static frmEditorial Editorial = new frmEditorial();
         private void btnProductos_Click(object sender, EventArgs e)
         {
 
-            MostrarPanel(new frmEditoriales());
+            MostrarPanel(Editorial);
         
         }
 
@@ -103,7 +104,7 @@ namespace AdminLabrary.formularios.principales
         private void btnMinimizar_Click(object sender, EventArgs e)
 
         {
-          
+            this.WindowState = FormWindowState.Minimized;
             
         }
 
@@ -137,23 +138,24 @@ namespace AdminLabrary.formularios.principales
 
         }
 
-        private void btnCarreras_Click(object sender, EventArgs e)
+        private void btnAdministrador_Click(object sender, EventArgs e)
         {
          MostrarPanel(new frmAdministradores());
         }
 
-       
+
+        public static frmLectores lector = new frmLectores();
         private void btnLectores_Click(object sender, EventArgs e)
         {
 
-            MostrarPanel(new frmLectores());
+            MostrarPanel(lector);
            
         }
-
+        public static frmCategoria categoria = new frmCategoria();
         private void btnCategoria_Click(object sender, EventArgs e)
         {
 
-            MostrarPanel(new frmCat());
+            MostrarPanel(categoria);
             
         }
 
@@ -165,38 +167,31 @@ namespace AdminLabrary.formularios.principales
             
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnPrestamos_Click(object sender, EventArgs e)
         {
             MostrarPanel(new frmPrestamos());
-            PanelMenu.Hide();
+            
 
         }
 
+        public static frmAutor Autor = new frmAutor();
         private void btnAutor_Click(object sender, EventArgs e)
         {
-            MostrarPanel(new frmAutor());
+            MostrarPanel(Autor);
         }
 
-        int botonO = 0;
+        
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            if (botonO == 0)
-            {
-                PanelMenu.Hide();
-                botonO = 1;
-           
-            }
-            else
-            {
-                PanelMenu.Show();
-                botonO = 0;
-            }
+            PanelMenu.Hide();
 
+            btnMostrar.Show();
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            PanelMenu.Show();
+            btnMostrar.Hide();
         }
     }
 

@@ -35,28 +35,24 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblUsuarioARecibir = new System.Windows.Forms.Label();
             this.PanelBarraTitulo = new System.Windows.Forms.Panel();
+            this.btnMostrar = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.pPrincipal = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PictureBox5 = new System.Windows.Forms.PictureBox();
             this.Panel10 = new System.Windows.Forms.Panel();
             this.btnEditorial = new System.Windows.Forms.Button();
-            this.Panel2 = new System.Windows.Forms.Panel();
             this.btnCategoria = new System.Windows.Forms.Button();
-            this.Panel3 = new System.Windows.Forms.Panel();
             this.btnAdmin = new System.Windows.Forms.Button();
-            this.Panel5 = new System.Windows.Forms.Panel();
             this.btnLibros = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnLectores = new System.Windows.Forms.Button();
-            this.Panel4 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.btnPrestamos = new System.Windows.Forms.Button();
             this.btnAutor = new System.Windows.Forms.Button();
             this.PanelMenu = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.PanelBarraTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMostrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.pPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -135,7 +131,7 @@
             // PanelBarraTitulo
             // 
             this.PanelBarraTitulo.BackColor = System.Drawing.Color.Teal;
-            this.PanelBarraTitulo.Controls.Add(this.btnMenu);
+            this.PanelBarraTitulo.Controls.Add(this.btnMostrar);
             this.PanelBarraTitulo.Controls.Add(this.lblUsuarioARecibir);
             this.PanelBarraTitulo.Controls.Add(this.lblUsuario);
             this.PanelBarraTitulo.Controls.Add(this.btnMinimizar);
@@ -149,12 +145,26 @@
             this.PanelBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBarraTitulo_Paint);
             this.PanelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBarraTitulo_MouseDown);
             // 
+            // btnMostrar
+            // 
+            this.btnMostrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMostrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMostrar.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrar.Image")));
+            this.btnMostrar.Location = new System.Drawing.Point(3, 3);
+            this.btnMostrar.Name = "btnMostrar";
+            this.btnMostrar.Size = new System.Drawing.Size(32, 33);
+            this.btnMostrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMostrar.TabIndex = 18;
+            this.btnMostrar.TabStop = false;
+            this.btnMostrar.Visible = false;
+            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
+            // 
             // btnMenu
             // 
-            this.btnMenu.BackColor = System.Drawing.Color.Maroon;
+            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
             this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(3, 1);
+            this.btnMenu.Location = new System.Drawing.Point(188, 6);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(32, 33);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -200,16 +210,17 @@
             // 
             // Panel10
             // 
-            this.Panel10.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.Panel10.Location = new System.Drawing.Point(9, 180);
+            this.Panel10.BackColor = System.Drawing.Color.SeaGreen;
+            this.Panel10.Location = new System.Drawing.Point(10, 173);
             this.Panel10.Name = "Panel10";
-            this.Panel10.Size = new System.Drawing.Size(5, 50);
+            this.Panel10.Size = new System.Drawing.Size(5, 415);
             this.Panel10.TabIndex = 1;
             // 
             // btnEditorial
             // 
+            this.btnEditorial.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditorial.FlatAppearance.BorderSize = 0;
-            this.btnEditorial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnEditorial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnEditorial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btnEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -218,7 +229,7 @@
             this.btnEditorial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditorial.Location = new System.Drawing.Point(20, 236);
             this.btnEditorial.Name = "btnEditorial";
-            this.btnEditorial.Size = new System.Drawing.Size(220, 50);
+            this.btnEditorial.Size = new System.Drawing.Size(220, 56);
             this.btnEditorial.TabIndex = 2;
             this.btnEditorial.Text = "  Editorial";
             this.btnEditorial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -226,18 +237,11 @@
             this.btnEditorial.UseVisualStyleBackColor = true;
             this.btnEditorial.Click += new System.EventHandler(this.btnProductos_Click);
             // 
-            // Panel2
-            // 
-            this.Panel2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.Panel2.Location = new System.Drawing.Point(9, 236);
-            this.Panel2.Name = "Panel2";
-            this.Panel2.Size = new System.Drawing.Size(5, 50);
-            this.Panel2.TabIndex = 3;
-            // 
             // btnCategoria
             // 
+            this.btnCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCategoria.FlatAppearance.BorderSize = 0;
-            this.btnCategoria.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnCategoria.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnCategoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -246,7 +250,7 @@
             this.btnCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategoria.Location = new System.Drawing.Point(20, 292);
             this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(220, 50);
+            this.btnCategoria.Size = new System.Drawing.Size(220, 56);
             this.btnCategoria.TabIndex = 4;
             this.btnCategoria.Text = "  Categoria";
             this.btnCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -254,18 +258,11 @@
             this.btnCategoria.UseVisualStyleBackColor = true;
             this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
-            // Panel3
-            // 
-            this.Panel3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.Panel3.Location = new System.Drawing.Point(9, 292);
-            this.Panel3.Name = "Panel3";
-            this.Panel3.Size = new System.Drawing.Size(5, 50);
-            this.Panel3.TabIndex = 5;
-            // 
             // btnAdmin
             // 
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -274,33 +271,26 @@
             this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdmin.Location = new System.Drawing.Point(18, 421);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(220, 50);
+            this.btnAdmin.Size = new System.Drawing.Size(220, 56);
             this.btnAdmin.TabIndex = 8;
             this.btnAdmin.Text = "Administradores";
             this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Click += new System.EventHandler(this.btnCarreras_Click);
-            // 
-            // Panel5
-            // 
-            this.Panel5.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.Panel5.Location = new System.Drawing.Point(10, 421);
-            this.Panel5.Name = "Panel5";
-            this.Panel5.Size = new System.Drawing.Size(5, 50);
-            this.Panel5.TabIndex = 9;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdministrador_Click);
             // 
             // btnLibros
             // 
+            this.btnLibros.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLibros.FlatAppearance.BorderSize = 0;
-            this.btnLibros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnLibros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnLibros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btnLibros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLibros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLibros.ForeColor = System.Drawing.Color.White;
             this.btnLibros.Image = ((System.Drawing.Image)(resources.GetObject("btnLibros.Image")));
             this.btnLibros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLibros.Location = new System.Drawing.Point(20, 359);
+            this.btnLibros.Location = new System.Drawing.Point(22, 359);
             this.btnLibros.Name = "btnLibros";
             this.btnLibros.Size = new System.Drawing.Size(220, 56);
             this.btnLibros.TabIndex = 14;
@@ -310,18 +300,11 @@
             this.btnLibros.UseVisualStyleBackColor = true;
             this.btnLibros.Click += new System.EventHandler(this.btnLibros_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel1.Location = new System.Drawing.Point(10, 359);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 50);
-            this.panel1.TabIndex = 6;
-            // 
             // btnLectores
             // 
+            this.btnLectores.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLectores.FlatAppearance.BorderSize = 0;
-            this.btnLectores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnLectores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnLectores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btnLectores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLectores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -330,7 +313,7 @@
             this.btnLectores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLectores.Location = new System.Drawing.Point(22, 477);
             this.btnLectores.Name = "btnLectores";
-            this.btnLectores.Size = new System.Drawing.Size(216, 50);
+            this.btnLectores.Size = new System.Drawing.Size(216, 56);
             this.btnLectores.TabIndex = 6;
             this.btnLectores.Text = "  Lectores";
             this.btnLectores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -338,26 +321,11 @@
             this.btnLectores.UseVisualStyleBackColor = true;
             this.btnLectores.Click += new System.EventHandler(this.btnLectores_Click);
             // 
-            // Panel4
-            // 
-            this.Panel4.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.Panel4.Location = new System.Drawing.Point(10, 477);
-            this.Panel4.Name = "Panel4";
-            this.Panel4.Size = new System.Drawing.Size(5, 50);
-            this.Panel4.TabIndex = 7;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel6.Location = new System.Drawing.Point(11, 533);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(5, 50);
-            this.panel6.TabIndex = 8;
-            // 
             // btnPrestamos
             // 
+            this.btnPrestamos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrestamos.FlatAppearance.BorderSize = 0;
-            this.btnPrestamos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnPrestamos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnPrestamos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btnPrestamos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrestamos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -366,7 +334,7 @@
             this.btnPrestamos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrestamos.Location = new System.Drawing.Point(20, 173);
             this.btnPrestamos.Name = "btnPrestamos";
-            this.btnPrestamos.Size = new System.Drawing.Size(220, 57);
+            this.btnPrestamos.Size = new System.Drawing.Size(220, 56);
             this.btnPrestamos.TabIndex = 17;
             this.btnPrestamos.Text = "  Prestamos";
             this.btnPrestamos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -376,8 +344,9 @@
             // 
             // btnAutor
             // 
+            this.btnAutor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAutor.FlatAppearance.BorderSize = 0;
-            this.btnAutor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnAutor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnAutor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btnAutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -386,7 +355,7 @@
             this.btnAutor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAutor.Location = new System.Drawing.Point(22, 533);
             this.btnAutor.Name = "btnAutor";
-            this.btnAutor.Size = new System.Drawing.Size(219, 50);
+            this.btnAutor.Size = new System.Drawing.Size(219, 56);
             this.btnAutor.TabIndex = 17;
             this.btnAutor.Text = "  Autor";
             this.btnAutor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -396,22 +365,18 @@
             // 
             // PanelMenu
             // 
-            this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.PanelMenu.Controls.Add(this.btnMenu);
             this.PanelMenu.Controls.Add(this.btnAutor);
             this.PanelMenu.Controls.Add(this.btnPrestamos);
-            this.PanelMenu.Controls.Add(this.panel6);
-            this.PanelMenu.Controls.Add(this.Panel4);
             this.PanelMenu.Controls.Add(this.btnLectores);
-            this.PanelMenu.Controls.Add(this.panel1);
             this.PanelMenu.Controls.Add(this.btnLibros);
-            this.PanelMenu.Controls.Add(this.Panel5);
             this.PanelMenu.Controls.Add(this.btnAdmin);
-            this.PanelMenu.Controls.Add(this.Panel3);
             this.PanelMenu.Controls.Add(this.btnCategoria);
-            this.PanelMenu.Controls.Add(this.Panel2);
             this.PanelMenu.Controls.Add(this.btnEditorial);
             this.PanelMenu.Controls.Add(this.Panel10);
             this.PanelMenu.Controls.Add(this.PictureBox5);
+            this.PanelMenu.Cursor = System.Windows.Forms.Cursors.Default;
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.Location = new System.Drawing.Point(0, 40);
             this.PanelMenu.Name = "PanelMenu";
@@ -437,6 +402,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.PanelBarraTitulo.ResumeLayout(false);
             this.PanelBarraTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMostrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.pPrincipal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -460,18 +426,13 @@
         internal System.Windows.Forms.PictureBox PictureBox5;
         internal System.Windows.Forms.Panel Panel10;
         internal System.Windows.Forms.Button btnEditorial;
-        internal System.Windows.Forms.Panel Panel2;
         internal System.Windows.Forms.Button btnCategoria;
-        internal System.Windows.Forms.Panel Panel3;
         internal System.Windows.Forms.Button btnAdmin;
-        internal System.Windows.Forms.Panel Panel5;
         internal System.Windows.Forms.Button btnLibros;
-        internal System.Windows.Forms.Panel panel1;
         internal System.Windows.Forms.Button btnLectores;
-        internal System.Windows.Forms.Panel Panel4;
-        internal System.Windows.Forms.Panel panel6;
         internal System.Windows.Forms.Button btnPrestamos;
         internal System.Windows.Forms.Button btnAutor;
         internal System.Windows.Forms.Panel PanelMenu;
+        internal System.Windows.Forms.PictureBox btnMostrar;
     }
 }

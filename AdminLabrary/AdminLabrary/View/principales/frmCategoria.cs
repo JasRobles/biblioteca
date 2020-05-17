@@ -9,12 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdminLabrary.Model;
+using AdminLabrary.View.insertUpdateDelete;
 
 namespace AdminLabrary.formularios.principales
 {
-    public partial class frmCat : Form
+    public partial class frmCategoria : Form
     {
-        public frmCat()
+        public frmCategoria()
         {
             InitializeComponent();
         }
@@ -23,16 +24,64 @@ namespace AdminLabrary.formularios.principales
         {
             CargarDatos();
         }
-        private void CargarDatos()
+        public void CargarDatos()
         {
-            using (BibliotecaEntities3 db= new BibliotecaEntities3())
+            using (BibliotecaEntities4 db= new BibliotecaEntities4())
             {
                 var lista = from cat in db.Categorias
-                            select new {ID = cat.Id_categoria,Categoria =cat.Categoria };
+                            select new {ID = cat.Id_categoria,Categoria =cat.Categoria1 };
                 dgvCat.DataSource = lista.ToList();
                 
             }
 
+        }
+        void seleccionar()
+        {
+            int Id = int.Parse(dgvCat.CurrentRow.Cells[0].Value.ToString());
+            string cate = dgvCat.CurrentRow.Cells[1].Value.ToString();
+            categoria.txtCategoria.Text = cate;
+            categoria.ID = Id;
+        }
+
+        private void dgvCat_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+
+        }
+
+        frmCategorias categoria = new frmCategorias();
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            categoria.btnGuardar.Enabled = true;
+            categoria.btnEditar.Enabled = false;
+            categoria.btnEliminar.Enabled = false;
+            categoria.ShowDialog();
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            seleccionar();
+            categoria.btnGuardar.Enabled = false;
+            categoria.btnEditar.Enabled = true;
+            categoria.btnEliminar.Enabled = false;
+            categoria.ShowDialog();
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            seleccionar();
+            categoria.btnGuardar.Enabled = false;
+            categoria.btnEditar.Enabled = false;
+            categoria.btnEliminar.Enabled = true;
+            categoria.txtCategoria.Enabled = false;
+            categoria.ShowDialog();
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
     }
 }

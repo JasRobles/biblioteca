@@ -24,30 +24,28 @@ namespace AdminLabrary.View.principales
         }
 
         private void CargarDatos()
-        {using (BibliotecaEntities3 db = new BibliotecaEntities3())
+        {using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
                 var lista = from pre in db.Alquileres
                             from li in db.Libros
                             from le in db.Lectores
                             from ad in db.Administradores
-                            from a in db.Administradores
                             where pre.Id_Lector == le.Id_Lector
                             && pre.Id_libro == li.Id_libro
                             && pre.Entregado == ad.Id_Admin
-                            && pre.Recibido == a.Id_Admin
+                            && pre.Recibido == null
+                         
 
 
-                            select new    {
+                            select new    
+                            {
                                     ID = pre.Id_alquiler,
                                     Lector = le.Nombres,
                                     Libro = li.Nombre,
                                     Entregado = ad.Usuario,
                                     Fecha_salida = pre.fecha_salida,
                                     Fecha_prevista_Entrega = pre.fecha_prevista_de_entrega,
-                                    Fecha_entrega = pre.fecha_de_entrega,
-                                    Recibido = a.Usuario
                                     
-                                   
                                 };
 
 

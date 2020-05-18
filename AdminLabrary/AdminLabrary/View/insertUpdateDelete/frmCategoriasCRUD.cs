@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace AdminLabrary.View.insertUpdateDelete
 {
-    public partial class frmCategorias : Form
+    public partial class frmCategoriasCRUD : Form
     {
-        public frmCategorias()
+        public frmCategoriasCRUD()
         {
             InitializeComponent();
         }

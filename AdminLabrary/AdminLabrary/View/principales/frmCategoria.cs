@@ -50,7 +50,7 @@ namespace AdminLabrary.formularios.principales
 
         }
 
-        frmCategorias categoria = new frmCategorias();
+        frmCategoriasCRUD categoria = new frmCategoriasCRUD();
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             categoria.btnGuardar.Enabled = true;

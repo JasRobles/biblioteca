@@ -138,9 +138,10 @@ namespace AdminLabrary.formularios.principales
 
         }
 
+        public static frmAdministradores admin = new frmAdministradores();
         private void btnAdministrador_Click(object sender, EventArgs e)
         {
-         MostrarPanel(new frmAdministradores());
+         MostrarPanel(admin);
         }
 
 

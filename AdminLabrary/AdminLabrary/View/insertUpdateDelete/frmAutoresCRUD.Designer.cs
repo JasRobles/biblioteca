@@ -1,6 +1,6 @@
 ﻿namespace AdminLabrary.View.insertUpdateDelete
 {
-    partial class frmAutores
+    partial class frmAutoresCRUD
     {
         /// <summary>
         /// Required designer variable.

@@ -46,7 +46,7 @@ namespace AdminLabrary.formularios.principales
             btnEliminar.Enabled = true;
         }
 
-        public static frmEditoriales Editorial = new frmEditoriales();
+        public static frmEditorialesCRUD Editorial = new frmEditorialesCRUD();
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Editorial.btnGuardar.Enabled = true;

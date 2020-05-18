@@ -40,7 +40,7 @@ namespace AdminLabrary.formularios.principales
 
         }
 
-        frmNuevoLector nuevo = new frmNuevoLector();
+        frmLectorCRUD nuevo = new frmLectorCRUD();
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             nuevo.limpiar();

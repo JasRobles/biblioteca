@@ -145,29 +145,41 @@
     <Compile Include="Model\Libros.cs">
       <DependentUpon>Biblioteca.tt</DependentUpon>
     </Compile>
-    <Compile Include="View\insertUpdateDelete\frmAutores.cs">
+    <Compile Include="View\buscar\frmBuscarLector.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\insertUpdateDelete\frmAutores.Designer.cs">
-      <DependentUpon>frmAutores.cs</DependentUpon>
+    <Compile Include="View\buscar\frmBuscarLector.Designer.cs">
+      <DependentUpon>frmBuscarLector.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\insertUpdateDelete\frmCategorias.cs">
+    <Compile Include="View\insertUpdateDelete\frmAdministradoresCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\insertUpdateDelete\frmCategorias.Designer.cs">
-      <DependentUpon>frmCategorias.cs</DependentUpon>
+    <Compile Include="View\insertUpdateDelete\frmAdministradoresCRUD.Designer.cs">
+      <DependentUpon>frmAdministradoresCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\insertUpdateDelete\frmEditoriales.cs">
+    <Compile Include="View\insertUpdateDelete\frmAutoresCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\insertUpdateDelete\frmEditoriales.Designer.cs">
-      <DependentUpon>frmEditoriales.cs</DependentUpon>
+    <Compile Include="View\insertUpdateDelete\frmAutoresCRUD.Designer.cs">
+      <DependentUpon>frmAutoresCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\insertUpdateDelete\frmNuevoLector.cs">
+    <Compile Include="View\insertUpdateDelete\frmCategoriasCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\insertUpdateDelete\frmNuevoLector.Designer.cs">
-      <DependentUpon>frmNuevoLector.cs</DependentUpon>
+    <Compile Include="View\insertUpdateDelete\frmCategoriasCRUD.Designer.cs">
+      <DependentUpon>frmCategoriasCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\insertUpdateDelete\frmEditorialesCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\insertUpdateDelete\frmEditorialesCRUD.Designer.cs">
+      <DependentUpon>frmEditorialesCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\insertUpdateDelete\frmLectorCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\insertUpdateDelete\frmLectorCRUD.Designer.cs">
+      <DependentUpon>frmLectorCRUD.cs</DependentUpon>
     </Compile>
     <Compile Include="View\principales\frmAdministradores.cs">
       <SubType>Form</SubType>
@@ -225,17 +237,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View\insertUpdateDelete\frmAutores.resx">
-      <DependentUpon>frmAutores.cs</DependentUpon>
+    <EmbeddedResource Include="View\buscar\frmBuscarLector.resx">
+      <DependentUpon>frmBuscarLector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\insertUpdateDelete\frmCategorias.resx">
-      <DependentUpon>frmCategorias.cs</DependentUpon>
+    <EmbeddedResource Include="View\insertUpdateDelete\frmAdministradoresCRUD.resx">
+      <DependentUpon>frmAdministradoresCRUD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\insertUpdateDelete\frmEditoriales.resx">
-      <DependentUpon>frmEditoriales.cs</DependentUpon>
+    <EmbeddedResource Include="View\insertUpdateDelete\frmAutoresCRUD.resx">
+      <DependentUpon>frmAutoresCRUD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\insertUpdateDelete\frmNuevoLector.resx">
-      <DependentUpon>frmNuevoLector.cs</DependentUpon>
+    <EmbeddedResource Include="View\insertUpdateDelete\frmCategoriasCRUD.resx">
+      <DependentUpon>frmCategoriasCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\insertUpdateDelete\frmEditorialesCRUD.resx">
+      <DependentUpon>frmEditorialesCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\insertUpdateDelete\frmLectorCRUD.resx">
+      <DependentUpon>frmLectorCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\principales\frmAdministradores.resx">
       <DependentUpon>frmAdministradores.cs</DependentUpon>
@@ -336,7 +354,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />
-    <Folder Include="View\buscar\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\Biblioteca.Context.tt">

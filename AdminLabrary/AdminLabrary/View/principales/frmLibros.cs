@@ -59,5 +59,10 @@ namespace AdminLabrary.formularios.principales
             }
 
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

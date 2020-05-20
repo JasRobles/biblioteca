@@ -145,11 +145,23 @@
     <Compile Include="Model\Libros.cs">
       <DependentUpon>Biblioteca.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\buscar\frmBuscarAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\buscar\frmBuscarAutor.Designer.cs">
+      <DependentUpon>frmBuscarAutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\buscar\frmBuscarLector.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\buscar\frmBuscarLector.Designer.cs">
       <DependentUpon>frmBuscarLector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\buscar\frmBuscarLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\buscar\frmBuscarLibros.Designer.cs">
+      <DependentUpon>frmBuscarLibros.cs</DependentUpon>
     </Compile>
     <Compile Include="View\insertUpdateDelete\frmAdministradoresCRUD.cs">
       <SubType>Form</SubType>
@@ -180,6 +192,12 @@
     </Compile>
     <Compile Include="View\insertUpdateDelete\frmLectorCRUD.Designer.cs">
       <DependentUpon>frmLectorCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\insertUpdateDelete\frmLibrosCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\insertUpdateDelete\frmLibrosCRUD.Designer.cs">
+      <DependentUpon>frmLibrosCRUD.cs</DependentUpon>
     </Compile>
     <Compile Include="View\principales\frmAdministradores.cs">
       <SubType>Form</SubType>
@@ -237,8 +255,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\buscar\frmBuscarAutor.resx">
+      <DependentUpon>frmBuscarAutor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\buscar\frmBuscarLector.resx">
       <DependentUpon>frmBuscarLector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\buscar\frmBuscarLibros.resx">
+      <DependentUpon>frmBuscarLibros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\insertUpdateDelete\frmAdministradoresCRUD.resx">
       <DependentUpon>frmAdministradoresCRUD.cs</DependentUpon>
@@ -254,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\insertUpdateDelete\frmLectorCRUD.resx">
       <DependentUpon>frmLectorCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\insertUpdateDelete\frmLibrosCRUD.resx">
+      <DependentUpon>frmLibrosCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\principales\frmAdministradores.resx">
       <DependentUpon>frmAdministradores.cs</DependentUpon>

@@ -194,6 +194,11 @@ namespace AdminLabrary.formularios.principales
             PanelMenu.Show();
             btnMostrar.Hide();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

@@ -58,5 +58,10 @@ namespace AdminLabrary.View.principales
             }
 
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

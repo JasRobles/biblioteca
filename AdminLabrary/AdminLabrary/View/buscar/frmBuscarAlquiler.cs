@@ -1,4 +1,5 @@
-﻿using AdminLabrary.Model;
+﻿using AdminLabrary.formularios.principales;
+using AdminLabrary.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,16 +21,67 @@ namespace AdminLabrary.View.buscar
 
         private void frmBuscarAlquiler_Load(object sender, EventArgs e)
         {
-
+            filtro();
         }
 
         void filtro()
         {
             using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
+                dgvAlquiler.Rows.Clear();
                 string buscar = txtBuscar.Text;
                 var ListaA = from Alq in db.Alquileres
-                             where Alq.
+                             from Lec in db.Lectores
+                             from Lib in db.Libros
+                             where Lec.Id_Lector == Alq.Id_Lector
+                             where Alq.Id_libro == Lib.Id_libro
+                             where Lec.Nombres.Contains(buscar)
+                             select new
+                             {
+                                 ID = Alq.Id_alquiler,
+                                 Lector = Lec.Nombres,
+                                 Libro = Lib.Nombre,
+                                 Fecha_Salida = Alq.fecha_salida,
+                                 Fecha_Prevista_Entrega = Alq.fecha_prevista_de_entrega,
+                                 Fecha_Entrega = Alq.fecha_de_entrega,
+                                 Recibido = Alq.Recibido
+                             };
+                foreach (var iterar in ListaA)
+                {
+                    dgvAlquiler.Rows.Add(iterar.ID, iterar.Lector, iterar.Libro, iterar.Fecha_Salida, 
+                        iterar.Fecha_Prevista_Entrega, iterar.Fecha_Entrega, iterar.Recibido);
+                }
+            }
+        }
+
+        public int indicador;
+        void seleccionar()
+        {
+            string Id = dgvAlquiler.CurrentRow.Cells[0].Value.ToString();
+            string Nombre = dgvAlquiler.CurrentRow.Cells[1].Value.ToString();
+            if (indicador == 1)
+            {
+                frmPrincipal.admin.admin.txtLector.Text = Nombre;
+                frmPrincipal.admin.admin.IDLector = int.Parse(Id);
+                this.Close();
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            filtro();
+        }
+
+        private void dgvAlquiler_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionar();
+        }
+
+        private void dgvAlquiler_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                seleccionar();
             }
         }
     }

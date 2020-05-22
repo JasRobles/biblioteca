@@ -56,6 +56,7 @@ namespace AdminLabrary.View.buscar
             {
                 frmPrincipal.admin.admin.txtLector.Text = Nombre;
                 frmPrincipal.admin.admin.IDLector = int.Parse(Id);
+                this.Close();
             }
 
 

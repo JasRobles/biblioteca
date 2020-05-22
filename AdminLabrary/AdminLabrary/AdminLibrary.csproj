@@ -145,11 +145,35 @@
     <Compile Include="Model\Libros.cs">
       <DependentUpon>Biblioteca.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\buscar\frmBuscarAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\buscar\frmBuscarAdministrador.Designer.cs">
+      <DependentUpon>frmBuscarAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\buscar\frmBuscarAlquiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\buscar\frmBuscarAlquiler.Designer.cs">
+      <DependentUpon>frmBuscarAlquiler.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\buscar\frmBuscarAutor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\buscar\frmBuscarAutor.Designer.cs">
       <DependentUpon>frmBuscarAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\buscar\frmBuscarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\buscar\frmBuscarCategoria.Designer.cs">
+      <DependentUpon>frmBuscarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\buscar\frmBuscarEditoriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\buscar\frmBuscarEditoriales.Designer.cs">
+      <DependentUpon>frmBuscarEditoriales.cs</DependentUpon>
     </Compile>
     <Compile Include="View\buscar\frmBuscarLector.cs">
       <SubType>Form</SubType>
@@ -255,8 +279,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\buscar\frmBuscarAdministrador.resx">
+      <DependentUpon>frmBuscarAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\buscar\frmBuscarAlquiler.resx">
+      <DependentUpon>frmBuscarAlquiler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\buscar\frmBuscarAutor.resx">
       <DependentUpon>frmBuscarAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\buscar\frmBuscarCategoria.resx">
+      <DependentUpon>frmBuscarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\buscar\frmBuscarEditoriales.resx">
+      <DependentUpon>frmBuscarEditoriales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\buscar\frmBuscarLector.resx">
       <DependentUpon>frmBuscarLector.cs</DependentUpon>

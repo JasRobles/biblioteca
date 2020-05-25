@@ -56,8 +56,8 @@ namespace AdminLabrary.View.buscar
             string Nombre = dgvAutor.CurrentRow.Cells[1].Value.ToString();
             if (indicador == 1)
             {
-                frmPrincipal.Lib.Libros.txtAutor.Text = Nombre;
-                frmPrincipal.Lib.Libros.ID_Autor = int.Parse(Id);
+                frmPrincipal.admin.admin.txtLector.Text = Nombre;
+                frmPrincipal.admin.admin.IDLector = int.Parse(Id);
                 this.Close();
             }
         }
@@ -78,7 +78,6 @@ namespace AdminLabrary.View.buscar
         private void dgvAutor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             seleccionar();
-
         }
     }
 }

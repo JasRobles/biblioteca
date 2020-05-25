@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdminLabrary.Model;
-using AdminLabrary.View.insertUpdateDelete;
 
 
 namespace AdminLabrary.formularios.principales
@@ -60,11 +59,10 @@ namespace AdminLabrary.formularios.principales
             }
 
         }
-        public frmLibrosCRUD Libros = new frmLibrosCRUD();
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            Libros.ShowDialog();
+
         }
     }
 }

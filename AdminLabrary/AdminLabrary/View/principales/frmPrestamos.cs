@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdminLabrary.Model;
+using AdminLabrary.View.insertUpdateDelete;
 
 namespace AdminLabrary.View.principales
 {
@@ -59,9 +60,10 @@ namespace AdminLabrary.View.principales
 
         }
 
+        public  frmAlquileresCRUD alquiler = new frmAlquileresCRUD();
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            alquiler.ShowDialog();
         }
     }
 }

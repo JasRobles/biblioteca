@@ -90,9 +90,9 @@
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(9, 227);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(97, 31);
+            this.btnGuardar.Size = new System.Drawing.Size(120, 31);
             this.btnGuardar.TabIndex = 21;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -156,7 +156,7 @@
             this.dtpFecha.Size = new System.Drawing.Size(288, 26);
             this.dtpFecha.TabIndex = 27;
             // 
-            // frmEditoriales
+            // frmEditorialesCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,7 +174,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmEditoriales";
+            this.Name = "frmEditorialesCRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditoriales";
             this.Load += new System.EventHandler(this.frmEditoriales_Load);

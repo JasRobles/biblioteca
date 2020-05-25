@@ -14,12 +14,13 @@ namespace AdminLabrary.View.buscar
 {
     public partial class frmBuscarLector : Form
     {
+        public int indicador = 1;
         public frmBuscarLector()
         {
             InitializeComponent();
         }
 
-        public int indicador;
+       
         private void frmBuscarLector_Load(object sender, EventArgs e)
         {
             filtro();
@@ -27,20 +28,61 @@ namespace AdminLabrary.View.buscar
         }
         void filtro()
         {
-            
-            using (BibliotecaEntities4 db  = new BibliotecaEntities4())
+            if(indicador == 1) {
+                using (BibliotecaEntities4 db = new BibliotecaEntities4())
+                {
+                    
+                    dgvLecto.Rows.Clear();
+                    string buscar = txtBuscar.Text;
+                    var listaL = from LEC in db.Lectores
+                                 where !(from adm in db.Administradores select adm.Id_Lector).Contains(LEC.Id_Lector)
+                                 && LEC.Nombres.Contains(buscar)
+                                 select new
+                                 {
+                                     ID = LEC.Id_Lector,
+                                     Nombres = LEC.Nombres,
+                                     Apellidos = LEC.Apellidos
+                                 };
+                  foreach(var i in listaL)
+                    {
+
+                        dgvLecto.Rows.Add(i.ID, i.Nombres, i.Apellidos);
+                    }
+                    
+                }
+            }
+            else
             {
-                string buscar = txtBuscar.Text;
-                var listaL = from LEC in db.Lectores
-                            where !(from adm in db.Administradores select adm.Id_Lector).Contains(LEC.Id_Lector)
-                            && LEC.Nombres.Contains(buscar)
-                            select new
-                            {
-                                ID = LEC.Id_Lector,
-                                Nombres = LEC.Nombres,
-                                Apellidos = LEC.Apellidos
-                            };
-                dgvLecto.DataSource = listaL.ToList();
+                using (BibliotecaEntities4 db = new BibliotecaEntities4())
+                {
+                    dgvLecto.Rows.Clear();
+                    string buscar = txtBuscar.Text;
+                    var listaL = from LEC in db.Lectores
+                                 where LEC.Nombres.Contains(buscar)
+                                 select new
+                                 {
+                                     ID = LEC.Id_Lector,
+                                     Nombres = LEC.Nombres,
+                                     Apellidos = LEC.Apellidos
+                                 };
+                    foreach (var i in listaL)
+                    {
+
+                        var lista = from pres in db.Alquileres
+                                    where pres.Id_Lector == i.ID
+
+                                    select new
+                                    {
+                                        pres
+                                    };
+                        if(lista.Count() < 3)
+                        {
+                            dgvLecto.Rows.Add(i.ID, i.Nombres, i.Apellidos);
+                        }
+                    }
+
+                }
+
             }
         }
 

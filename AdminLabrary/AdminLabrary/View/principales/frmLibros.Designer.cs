@@ -34,6 +34,14 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Libro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero_Edicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_Editorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,6 +59,15 @@
             this.dgvLibros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLibros.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Libro,
+            this.Cantidad,
+            this.Año,
+            this.Numero_Edicion,
+            this.Id_Autor,
+            this.Id_Editorial,
+            this.Id_Categoria});
             this.dgvLibros.GridColor = System.Drawing.Color.Lime;
             this.dgvLibros.Location = new System.Drawing.Point(12, 140);
             this.dgvLibros.Name = "dgvLibros";
@@ -93,6 +110,57 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Libro
+            // 
+            this.Libro.HeaderText = "Libro";
+            this.Libro.Name = "Libro";
+            this.Libro.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Año
+            // 
+            this.Año.HeaderText = "Año";
+            this.Año.Name = "Año";
+            this.Año.ReadOnly = true;
+            // 
+            // Numero_Edicion
+            // 
+            this.Numero_Edicion.HeaderText = "Numero_Edicion";
+            this.Numero_Edicion.Name = "Numero_Edicion";
+            this.Numero_Edicion.ReadOnly = true;
+            // 
+            // Id_Autor
+            // 
+            this.Id_Autor.HeaderText = "Id_Autor";
+            this.Id_Autor.Name = "Id_Autor";
+            this.Id_Autor.ReadOnly = true;
+            this.Id_Autor.Visible = false;
+            // 
+            // Id_Editorial
+            // 
+            this.Id_Editorial.HeaderText = "Id_Editorial";
+            this.Id_Editorial.Name = "Id_Editorial";
+            this.Id_Editorial.ReadOnly = true;
+            this.Id_Editorial.Visible = false;
+            // 
+            // Id_Categoria
+            // 
+            this.Id_Categoria.HeaderText = "Id_Categoria";
+            this.Id_Categoria.Name = "Id_Categoria";
+            this.Id_Categoria.ReadOnly = true;
+            this.Id_Categoria.Visible = false;
+            // 
             // frmLibros
             // 
             this.ClientSize = new System.Drawing.Size(952, 551);
@@ -114,5 +182,13 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Libro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Año;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Edicion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Autor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Editorial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Categoria;
     }
 }

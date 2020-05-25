@@ -110,6 +110,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(288, 26);
             this.txtNombre.TabIndex = 9;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lblNacionalidad
             // 
@@ -156,7 +157,7 @@
             this.dtpFecha.Size = new System.Drawing.Size(288, 26);
             this.dtpFecha.TabIndex = 15;
             // 
-            // frmAutores
+            // frmAutoresCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,9 +175,10 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmAutores";
+            this.Name = "frmAutoresCRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAutores";
+            this.Load += new System.EventHandler(this.frmAutoresCRUD_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

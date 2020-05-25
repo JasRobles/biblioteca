@@ -93,5 +93,15 @@ namespace AdminLabrary.View.insertUpdateDelete
                 }
             }
         }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAutoresCRUD_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

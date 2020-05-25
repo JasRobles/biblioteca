@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AdminLabrary.Model;
+using AdminLabrary.View.buscar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,41 @@ namespace AdminLabrary.View.insertUpdateDelete
         public frmLibrosCRUD()
         {
             InitializeComponent();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmLibrosCRUD_Load(object sender, EventArgs e)
+        {
+
+        }
+        public int ID_Autor;
+        frmBuscarAutor BuscarA = new frmBuscarAutor();
+        private void btnSeleccionarA_Click(object sender, EventArgs e)
+        {
+            BuscarA.ShowDialog();
+
+        }
+
+        Libros Lib = new Libros();
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            {
+
+
+                
+
+            }
         }
     }
 }

@@ -78,6 +78,7 @@ namespace AdminLabrary.View.buscar
         private void dgvAutor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             seleccionar();
+
         }
     }
 }

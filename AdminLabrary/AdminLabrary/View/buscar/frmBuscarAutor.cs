@@ -56,8 +56,8 @@ namespace AdminLabrary.View.buscar
             string Nombre = dgvAutor.CurrentRow.Cells[1].Value.ToString();
             if (indicador == 1)
             {
-                frmPrincipal.admin.admin.txtLector.Text = Nombre;
-                frmPrincipal.admin.admin.IDLector = int.Parse(Id);
+                frmPrincipal.Lib.Libros.txtAutor.Text = Nombre;
+                frmPrincipal.Lib.Libros.ID_Autor = int.Parse(Id);
                 this.Close();
             }
         }

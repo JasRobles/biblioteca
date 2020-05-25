@@ -159,12 +159,12 @@ namespace AdminLabrary.formularios.principales
             MostrarPanel(categoria);
             
         }
-
+        public static frmLibros Lib = new frmLibros();
         private void btnLibros_Click(object sender, EventArgs e)
         {
         
 
-            MostrarPanel(new frmLibros());
+            MostrarPanel(Lib);
             
         }
        public static frmPrestamos prestamos = new frmPrestamos();

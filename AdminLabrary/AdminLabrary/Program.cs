@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdminLabrary.formularios.principales;
 using AdminLabrary.View.buscar;
-
+using AdminLabrary.View.principales;
 
 namespace AdminLabrary
 {
@@ -20,7 +20,7 @@ namespace AdminLabrary
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal());
+            Application.Run(new frmLogin());
         }
     }
 }

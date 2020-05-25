@@ -31,17 +31,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvLibros = new System.Windows.Forms.DataGridView();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Libro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Numero_Edicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_Editorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +68,9 @@
             this.Cantidad,
             this.Año,
             this.Numero_Edicion,
+            this.Autor,
+            this.Editorial,
+            this.Categoria,
             this.Id_Autor,
             this.Id_Editorial,
             this.Id_Categoria});
@@ -79,57 +85,6 @@
             this.dgvLibros.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLibros.Size = new System.Drawing.Size(917, 374);
             this.dgvLibros.TabIndex = 1;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Libro
-            // 
-            this.Libro.HeaderText = "Libro";
-            this.Libro.Name = "Libro";
-            this.Libro.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Año
-            // 
-            this.Año.HeaderText = "Año";
-            this.Año.Name = "Año";
-            this.Año.ReadOnly = true;
-            // 
-            // Numero_Edicion
-            // 
-            this.Numero_Edicion.HeaderText = "Numero_Edicion";
-            this.Numero_Edicion.Name = "Numero_Edicion";
-            this.Numero_Edicion.ReadOnly = true;
-            // 
-            // Id_Autor
-            // 
-            this.Id_Autor.HeaderText = "Id_Autor";
-            this.Id_Autor.Name = "Id_Autor";
-            this.Id_Autor.ReadOnly = true;
-            this.Id_Autor.Visible = false;
-            // 
-            // Id_Editorial
-            // 
-            this.Id_Editorial.HeaderText = "Id_Editorial";
-            this.Id_Editorial.Name = "Id_Editorial";
-            this.Id_Editorial.ReadOnly = true;
-            this.Id_Editorial.Visible = false;
-            // 
-            // Id_Categoria
-            // 
-            this.Id_Categoria.HeaderText = "Id_Categoria";
-            this.Id_Categoria.Name = "Id_Categoria";
-            this.Id_Categoria.ReadOnly = true;
-            this.Id_Categoria.Visible = false;
             // 
             // btnNuevo
             // 
@@ -161,6 +116,72 @@
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Libro
+            // 
+            this.Libro.HeaderText = "Libro";
+            this.Libro.Name = "Libro";
+            this.Libro.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Año
+            // 
+            this.Año.HeaderText = "Año";
+            this.Año.Name = "Año";
+            this.Año.ReadOnly = true;
+            // 
+            // Numero_Edicion
+            // 
+            this.Numero_Edicion.HeaderText = "Numero_Edicion";
+            this.Numero_Edicion.Name = "Numero_Edicion";
+            this.Numero_Edicion.ReadOnly = true;
+            // 
+            // Autor
+            // 
+            this.Autor.HeaderText = "Autor";
+            this.Autor.Name = "Autor";
+            this.Autor.ReadOnly = true;
+            // 
+            // Editorial
+            // 
+            this.Editorial.HeaderText = "Editorial";
+            this.Editorial.Name = "Editorial";
+            this.Editorial.ReadOnly = true;
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            // 
+            // Id_Autor
+            // 
+            this.Id_Autor.HeaderText = "Id_Autor";
+            this.Id_Autor.Name = "Id_Autor";
+            this.Id_Autor.ReadOnly = true;
+            // 
+            // Id_Editorial
+            // 
+            this.Id_Editorial.HeaderText = "Id_Editorial";
+            this.Id_Editorial.Name = "Id_Editorial";
+            this.Id_Editorial.ReadOnly = true;
+            // 
+            // Id_Categoria
+            // 
+            this.Id_Categoria.HeaderText = "Id_Categoria";
+            this.Id_Categoria.Name = "Id_Categoria";
+            this.Id_Categoria.ReadOnly = true;
+            // 
             // frmLibros
             // 
             this.ClientSize = new System.Drawing.Size(952, 551);
@@ -179,16 +200,19 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvLibros;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Libro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Año;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Edicion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Editorial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Autor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Editorial;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Categoria;
-        private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnEliminar;
     }
 }

@@ -33,14 +33,23 @@ namespace AdminLabrary.View.principales
                 var lista = from admin in db.Administradores
                             where admin.Usuario == txtUsuario.Text
                             && admin.Contraseña == txtContraseña.Text
-                            select admin;
+                            select new 
+                            {
+                                ID = admin.Id_Admin,
+                                Nombre = admin.Usuario,
+                                contaseña = admin.Contraseña
+                            };
+               
                 if (lista.Count() > 0)
                 {
                     frmPrincipal f = new frmPrincipal();
                     string usu = txtUsuario.Text;
                     f.lblUsuarioARecibir.Text = usu;
+                    foreach( var i in lista)
+                    {
+                        frmPrincipal.prestamos.alquiler.idAdmin = i.ID;
+                    }
                     f.ShowDialog();
-                   
                     this.Hide();
 
                 }

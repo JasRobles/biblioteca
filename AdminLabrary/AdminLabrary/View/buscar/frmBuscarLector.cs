@@ -92,12 +92,21 @@ namespace AdminLabrary.View.buscar
         }
         void seleccionar()
         {
-            string id = dgvLecto.CurrentRow.Cells[0].Value.ToString();
-            string Nombre = dgvLecto.CurrentRow.Cells[1].Value.ToString();
+           
             if (indicador == 1)
             {
+                string id = dgvLecto.CurrentRow.Cells[0].Value.ToString();
+                string Nombre = dgvLecto.CurrentRow.Cells[1].Value.ToString();
                 frmPrincipal.admin.admin.txtLector.Text = Nombre;
                 frmPrincipal.admin.admin.IDLector = int.Parse(id);
+                this.Close();
+            }
+            else
+            {
+                string idl = dgvLecto.CurrentRow.Cells[0].Value.ToString();
+                string Nombrel = dgvLecto.CurrentRow.Cells[1].Value.ToString();
+                frmPrincipal.prestamos.alquiler.txtLector.Text = Nombrel;
+                frmPrincipal.prestamos.alquiler.idLector = int.Parse(idl);
                 this.Close();
             }
         }

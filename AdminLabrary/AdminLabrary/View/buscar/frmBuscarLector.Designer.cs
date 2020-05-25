@@ -90,6 +90,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmBuscarLector";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBuscarLector";
             this.Load += new System.EventHandler(this.frmBuscarLector_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLecto)).EndInit();

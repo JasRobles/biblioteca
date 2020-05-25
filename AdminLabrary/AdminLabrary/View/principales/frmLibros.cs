@@ -43,6 +43,7 @@ namespace AdminLabrary.formularios.principales
         {
             using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
+                dgvLibros.Rows.Clear();
                 var lista = from li in db.Libros
                             from au in db.Autores
                             from ca in db.Categorias
@@ -53,10 +54,15 @@ namespace AdminLabrary.formularios.principales
                             select new 
                             { ID = li.Id_libro, Nombre = li.Nombre,
                                 Cantidad =li.cantidad,Año=li.Año,Numero_edicion =li.Numero_edicion,
-                                Autor = au.Nombre,Editorial = ed.Editorial,Categoria = ca.Categoria1
+                                Autor = au.Nombre,Editorial = ed.Editorial,Categoria = ca.Categoria1,
+                                idAutor = li.Id_autor,idEditorial = li.Id_Editorial, idCategoria = li.Id_categoria
                             };
+                foreach (var i in lista)
+                {
+                    dgvLibros.Rows.Add(i.ID,i.Nombre,i.Cantidad,i.Año,i.Numero_edicion,i.Autor, i.Editorial, i.Categoria,i.idAutor,i.idEditorial,i.idCategoria);
+                }
 
-                dgvLibros.DataSource = lista.ToList();
+              
 
             }
 

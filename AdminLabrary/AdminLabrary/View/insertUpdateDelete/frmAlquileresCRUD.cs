@@ -14,6 +14,8 @@ namespace AdminLabrary.View.insertUpdateDelete
     public partial class frmAlquileresCRUD : Form
     {
         public int IdLibro;
+        public int idLector;
+        public int idAdmin;
         public frmAlquileresCRUD()
         {
             InitializeComponent();
@@ -28,6 +30,16 @@ namespace AdminLabrary.View.insertUpdateDelete
         {
             lec.indicador = 2;
             lec.ShowDialog();
+        }
+
+        private void frmAlquileresCRUD_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(idAdmin.ToString());
         }
     }
 }

@@ -167,10 +167,10 @@ namespace AdminLabrary.formularios.principales
             MostrarPanel(new frmLibros());
             
         }
-
+       public static frmPrestamos prestamos = new frmPrestamos();
         private void btnPrestamos_Click(object sender, EventArgs e)
         {
-            MostrarPanel(new frmPrestamos());
+            MostrarPanel(prestamos);
             
 
         }

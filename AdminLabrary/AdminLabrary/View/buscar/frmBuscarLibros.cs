@@ -18,12 +18,12 @@ namespace AdminLabrary.View.buscar
         public frmBuscarLibros()
         {
             InitializeComponent();
-            filtro();
+           
         }
 
         private void frmBuscarLibros_Load(object sender, EventArgs e)
         {
-
+            filtro();
         }
 
         void filtro()
@@ -58,12 +58,10 @@ namespace AdminLabrary.View.buscar
         {
             String Id = dgvLibro.CurrentRow.Cells[0].Value.ToString();
             String Nombre = dgvLibro.CurrentRow.Cells[1].Value.ToString();
-            if (indicador == 1)
-            {
-                frmPrincipal.admin.admin.txtLector.Text = Nombre;
-                frmPrincipal.admin.admin.IDLector = int.Parse(Id);
-                this.Close();
-            }
+            frmPrincipal.prestamos.alquiler.txtLibro.Text = Nombre;
+            frmPrincipal.prestamos.alquiler.IdLibro = int.Parse(Id);
+            this.Close();
+            
         }
 
         private void dgvLibro_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

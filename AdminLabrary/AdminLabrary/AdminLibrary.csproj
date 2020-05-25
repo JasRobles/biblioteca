@@ -193,6 +193,12 @@
     <Compile Include="View\insertUpdateDelete\frmAdministradoresCRUD.Designer.cs">
       <DependentUpon>frmAdministradoresCRUD.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\insertUpdateDelete\frmAlquileresCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\insertUpdateDelete\frmAlquileresCRUD.Designer.cs">
+      <DependentUpon>frmAlquileresCRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\insertUpdateDelete\frmAutoresCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\insertUpdateDelete\frmAdministradoresCRUD.resx">
       <DependentUpon>frmAdministradoresCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\insertUpdateDelete\frmAlquileresCRUD.resx">
+      <DependentUpon>frmAlquileresCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\insertUpdateDelete\frmAutoresCRUD.resx">
       <DependentUpon>frmAutoresCRUD.cs</DependentUpon>

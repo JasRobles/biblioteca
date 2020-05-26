@@ -169,18 +169,21 @@
             this.Id_Autor.HeaderText = "Id_Autor";
             this.Id_Autor.Name = "Id_Autor";
             this.Id_Autor.ReadOnly = true;
+            this.Id_Autor.Visible = false;
             // 
             // Id_Editorial
             // 
             this.Id_Editorial.HeaderText = "Id_Editorial";
             this.Id_Editorial.Name = "Id_Editorial";
             this.Id_Editorial.ReadOnly = true;
+            this.Id_Editorial.Visible = false;
             // 
             // Id_Categoria
             // 
             this.Id_Categoria.HeaderText = "Id_Categoria";
             this.Id_Categoria.Name = "Id_Categoria";
             this.Id_Categoria.ReadOnly = true;
+            this.Id_Categoria.Visible = false;
             // 
             // frmLibros
             // 

@@ -70,7 +70,7 @@ namespace AdminLabrary.View.buscar
 
                         var lista = from pres in db.Alquileres
                                     where pres.Id_Lector == i.ID
-
+                                    && pres.Recibido == null
                                     select new
                                     {
                                         pres

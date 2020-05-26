@@ -118,6 +118,7 @@
             // 
             // ID
             // 
+            this.ID.FillWeight = 40F;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -130,19 +131,22 @@
             // 
             // Cantidad
             // 
+            this.Cantidad.FillWeight = 40F;
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
             // 
             // Año
             // 
+            this.Año.FillWeight = 60F;
             this.Año.HeaderText = "Año";
             this.Año.Name = "Año";
             this.Año.ReadOnly = true;
             // 
             // Numero_Edicion
             // 
-            this.Numero_Edicion.HeaderText = "Numero_Edicion";
+            this.Numero_Edicion.FillWeight = 50F;
+            this.Numero_Edicion.HeaderText = "Numero Edicion";
             this.Numero_Edicion.Name = "Numero_Edicion";
             this.Numero_Edicion.ReadOnly = true;
             // 
@@ -160,6 +164,7 @@
             // 
             // Categoria
             // 
+            this.Categoria.FillWeight = 80F;
             this.Categoria.HeaderText = "Categoria";
             this.Categoria.Name = "Categoria";
             this.Categoria.ReadOnly = true;

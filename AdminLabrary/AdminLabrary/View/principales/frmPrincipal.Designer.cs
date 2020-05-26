@@ -184,6 +184,7 @@
             this.pPrincipal.Name = "pPrincipal";
             this.pPrincipal.Size = new System.Drawing.Size(956, 624);
             this.pPrincipal.TabIndex = 16;
+            this.pPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.pPrincipal_Paint_1);
             // 
             // pictureBox1
             // 

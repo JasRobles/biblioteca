@@ -56,7 +56,7 @@
             // 
             // btnSeleccionarLibro
             // 
-            this.btnSeleccionarLibro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSeleccionarLibro.BackColor = System.Drawing.Color.Lime;
             this.btnSeleccionarLibro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSeleccionarLibro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnSeleccionarLibro.FlatAppearance.BorderSize = 2;
@@ -74,7 +74,7 @@
             // 
             // btnRecibir
             // 
-            this.btnRecibir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnRecibir.BackColor = System.Drawing.Color.Lime;
             this.btnRecibir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRecibir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnRecibir.FlatAppearance.BorderSize = 2;
@@ -88,10 +88,11 @@
             this.btnRecibir.TabIndex = 18;
             this.btnRecibir.Text = "RECIBIR";
             this.btnRecibir.UseVisualStyleBackColor = false;
+            this.btnRecibir.Click += new System.EventHandler(this.btnRecibir_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnGuardar.BackColor = System.Drawing.Color.Lime;
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnGuardar.FlatAppearance.BorderSize = 2;
@@ -131,7 +132,7 @@
             // 
             // btnSeleccionarLector
             // 
-            this.btnSeleccionarLector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSeleccionarLector.BackColor = System.Drawing.Color.Lime;
             this.btnSeleccionarLector.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSeleccionarLector.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnSeleccionarLector.FlatAppearance.BorderSize = 2;
@@ -151,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(486, 246);
             this.Controls.Add(this.btnSeleccionarLector);
             this.Controls.Add(this.label1);

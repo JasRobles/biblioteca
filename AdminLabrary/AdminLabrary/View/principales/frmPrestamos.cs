@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdminLabrary.formularios.principales;
 using AdminLabrary.Model;
+using AdminLabrary.View.buscar;
 using AdminLabrary.View.insertUpdateDelete;
 
 namespace AdminLabrary.View.principales
@@ -50,12 +52,13 @@ namespace AdminLabrary.View.principales
                                     Fecha_salida = pre.fecha_salida,
                                     Fecha_prevista_Entrega = pre.fecha_prevista_de_entrega,
                                     IDLector = pre.Id_Lector,
-                                    IDLibro = pre.Id_libro
+                                    IDLibro = pre.Id_libro,
+                                    IDEntregado = pre.Entregado
                                 };
 
                 foreach(var i in lista)
                 {
-                    dgvPrestamos.Rows.Add(i.ID, i.Lector,i.Libro,i.Entregado,i.Fecha_salida,i.Fecha_prevista_Entrega,i.IDLector,i.IDLibro);
+                    dgvPrestamos.Rows.Add(i.ID, i.Lector,i.Libro,i.Entregado,i.Fecha_salida,i.Fecha_prevista_Entrega,i.IDLector,i.IDLibro,i.IDEntregado);
 
                 }
 
@@ -67,7 +70,35 @@ namespace AdminLabrary.View.principales
         public  frmAlquileresCRUD alquiler = new frmAlquileresCRUD();
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+
+            alquiler.indicador = 1;
             alquiler.ShowDialog();
+
+        }
+
+        private void dgvPrestamos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnRecibir.Enabled = true;
+        }
+
+        private void btnRecibir_Click(object sender, EventArgs e)
+        {
+            alquiler.txtLector.Text = dgvPrestamos.CurrentRow.Cells[1].Value.ToString();
+            alquiler.idLector = int.Parse(dgvPrestamos.CurrentRow.Cells[6].Value.ToString());
+            alquiler.txtLibro.Text = dgvPrestamos.CurrentRow.Cells[2].Value.ToString();
+            alquiler.IdLibro = int.Parse(dgvPrestamos.CurrentRow.Cells[7].Value.ToString());
+            alquiler.IdEntregado = int.Parse(dgvPrestamos.CurrentRow.Cells[8].Value.ToString());
+            alquiler.fecha_salida = Convert.ToDateTime(dgvPrestamos.CurrentRow.Cells[4].Value.ToString());
+            alquiler.fecha_pre = Convert.ToDateTime(dgvPrestamos.CurrentRow.Cells[5].Value.ToString());
+            alquiler.idAlquiler = int.Parse(dgvPrestamos.CurrentRow.Cells[0].Value.ToString());
+            alquiler.indicador = 2;
+            alquiler.ShowDialog();
+        }
+
+        public frmBuscarAlquiler f = new frmBuscarAlquiler();
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            frmLogin.f.MostrarPanel(new frmBuscarAlquiler());
         }
     }
 }

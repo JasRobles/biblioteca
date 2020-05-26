@@ -19,7 +19,7 @@ namespace AdminLabrary.View.insertUpdateDelete
         public int idLector;
         public int idAdmin;
         public int IdDE;
-        public int indicador;
+        public int indicador = 1;
         public frmAlquileresCRUD()
         {
             InitializeComponent();
@@ -42,6 +42,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                 txtLibro.Enabled = true;
                 txtLibro.Enabled = true;
                 btnRecibir.Enabled = true;
+                btnGuardar.Enabled = true;
                 btnSeleccionarLector.Enabled = true;
                 btnSeleccionarLibro.Enabled = true;
 

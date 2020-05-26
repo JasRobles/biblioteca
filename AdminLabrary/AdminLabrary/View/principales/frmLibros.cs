@@ -39,7 +39,7 @@ namespace AdminLabrary.formularios.principales
         {
 
         }
-        private void CargaDratos()
+        public void CargaDratos()
         {
             using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {

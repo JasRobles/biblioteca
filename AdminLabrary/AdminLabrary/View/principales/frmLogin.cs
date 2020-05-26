@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,6 +23,7 @@ namespace AdminLabrary.View.principales
           
         }
 
+        public static frmPrincipal f = new frmPrincipal();
         public void btnIniciarsesion_Click(object sender, EventArgs e)
            
         {
@@ -39,10 +41,11 @@ namespace AdminLabrary.View.principales
                                 Nombre = admin.Usuario,
                                 contaseña = admin.Contraseña
                             };
+
                
                 if (lista.Count() > 0)
                 {
-                    frmPrincipal f = new frmPrincipal();
+                    
                     string usu = txtUsuario.Text;
                     f.lblUsuarioARecibir.Text = usu;
                     foreach( var i in lista)
@@ -67,6 +70,11 @@ namespace AdminLabrary.View.principales
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
         {
 
         }

@@ -88,6 +88,7 @@
             this.btnRecibir.TabIndex = 18;
             this.btnRecibir.Text = "RECIBIR";
             this.btnRecibir.UseVisualStyleBackColor = false;
+            this.btnRecibir.Click += new System.EventHandler(this.btnRecibir_Click);
             // 
             // btnGuardar
             // 

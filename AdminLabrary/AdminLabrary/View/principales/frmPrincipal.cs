@@ -162,7 +162,7 @@ namespace AdminLabrary.formularios.principales
         public static frmLibros Lib = new frmLibros();
         private void btnLibros_Click(object sender, EventArgs e)
         {
-        
+            Lib.CargaDratos();
 
             MostrarPanel(Lib);
             
@@ -196,6 +196,11 @@ namespace AdminLabrary.formularios.principales
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pPrincipal_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

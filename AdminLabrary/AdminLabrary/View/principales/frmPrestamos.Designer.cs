@@ -31,9 +31,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPrestamos = new System.Windows.Forms.DataGridView();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnRecibir = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnVer = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LECTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LIBRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +42,7 @@
             this.FECHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDLector = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDLibro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Entregadoid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +68,8 @@
             this.FECHAS,
             this.FECHAP,
             this.IDLector,
-            this.IDLibro});
+            this.IDLibro,
+            this.Entregadoid});
             this.dgvPrestamos.GridColor = System.Drawing.Color.Lime;
             this.dgvPrestamos.Location = new System.Drawing.Point(12, 140);
             this.dgvPrestamos.Name = "dgvPrestamos";
@@ -79,26 +81,18 @@
             this.dgvPrestamos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPrestamos.Size = new System.Drawing.Size(917, 374);
             this.dgvPrestamos.TabIndex = 2;
+            this.dgvPrestamos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrestamos_CellClick);
             // 
-            // btnEliminar
+            // btnRecibir
             // 
-            this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(786, 89);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(142, 36);
-            this.btnEliminar.TabIndex = 15;
-            this.btnEliminar.Text = "ELIMINAR";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Enabled = false;
-            this.btnEditar.Location = new System.Drawing.Point(402, 89);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(142, 36);
-            this.btnEditar.TabIndex = 14;
-            this.btnEditar.Text = "EDITAR";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnRecibir.Enabled = false;
+            this.btnRecibir.Location = new System.Drawing.Point(402, 89);
+            this.btnRecibir.Name = "btnRecibir";
+            this.btnRecibir.Size = new System.Drawing.Size(142, 36);
+            this.btnRecibir.TabIndex = 14;
+            this.btnRecibir.Text = "RECIBIR";
+            this.btnRecibir.UseVisualStyleBackColor = true;
+            this.btnRecibir.Click += new System.EventHandler(this.btnRecibir_Click);
             // 
             // btnNuevo
             // 
@@ -110,8 +104,19 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // btnVer
+            // 
+            this.btnVer.Location = new System.Drawing.Point(661, 89);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(142, 36);
+            this.btnVer.TabIndex = 15;
+            this.btnVer.Text = "VER TODOS ";
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
             // ID
             // 
+            this.ID.FillWeight = 50F;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -124,6 +129,7 @@
             // 
             // LIBRO
             // 
+            this.LIBRO.FillWeight = 150F;
             this.LIBRO.HeaderText = "LIBRO";
             this.LIBRO.Name = "LIBRO";
             this.LIBRO.ReadOnly = true;
@@ -160,13 +166,20 @@
             this.IDLibro.ReadOnly = true;
             this.IDLibro.Visible = false;
             // 
+            // Entregadoid
+            // 
+            this.Entregadoid.HeaderText = "Entregadoid";
+            this.Entregadoid.Name = "Entregadoid";
+            this.Entregadoid.ReadOnly = true;
+            this.Entregadoid.Visible = false;
+            // 
             // frmPrestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 551);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnVer);
+            this.Controls.Add(this.btnRecibir);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dgvPrestamos);
             this.Name = "frmPrestamos";
@@ -180,9 +193,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvPrestamos;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnRecibir;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn LECTOR;
         private System.Windows.Forms.DataGridViewTextBoxColumn LIBRO;
@@ -191,5 +204,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FECHAP;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDLector;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDLibro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Entregadoid;
     }
 }

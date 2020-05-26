@@ -42,12 +42,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtNumero_de_Edicion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtAño = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.dtpAño = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnEliminar
@@ -176,13 +176,6 @@
             this.label4.TabIndex = 27;
             this.label4.Text = "Año";
             // 
-            // txtAño
-            // 
-            this.txtAño.Location = new System.Drawing.Point(405, 65);
-            this.txtAño.Name = "txtAño";
-            this.txtAño.Size = new System.Drawing.Size(207, 20);
-            this.txtAño.TabIndex = 26;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -223,12 +216,22 @@
             this.txtNombre.Size = new System.Drawing.Size(207, 20);
             this.txtNombre.TabIndex = 21;
             // 
+            // dtpAño
+            // 
+            this.dtpAño.CustomFormat = "yyyy - MM - dd";
+            this.dtpAño.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpAño.Location = new System.Drawing.Point(405, 68);
+            this.dtpAño.Name = "dtpAño";
+            this.dtpAño.Size = new System.Drawing.Size(207, 20);
+            this.dtpAño.TabIndex = 41;
+            // 
             // frmLibrosCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(761, 388);
+            this.Controls.Add(this.dtpAño);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnGuardar);
@@ -243,7 +246,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtNumero_de_Edicion);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtAño);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.label2);
@@ -251,6 +253,7 @@
             this.Controls.Add(this.txtNombre);
             this.Name = "frmLibrosCRUD";
             this.Text = "frmLibrosCRUD";
+            this.Load += new System.EventHandler(this.frmLibrosCRUD_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,11 +275,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNumero_de_Edicion;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtAño;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.DateTimePicker dtpAño;
     }
 }

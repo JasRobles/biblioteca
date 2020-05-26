@@ -19,21 +19,48 @@ namespace AdminLabrary.View.insertUpdateDelete
         {
             InitializeComponent();
         }
-
+        public int ID_Categoria;
+        public int ID_Editorial;
         public int ID_Autor;
         frmBuscarAutor BuscarA = new frmBuscarAutor();
 
         private void btnSeleccionarA_Click(object sender, EventArgs e)
         {
+            BuscarA.indicador = 1;
             BuscarA.ShowDialog();
 
         }
         Libros Lib = new Libros();
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        void CargarCombo()
         {
 
+        }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" && txtAutor.Text != "" && txtCantidad.Text != "" 
+                && txtEditorial.Text != "" && txtNumero_de_Edicion.Text != "")
+            {
+                using (BibliotecaEntities4 db = new BibliotecaEntities4())
+                {
+                    Lib.Nombre = txtNombre.Text;
+                    Lib.Año = Convert.ToDateTime(dtpAño.Text);
+                    Lib.Id_autor = ID_Autor;
+                    Lib.Id_Editorial = ID_Editorial;
+                    
+                    
+                    db.Libros.Add(Lib);
+                    db.SaveChanges();
+                    
+                }
+            }
+
+
+        }
+
+        private void frmLibrosCRUD_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -75,7 +75,7 @@ namespace AdminLabrary.View.buscar
                                     {
                                         pres
                                     };
-                        if(lista.Count() < 3)
+                        if(lista.Count() <= 3)
                         {
                             dgvLecto.Rows.Add(i.ID, i.Nombres, i.Apellidos);
                         }

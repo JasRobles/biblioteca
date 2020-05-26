@@ -50,7 +50,7 @@ namespace AdminLabrary.View.principales
                         frmPrincipal.prestamos.alquiler.idAdmin = i.ID;
                     }
                     f.ShowDialog();
-                    this.Hide();
+                    this.Close();
 
                 }
                 else

@@ -31,8 +31,7 @@
             this.txtLector = new System.Windows.Forms.TextBox();
             this.txtLibro = new System.Windows.Forms.TextBox();
             this.btnSeleccionarLibro = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnRecibir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblLibro = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,39 +72,22 @@
             this.btnSeleccionarLibro.UseVisualStyleBackColor = false;
             this.btnSeleccionarLibro.Click += new System.EventHandler(this.btnSeleccionarLibro_Click);
             // 
-            // btnEliminar
+            // btnRecibir
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnEliminar.FlatAppearance.BorderSize = 2;
-            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(318, 181);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(128, 31);
-            this.btnEliminar.TabIndex = 19;
-            this.btnEliminar.Text = "ELIMINAR";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnEditar.FlatAppearance.BorderSize = 2;
-            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(151, 181);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(133, 31);
-            this.btnEditar.TabIndex = 18;
-            this.btnEditar.Text = "ACTUALIZAR";
-            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnRecibir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnRecibir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecibir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnRecibir.FlatAppearance.BorderSize = 2;
+            this.btnRecibir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnRecibir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnRecibir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecibir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecibir.Location = new System.Drawing.Point(166, 181);
+            this.btnRecibir.Name = "btnRecibir";
+            this.btnRecibir.Size = new System.Drawing.Size(133, 31);
+            this.btnRecibir.TabIndex = 18;
+            this.btnRecibir.Text = "RECIBIR";
+            this.btnRecibir.UseVisualStyleBackColor = false;
             // 
             // btnGuardar
             // 
@@ -175,8 +157,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblLibro);
             this.Controls.Add(this.btnSeleccionarLibro);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnRecibir);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtLibro);
             this.Controls.Add(this.txtLector);
@@ -193,8 +174,7 @@
 
         #endregion
         public System.Windows.Forms.Button btnSeleccionarLibro;
-        public System.Windows.Forms.Button btnEliminar;
-        public System.Windows.Forms.Button btnEditar;
+        public System.Windows.Forms.Button btnRecibir;
         public System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblLibro;
         private System.Windows.Forms.Label label1;

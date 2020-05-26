@@ -24,8 +24,11 @@ namespace AdminLabrary.View.principales
             CargarDatos();
         }
 
-        private void CargarDatos()
-        {using (BibliotecaEntities4 db = new BibliotecaEntities4())
+        public void CargarDatos()
+        {
+            dgvPrestamos.Rows.Clear();
+            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+                
             {
                 var lista = from pre in db.Alquileres
                             from li in db.Libros
@@ -46,14 +49,15 @@ namespace AdminLabrary.View.principales
                                     Entregado = ad.Usuario,
                                     Fecha_salida = pre.fecha_salida,
                                     Fecha_prevista_Entrega = pre.fecha_prevista_de_entrega,
-                                    
+                                    IDLector = pre.Id_Lector,
+                                    IDLibro = pre.Id_libro
                                 };
 
+                foreach(var i in lista)
+                {
+                    dgvPrestamos.Rows.Add(i.ID, i.Lector,i.Libro,i.Entregado,i.Fecha_salida,i.Fecha_prevista_Entrega,i.IDLector,i.IDLibro);
 
-
-
-
-                dgvPrestamos.DataSource = lista.ToList();
+                }
 
 
             }

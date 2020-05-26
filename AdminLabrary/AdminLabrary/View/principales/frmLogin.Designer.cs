@@ -45,7 +45,7 @@
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(862, 577);
+            this.pictureBox1.Size = new System.Drawing.Size(871, 587);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
@@ -58,7 +58,7 @@
             this.pictureBox2.InitialImage = null;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(862, 577);
+            this.pictureBox2.Size = new System.Drawing.Size(871, 587);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
@@ -69,7 +69,7 @@
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtUsuario.Location = new System.Drawing.Point(564, 308);
+            this.txtUsuario.Location = new System.Drawing.Point(564, 314);
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(184, 29);
@@ -86,9 +86,9 @@
             this.btnIniciarsesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarsesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarsesion.ForeColor = System.Drawing.Color.Transparent;
-            this.btnIniciarsesion.Location = new System.Drawing.Point(564, 461);
+            this.btnIniciarsesion.Location = new System.Drawing.Point(596, 469);
             this.btnIniciarsesion.Name = "btnIniciarsesion";
-            this.btnIniciarsesion.Size = new System.Drawing.Size(207, 27);
+            this.btnIniciarsesion.Size = new System.Drawing.Size(162, 27);
             this.btnIniciarsesion.TabIndex = 26;
             this.btnIniciarsesion.Text = "INGRESAR";
             this.btnIniciarsesion.UseVisualStyleBackColor = false;
@@ -99,7 +99,7 @@
             this.txtContraseña.BackColor = System.Drawing.Color.Teal;
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(564, 375);
+            this.txtContraseña.Location = new System.Drawing.Point(564, 381);
             this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(184, 29);
@@ -109,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 577);
+            this.ClientSize = new System.Drawing.Size(871, 587);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.btnIniciarsesion);
             this.Controls.Add(this.txtContraseña);

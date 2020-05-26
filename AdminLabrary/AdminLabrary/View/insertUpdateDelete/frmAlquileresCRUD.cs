@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdminLabrary.Model;
+using AdminLabrary.formularios.principales;
 
 namespace AdminLabrary.View.insertUpdateDelete
 {
@@ -16,6 +18,8 @@ namespace AdminLabrary.View.insertUpdateDelete
         public int IdLibro;
         public int idLector;
         public int idAdmin;
+        public int IdDE;
+        public int indicador;
         public frmAlquileresCRUD()
         {
             InitializeComponent();
@@ -31,15 +35,51 @@ namespace AdminLabrary.View.insertUpdateDelete
             lec.indicador = 2;
             lec.ShowDialog();
         }
+        void enable()
+        {
+            if(indicador == 1)
+            {
+                txtLibro.Enabled = true;
+                txtLibro.Enabled = true;
+                btnRecibir.Enabled = true;
+                btnSeleccionarLector.Enabled = true;
+                btnSeleccionarLibro.Enabled = true;
 
+            }
+            else
+            {
+                txtLibro.Enabled = false;
+                txtLibro.Enabled = false;
+                btnRecibir.Enabled = false;
+                btnSeleccionarLector.Enabled = false;
+                btnSeleccionarLibro.Enabled = false;
+            }
+        }
         private void frmAlquileresCRUD_Load(object sender, EventArgs e)
         {
-
+            enable();
         }
+        Alquileres alqu = new Alquileres();
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(idAdmin.ToString());
+            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            {
+                alqu.Id_Lector = idLector;
+                alqu.Id_libro = IdLibro;
+                alqu.Entregado = idAdmin;
+                alqu.fecha_salida = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
+                DateTime fecha = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
+                alqu.fecha_prevista_de_entrega = fecha.AddDays(8);
+                db.Alquileres.Add(alqu);
+                db.SaveChanges();
+                frmPrincipal.prestamos.CargarDatos();
+                txtLector.Text = "";
+                txtLibro.Text = "";
+                idLector = 0;
+                IdLibro = 0;
+                this.Close();
+            }
         }
     }
 }

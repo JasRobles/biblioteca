@@ -28,12 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPrestamos = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LECTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LIBRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ENTREGADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FECHAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FECHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDLector = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDLibro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,25 +49,34 @@
             // 
             this.dgvPrestamos.AllowUserToAddRows = false;
             this.dgvPrestamos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvPrestamos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvPrestamos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPrestamos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPrestamos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPrestamos.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrestamos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.LECTOR,
+            this.LIBRO,
+            this.ENTREGADO,
+            this.FECHAS,
+            this.FECHAP,
+            this.IDLector,
+            this.IDLibro});
             this.dgvPrestamos.GridColor = System.Drawing.Color.Lime;
             this.dgvPrestamos.Location = new System.Drawing.Point(12, 140);
             this.dgvPrestamos.Name = "dgvPrestamos";
             this.dgvPrestamos.ReadOnly = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvPrestamos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvPrestamos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPrestamos.Size = new System.Drawing.Size(917, 374);
             this.dgvPrestamos.TabIndex = 2;
             // 
@@ -93,6 +110,56 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // LECTOR
+            // 
+            this.LECTOR.HeaderText = "LECTOR";
+            this.LECTOR.Name = "LECTOR";
+            this.LECTOR.ReadOnly = true;
+            // 
+            // LIBRO
+            // 
+            this.LIBRO.HeaderText = "LIBRO";
+            this.LIBRO.Name = "LIBRO";
+            this.LIBRO.ReadOnly = true;
+            // 
+            // ENTREGADO
+            // 
+            this.ENTREGADO.HeaderText = "ENTREGADO POR";
+            this.ENTREGADO.Name = "ENTREGADO";
+            this.ENTREGADO.ReadOnly = true;
+            // 
+            // FECHAS
+            // 
+            this.FECHAS.HeaderText = "FECHA  DE SALIDA";
+            this.FECHAS.Name = "FECHAS";
+            this.FECHAS.ReadOnly = true;
+            // 
+            // FECHAP
+            // 
+            this.FECHAP.HeaderText = "FECHA PREVISTA ENTREGA";
+            this.FECHAP.Name = "FECHAP";
+            this.FECHAP.ReadOnly = true;
+            // 
+            // IDLector
+            // 
+            this.IDLector.HeaderText = "IDLector";
+            this.IDLector.Name = "IDLector";
+            this.IDLector.ReadOnly = true;
+            this.IDLector.Visible = false;
+            // 
+            // IDLibro
+            // 
+            this.IDLibro.HeaderText = "IDLibro";
+            this.IDLibro.Name = "IDLibro";
+            this.IDLibro.ReadOnly = true;
+            this.IDLibro.Visible = false;
+            // 
             // frmPrestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,5 +183,13 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LECTOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LIBRO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ENTREGADO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FECHAS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FECHAP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDLector;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDLibro;
     }
 }

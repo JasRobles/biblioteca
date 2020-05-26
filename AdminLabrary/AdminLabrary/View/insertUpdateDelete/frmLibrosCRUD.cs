@@ -18,8 +18,9 @@ namespace AdminLabrary.View.insertUpdateDelete
         public frmLibrosCRUD()
         {
             InitializeComponent();
+            CargarCombo();
         }
-        public int ID_Categoria;
+        string ID_Categoria;
         public int ID_Editorial;
         public int ID_Autor;
         frmBuscarAutor BuscarA = new frmBuscarAutor();
@@ -34,8 +35,19 @@ namespace AdminLabrary.View.insertUpdateDelete
 
         void CargarCombo()
         {
+            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            {
 
+                var Categoria = db.Categorias.ToList();
+                cmbCategoria.DataSource = Categoria;
+                cmbCategoria.ValueMember = "ID_Categoria";
+                cmbCategoria.DisplayMember = "Categoria1";
+
+            }
+            
         }
+
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -62,6 +74,11 @@ namespace AdminLabrary.View.insertUpdateDelete
         private void frmLibrosCRUD_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ID_Categoria = cmbCategoria.SelectedValue.ToString();
         }
     }
 }

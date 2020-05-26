@@ -163,12 +163,6 @@
     <Compile Include="View\buscar\frmBuscarAutor.Designer.cs">
       <DependentUpon>frmBuscarAutor.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\buscar\frmBuscarCategoria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\buscar\frmBuscarCategoria.Designer.cs">
-      <DependentUpon>frmBuscarCategoria.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\buscar\frmBuscarEditoriales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,9 +287,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\buscar\frmBuscarAutor.resx">
       <DependentUpon>frmBuscarAutor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\buscar\frmBuscarCategoria.resx">
-      <DependentUpon>frmBuscarCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\buscar\frmBuscarEditoriales.resx">
       <DependentUpon>frmBuscarEditoriales.cs</DependentUpon>

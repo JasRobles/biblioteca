@@ -57,9 +57,11 @@ namespace AdminLabrary.formularios.principales
             categoria.btnGuardar.Enabled = true;
             categoria.btnEditar.Enabled = false;
             categoria.btnEliminar.Enabled = false;
-            categoria.ShowDialog();
+            categoria.limpiar();
             btnEditar.Enabled = false;
             btnEliminar.Enabled = false;
+            categoria.ShowDialog();
+          
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

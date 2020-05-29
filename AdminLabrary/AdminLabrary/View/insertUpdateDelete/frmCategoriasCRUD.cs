@@ -79,12 +79,8 @@ namespace AdminLabrary.View.insertUpdateDelete
             }
         }
 
-        private void txtCategoria_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void lblCategoria_Click(object sender, EventArgs e)
+        private void frmCategoriasCRUD_Load(object sender, EventArgs e)
         {
 
         }

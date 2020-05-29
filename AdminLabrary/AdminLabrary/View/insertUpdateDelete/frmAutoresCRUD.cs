@@ -21,7 +21,7 @@ namespace AdminLabrary.View.insertUpdateDelete
         }
         public int ID;
 
-        void limpiar()
+        public void limpiar()
         {
             txtNacionalidad.Text = "";
             txtNombre.Text = "";

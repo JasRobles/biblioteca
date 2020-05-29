@@ -114,7 +114,7 @@ namespace AdminLabrary.View.insertUpdateDelete
             limpiar();
             frmPrincipal.prestamos.CargarDatos();
         }
-        void limpiar()
+       public void limpiar()
         {
           
                 txtLector.Text = "";

@@ -98,7 +98,6 @@
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(288, 26);
             this.txtCategoria.TabIndex = 15;
-            this.txtCategoria.TextChanged += new System.EventHandler(this.txtCategoria_TextChanged);
             // 
             // lblCategoria
             // 
@@ -111,7 +110,6 @@
             this.lblCategoria.Size = new System.Drawing.Size(87, 20);
             this.lblCategoria.TabIndex = 14;
             this.lblCategoria.Text = "Categoria";
-            this.lblCategoria.Click += new System.EventHandler(this.lblCategoria_Click);
             // 
             // frmCategoriasCRUD
             // 
@@ -130,6 +128,7 @@
             this.Name = "frmCategoriasCRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCategorias";
+            this.Load += new System.EventHandler(this.frmCategoriasCRUD_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

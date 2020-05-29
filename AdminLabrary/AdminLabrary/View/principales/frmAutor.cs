@@ -56,6 +56,7 @@ namespace AdminLabrary.formularios.principales
             autor.btnEliminar.Enabled = false;
             btnEditar.Enabled = false;
             btnEliminar.Enabled = false;
+            autor.limpiar();
             autor.ShowDialog();
 
         }

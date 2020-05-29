@@ -53,20 +53,14 @@ namespace AdminLabrary.View.buscar
         {
             string Id = dgvEditorial.CurrentRow.Cells[0].Value.ToString();
             string Nombre = dgvEditorial.CurrentRow.Cells[1].Value.ToString();
-<<<<<<< HEAD
+
             frmPrincipal.Lib.Libros.txtEditorial.Text = Nombre;
             frmPrincipal.Lib.Libros.ID_Editorial = int.Parse(Id);
             this.Close();
-=======
-            if (indicador == 1)
-            {
-                frmPrincipal.Lib.Libros.txtEditorial.Text = Nombre;
-                frmPrincipal.Lib.Libros.ID_Editorial= int.Parse(Id);
-                this.Close();
-            }
 
 
->>>>>>> 47821180d10a869536efcb6a35d2a874f1843edd
+
+
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)

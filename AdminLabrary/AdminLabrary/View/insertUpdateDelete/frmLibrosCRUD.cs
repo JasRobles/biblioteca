@@ -20,13 +20,10 @@ namespace AdminLabrary.View.insertUpdateDelete
             InitializeComponent();
             CargarCombo();
         }
-<<<<<<< HEAD
+
         public int ID_Libro;
         public string ID_Cate="";
         public int id =0;
-=======
-        string ID_Categoria;
->>>>>>> 47821180d10a869536efcb6a35d2a874f1843edd
         public int ID_Editorial;
         public int ID_Autor;
         public int indi = 0;
@@ -57,7 +54,7 @@ namespace AdminLabrary.View.insertUpdateDelete
         {
             using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
-<<<<<<< HEAD
+
                 var lista = from ca in db.Categorias
                             where ca.estado == 0
                             select ca;
@@ -68,15 +65,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                
                
             }
-=======
 
-                var Categoria = db.Categorias.ToList();
-                cmbCategoria.DataSource = Categoria;
-                cmbCategoria.ValueMember = "ID_Categoria";
-                cmbCategoria.DisplayMember = "Categoria1";
->>>>>>> 47821180d10a869536efcb6a35d2a874f1843edd
-
-            }
             
         }
 
@@ -203,17 +192,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                     frmPrincipal.Lib.CargaDratos();
                 }
             }
-
-
-        }
-
-<<<<<<< HEAD
-     
-=======
-        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ID_Categoria = cmbCategoria.SelectedValue.ToString();
-        }
->>>>>>> 47821180d10a869536efcb6a35d2a874f1843edd
+        }  
+        
     }
 }

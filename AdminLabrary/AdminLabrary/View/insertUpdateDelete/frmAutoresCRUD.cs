@@ -40,6 +40,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                     autor.Nombre = txtNombre.Text;
                     autor.Nacionalidad = txtNacionalidad.Text;
                     autor.fecha_nacimiento = Convert.ToDateTime(dtpFecha.Text);
+                    autor.estado = 0;
                     db.Autores.Add(autor);
                     db.SaveChanges();
                     frmPrincipal.Autor.CargarDatos();
@@ -59,6 +60,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                     autor.Nombre = txtNombre.Text;
                     autor.Nacionalidad = txtNacionalidad.Text;
                     autor.fecha_nacimiento = Convert.ToDateTime(dtpFecha.Text);
+                    autor.estado = 0;
                     db.Entry(autor).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                     limpiar();
@@ -73,24 +75,16 @@ namespace AdminLabrary.View.insertUpdateDelete
         {
             using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
-                var lista = from i in db.Libros
-                            where i.Id_autor == ID
-                            select new { };
-                if(lista.Count() == 0)
-                {
-                    autor = db.Autores.Find(ID);
-                    db.Autores.Remove(autor);
-                    db.SaveChanges();
-                    limpiar();
-                    frmPrincipal.Autor.CargarDatos();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("No se puede eliminar verificar \r" +
-                        "que no exixta un libro con este autor");
-                    this.Close();
-                }
+                autor = db.Autores.Where(buscarID => buscarID.Id_autor == ID).First();
+                autor.Nombre = txtNombre.Text;
+                autor.Nacionalidad = txtNacionalidad.Text;
+                autor.fecha_nacimiento = Convert.ToDateTime(dtpFecha.Text);
+                autor.estado = 1;
+                db.Entry(autor).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                limpiar();
+                frmPrincipal.Autor.CargarDatos();
+                this.Close();
             }
         }
 

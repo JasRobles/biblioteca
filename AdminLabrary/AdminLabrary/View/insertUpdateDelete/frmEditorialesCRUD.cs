@@ -37,6 +37,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                     Edit.Editorial = txtEditorial.Text;
                     Edit.Fundada = Convert.ToDateTime(dtpFecha.Text);
                     Edit.Direccion = txtDirecion.Text;
+                    Edit.estado = 0;
                     db.Editoriales.Add(Edit);
                     db.SaveChanges();
                     limpiar();
@@ -56,6 +57,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                     Edit.Editorial = txtEditorial.Text;
                     Edit.Fundada = Convert.ToDateTime(dtpFecha.Text);
                     Edit.Direccion = txtDirecion.Text;
+                    Edit.estado = 0;
                     db.Entry(Edit).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                     limpiar();
@@ -72,24 +74,16 @@ namespace AdminLabrary.View.insertUpdateDelete
         {
             using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
-                var lista = from i in db.Libros
-                            where i.Id_Editorial == ID
-                            select new { };
-                if (lista.Count() == 0)
-                {
-                    Edit = db.Editoriales.Find(ID);
-                    db.Editoriales.Remove(Edit);
-                    db.SaveChanges();
-                    limpiar();
-                    frmPrincipal.Editorial.CargarDatos();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("No se puede eliminar verificar \r" + 
-                        "que no exista un libro con esta editorial");
-                    this.Close();
-                }
+                Edit = db.Editoriales.Where(buscarId => buscarId.Id_Editorial == ID).First();
+                Edit.Editorial = txtEditorial.Text;
+                Edit.Fundada = Convert.ToDateTime(dtpFecha.Text);
+                Edit.Direccion = txtDirecion.Text;
+                Edit.estado = 1;
+                db.Entry(Edit).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                limpiar();
+                frmPrincipal.Editorial.CargarDatos();
+                this.Close();
             }
         }
 

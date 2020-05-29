@@ -32,6 +32,7 @@ namespace AdminLabrary.formularios.principales
                 var lista = from ad in db.Administradores
                             from lec in db.Lectores
                             where ad.Id_Lector == lec.Id_Lector
+                            && ad.estado==0
                             select new
                             {
                                 ID = ad.Id_Admin,

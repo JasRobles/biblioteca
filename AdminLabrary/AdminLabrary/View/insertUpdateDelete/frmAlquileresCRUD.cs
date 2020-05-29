@@ -37,6 +37,7 @@ namespace AdminLabrary.View.insertUpdateDelete
         private void btnSeleccionarLector_Click(object sender, EventArgs e)
         {
             lec.indicador = 2;
+            lec.filtro();
             lec.ShowDialog();
         }
         void enable()
@@ -88,6 +89,10 @@ namespace AdminLabrary.View.insertUpdateDelete
                     this.Close();
                 }
             }
+            else
+            {
+                MessageBox.Show(idAdmin.ToString()+ idLector.ToString()+ IdLibro.ToString());
+            }
         }
 
         private void btnRecibir_Click(object sender, EventArgs e)
@@ -119,7 +124,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                 IdLibro = 0;
                 idLector = 0;
                 this.Close();
-            
+             
         }
     }
 }

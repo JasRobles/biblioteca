@@ -30,6 +30,7 @@ namespace AdminLabrary.formularios.principales
             using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
                 var lista = from lec in db.Lectores
+                             where lec.estado == 0
                             select new
                             {
                                 ID = lec.Id_Lector,Nombre=lec.Nombres, Apellidos = lec.Apellidos

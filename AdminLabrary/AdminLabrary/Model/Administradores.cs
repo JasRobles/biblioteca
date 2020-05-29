@@ -25,8 +25,9 @@ namespace AdminLabrary.Model
         public string Usuario { get; set; }
         public string Contraseña { get; set; }
         public int Id_Lector { get; set; }
+        public Nullable<int> estado { get; set; }
     
-        public virtual Lectores Lectore { get; set; }
+        public virtual Lectores Lectores { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Alquileres> Alquileres { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

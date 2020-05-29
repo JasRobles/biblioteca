@@ -28,11 +28,12 @@ namespace AdminLabrary.Model
         public int Id_autor { get; set; }
         public int Id_Editorial { get; set; }
         public int Id_categoria { get; set; }
+        public Nullable<int> estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Alquileres> Alquileres { get; set; }
-        public virtual Autores Autore { get; set; }
-        public virtual Categorias Categoria { get; set; }
-        public virtual Editoriales Editoriale { get; set; }
+        public virtual Autores Autores { get; set; }
+        public virtual Categorias Categorias { get; set; }
+        public virtual Editoriales Editoriales { get; set; }
     }
 }

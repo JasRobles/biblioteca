@@ -29,7 +29,8 @@ namespace AdminLabrary.formularios.principales
             using (BibliotecaEntities4 db= new BibliotecaEntities4())
             {
                 var lista = from cat in db.Categorias
-                            select new {ID = cat.Id_categoria,Categoria =cat.Categoria1 };
+                            where cat.estado ==0
+                            select new {ID = cat.Id_categoria,Categoria =cat.Categoria };
                 dgvCat.DataSource = lista.ToList();
                 
             }

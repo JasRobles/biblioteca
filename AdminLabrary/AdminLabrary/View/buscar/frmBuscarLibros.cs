@@ -35,8 +35,14 @@ namespace AdminLabrary.View.buscar
                 string buscar = txtBuscar.Text;
                 var ListaLib = from Lib in db.Libros
                                from Aut in db.Autores where Lib.Id_autor == Aut.Id_autor
+                               from ca in db.Categorias where Lib.Id_categoria == ca.Id_categoria
+                               from ed in db.Editoriales where Lib.Id_Editorial == ed.Id_Editorial
                                where Lib.Nombre.Contains(buscar)
                                where Lib.cantidad > 0
+                               && Lib.estado==0
+                               && Aut.estado == 0
+                               && ca.estado == 0
+                               && ed.estado == 0
                                select new
                                {
                                    Id = Lib.Id_libro,

@@ -95,7 +95,7 @@ namespace AdminLabrary.View.principales
             alquiler.ShowDialog();
         }
 
-        public frmBuscarAlquiler f = new frmBuscarAlquiler();
+        
         private void btnVer_Click(object sender, EventArgs e)
         {
             frmLogin.f.MostrarPanel(new frmBuscarAlquiler());

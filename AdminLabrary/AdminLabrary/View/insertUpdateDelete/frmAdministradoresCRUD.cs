@@ -45,6 +45,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                 admi.Usuario = txtUsuario.Text;
                 admi.Contraseña = txtContraseña.Text;
                 admi.Id_Lector = IDLector;
+                admi.estado = 0;
                 db.Administradores.Add(admi);
                 db.SaveChanges();
                 Limpiar();
@@ -62,6 +63,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                 admi.Usuario = txtUsuario.Text;
                 admi.Contraseña = txtContraseña.Text;
                 admi.Id_Lector = IDLector;
+                admi.estado = 0;
                 db.Entry(admi).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 Limpiar();
@@ -75,29 +77,16 @@ namespace AdminLabrary.View.insertUpdateDelete
         {
             using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
-                var lista = from pres in db.Alquileres
-                            where IDAdmin == pres.Entregado
-                            select new { };
-                var lis = from prest in db.Alquileres
-                          where IDAdmin == prest.Recibido
-                          select new { };
-                if (lis.Count() == 0 && lista.Count() == 0)
-                {
-                    admi = db.Administradores.Find(IDAdmin);
-                    db.Administradores.Remove(admi);
-                    db.SaveChanges();
-                    Limpiar();
-                    frmPrincipal.admin.CargarDatos();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("No se puede eliminar, verificar que \r" +
-                        "no exista un alquiler con este administrador");
-                    this.Close();
-                    Limpiar();
-                }
-
+                admi = db.Administradores.Where(buscarID => buscarID.Id_Admin == IDAdmin).First();
+                admi.Usuario = txtUsuario.Text;
+                admi.Contraseña = txtContraseña.Text;
+                admi.Id_Lector = IDLector;
+                admi.estado = 1;
+                db.Entry(admi).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                Limpiar();
+                frmPrincipal.admin.CargarDatos();
+                this.Close();
             }
         }
 

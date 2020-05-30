@@ -45,6 +45,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                     db.SaveChanges();
                     frmPrincipal.Autor.CargarDatos();
                     limpiar();
+                    this.Close();
                 }
 
             }

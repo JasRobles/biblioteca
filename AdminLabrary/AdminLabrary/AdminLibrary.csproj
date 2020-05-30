@@ -181,6 +181,12 @@
     <Compile Include="View\buscar\frmBuscarLibros.Designer.cs">
       <DependentUpon>frmBuscarLibros.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\buscar\frmHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\buscar\frmHistorial.Designer.cs">
+      <DependentUpon>frmHistorial.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\insertUpdateDelete\frmAdministradoresCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\buscar\frmBuscarLibros.resx">
       <DependentUpon>frmBuscarLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\buscar\frmHistorial.resx">
+      <DependentUpon>frmHistorial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\insertUpdateDelete\frmAdministradoresCRUD.resx">
       <DependentUpon>frmAdministradoresCRUD.cs</DependentUpon>

@@ -36,7 +36,6 @@
             this.lblUsuarioARecibir = new System.Windows.Forms.Label();
             this.PanelBarraTitulo = new System.Windows.Forms.Panel();
             this.btnMostrar = new System.Windows.Forms.PictureBox();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.pPrincipal = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PictureBox5 = new System.Windows.Forms.PictureBox();
@@ -48,15 +47,16 @@
             this.btnLectores = new System.Windows.Forms.Button();
             this.btnPrestamos = new System.Windows.Forms.Button();
             this.btnAutor = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.PanelMenu = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.PanelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMostrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.pPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.PanelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,19 +160,6 @@
             this.btnMostrar.Visible = false;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
-            // btnMenu
-            // 
-            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(188, 6);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(32, 33);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMenu.TabIndex = 15;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
             // pPrincipal
             // 
             this.pPrincipal.AutoSize = true;
@@ -204,11 +191,11 @@
             // PictureBox5
             // 
             this.PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox5.Image")));
-            this.PictureBox5.Location = new System.Drawing.Point(12, 6);
+            this.PictureBox5.Location = new System.Drawing.Point(6, -27);
             this.PictureBox5.Name = "PictureBox5";
             this.PictureBox5.Size = new System.Drawing.Size(214, 195);
             this.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox5.TabIndex = 12;
+            this.PictureBox5.TabIndex = 18;
             this.PictureBox5.TabStop = false;
             // 
             // Panel10
@@ -232,7 +219,7 @@
             this.btnEditorial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditorial.Location = new System.Drawing.Point(20, 236);
             this.btnEditorial.Name = "btnEditorial";
-            this.btnEditorial.Size = new System.Drawing.Size(220, 56);
+            this.btnEditorial.Size = new System.Drawing.Size(200, 56);
             this.btnEditorial.TabIndex = 2;
             this.btnEditorial.Text = "  Editorial";
             this.btnEditorial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -253,7 +240,7 @@
             this.btnCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategoria.Location = new System.Drawing.Point(20, 292);
             this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(220, 56);
+            this.btnCategoria.Size = new System.Drawing.Size(206, 56);
             this.btnCategoria.TabIndex = 4;
             this.btnCategoria.Text = "  Categoria";
             this.btnCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -274,7 +261,7 @@
             this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdmin.Location = new System.Drawing.Point(18, 421);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(220, 56);
+            this.btnAdmin.Size = new System.Drawing.Size(202, 56);
             this.btnAdmin.TabIndex = 8;
             this.btnAdmin.Text = "Administradores";
             this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -295,7 +282,7 @@
             this.btnLibros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLibros.Location = new System.Drawing.Point(22, 359);
             this.btnLibros.Name = "btnLibros";
-            this.btnLibros.Size = new System.Drawing.Size(220, 56);
+            this.btnLibros.Size = new System.Drawing.Size(198, 56);
             this.btnLibros.TabIndex = 14;
             this.btnLibros.Text = "  Libros";
             this.btnLibros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -316,7 +303,7 @@
             this.btnLectores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLectores.Location = new System.Drawing.Point(22, 477);
             this.btnLectores.Name = "btnLectores";
-            this.btnLectores.Size = new System.Drawing.Size(216, 56);
+            this.btnLectores.Size = new System.Drawing.Size(198, 56);
             this.btnLectores.TabIndex = 6;
             this.btnLectores.Text = "  Lectores";
             this.btnLectores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -335,9 +322,9 @@
             this.btnPrestamos.ForeColor = System.Drawing.Color.White;
             this.btnPrestamos.Image = ((System.Drawing.Image)(resources.GetObject("btnPrestamos.Image")));
             this.btnPrestamos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrestamos.Location = new System.Drawing.Point(20, 173);
+            this.btnPrestamos.Location = new System.Drawing.Point(20, 174);
             this.btnPrestamos.Name = "btnPrestamos";
-            this.btnPrestamos.Size = new System.Drawing.Size(220, 56);
+            this.btnPrestamos.Size = new System.Drawing.Size(206, 56);
             this.btnPrestamos.TabIndex = 17;
             this.btnPrestamos.Text = "  Prestamos";
             this.btnPrestamos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -358,7 +345,7 @@
             this.btnAutor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAutor.Location = new System.Drawing.Point(22, 533);
             this.btnAutor.Name = "btnAutor";
-            this.btnAutor.Size = new System.Drawing.Size(219, 56);
+            this.btnAutor.Size = new System.Drawing.Size(198, 56);
             this.btnAutor.TabIndex = 17;
             this.btnAutor.Text = "  Autor";
             this.btnAutor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -366,8 +353,22 @@
             this.btnAutor.UseVisualStyleBackColor = true;
             this.btnAutor.Click += new System.EventHandler(this.btnAutor_Click);
             // 
+            // btnMenu
+            // 
+            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(188, 6);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(32, 33);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMenu.TabIndex = 15;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
             // PanelMenu
             // 
+            this.PanelMenu.AutoScroll = true;
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.PanelMenu.Controls.Add(this.btnMenu);
             this.PanelMenu.Controls.Add(this.btnAutor);
@@ -406,10 +407,10 @@
             this.PanelBarraTitulo.ResumeLayout(false);
             this.PanelBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMostrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.pPrincipal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.PanelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -425,7 +426,7 @@
         internal System.Windows.Forms.Panel PanelBarraTitulo;
         private System.Windows.Forms.Panel pPrincipal;
         internal System.Windows.Forms.PictureBox pictureBox1;
-        internal System.Windows.Forms.PictureBox btnMenu;
+        internal System.Windows.Forms.PictureBox btnMostrar;
         internal System.Windows.Forms.PictureBox PictureBox5;
         internal System.Windows.Forms.Panel Panel10;
         internal System.Windows.Forms.Button btnEditorial;
@@ -435,7 +436,7 @@
         internal System.Windows.Forms.Button btnLectores;
         internal System.Windows.Forms.Button btnPrestamos;
         internal System.Windows.Forms.Button btnAutor;
+        internal System.Windows.Forms.PictureBox btnMenu;
         internal System.Windows.Forms.Panel PanelMenu;
-        internal System.Windows.Forms.PictureBox btnMostrar;
     }
 }

@@ -50,7 +50,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                 db.SaveChanges();
                 Limpiar();
                 frmPrincipal.admin.CargarDatos();
-
+                this.Close();
 
             }
         }

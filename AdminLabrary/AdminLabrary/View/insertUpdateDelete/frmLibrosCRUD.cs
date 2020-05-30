@@ -90,6 +90,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                     db.SaveChanges();
                     limpiar();
                     frmPrincipal.Lib.CargaDratos();
+                    this.Close();
                 }
             }
 
@@ -109,6 +110,8 @@ namespace AdminLabrary.View.insertUpdateDelete
                 txtNumero_de_Edicion.Enabled = false;
                 btnActualizar.Enabled = false;
                 btnGuardar.Enabled = false;
+                btnEliminar.Enabled = true;
+                dtpAño.Enabled = false;
                 btnSeleccionarA.Enabled = false;
                 btnSeleccionarE.Enabled = false;
                 cmbCategoria.Enabled = false;
@@ -121,8 +124,6 @@ namespace AdminLabrary.View.insertUpdateDelete
                
                 txtNombre.Enabled = true;
                 txtNumero_de_Edicion.Enabled = true;
-                btnActualizar.Enabled = true;
-                btnGuardar.Enabled = true;
                 btnSeleccionarA.Enabled = true;
                 btnSeleccionarE.Enabled = true;
                 cmbCategoria.Enabled = true;
@@ -164,6 +165,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                     db.SaveChanges();
                     limpiar();
                     frmPrincipal.Lib.CargaDratos();
+                    this.Close();
                 }
             }
 
@@ -190,6 +192,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                     db.SaveChanges();
                     limpiar();
                     frmPrincipal.Lib.CargaDratos();
+                    this.Close();
                 }
             }
         }  

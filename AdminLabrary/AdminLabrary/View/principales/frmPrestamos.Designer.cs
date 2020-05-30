@@ -31,9 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPrestamos = new System.Windows.Forms.DataGridView();
-            this.btnRecibir = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnVer = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LECTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LIBRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +40,14 @@
             this.IDLector = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDLibro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Entregadoid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRecibir = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.rbtnLector = new System.Windows.Forms.RadioButton();
+            this.rbtnLibro = new System.Windows.Forms.RadioButton();
+            this.rbtnAdministrador = new System.Windows.Forms.RadioButton();
+            this.btnRetrazo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,40 +84,10 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvPrestamos.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPrestamos.Size = new System.Drawing.Size(917, 374);
+            this.dgvPrestamos.Size = new System.Drawing.Size(917, 399);
             this.dgvPrestamos.TabIndex = 2;
             this.dgvPrestamos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrestamos_CellClick);
-            // 
-            // btnRecibir
-            // 
-            this.btnRecibir.Enabled = false;
-            this.btnRecibir.Location = new System.Drawing.Point(402, 89);
-            this.btnRecibir.Name = "btnRecibir";
-            this.btnRecibir.Size = new System.Drawing.Size(142, 36);
-            this.btnRecibir.TabIndex = 14;
-            this.btnRecibir.Text = "RECIBIR";
-            this.btnRecibir.UseVisualStyleBackColor = true;
-            this.btnRecibir.Click += new System.EventHandler(this.btnRecibir_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(11, 89);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(142, 36);
-            this.btnNuevo.TabIndex = 13;
-            this.btnNuevo.Text = "NUEVO";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnVer
-            // 
-            this.btnVer.Location = new System.Drawing.Point(661, 89);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(142, 36);
-            this.btnVer.TabIndex = 15;
-            this.btnVer.Text = "VER TODOS ";
-            this.btnVer.UseVisualStyleBackColor = true;
-            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            this.dgvPrestamos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrestamos_CellContentClick);
             // 
             // ID
             // 
@@ -173,11 +148,105 @@
             this.Entregadoid.ReadOnly = true;
             this.Entregadoid.Visible = false;
             // 
+            // btnRecibir
+            // 
+            this.btnRecibir.Enabled = false;
+            this.btnRecibir.Location = new System.Drawing.Point(193, 89);
+            this.btnRecibir.Name = "btnRecibir";
+            this.btnRecibir.Size = new System.Drawing.Size(142, 36);
+            this.btnRecibir.TabIndex = 14;
+            this.btnRecibir.Text = "RECIBIR";
+            this.btnRecibir.UseVisualStyleBackColor = true;
+            this.btnRecibir.Click += new System.EventHandler(this.btnRecibir_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(11, 89);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(142, 36);
+            this.btnNuevo.TabIndex = 13;
+            this.btnNuevo.Text = "NUEVO";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnVer
+            // 
+            this.btnVer.Location = new System.Drawing.Point(365, 89);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(142, 36);
+            this.btnVer.TabIndex = 15;
+            this.btnVer.Text = "PRESTAMOS FINALIZADOS";
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtBuscar.Location = new System.Drawing.Point(718, 70);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(211, 26);
+            this.txtBuscar.TabIndex = 16;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // rbtnLector
+            // 
+            this.rbtnLector.AutoSize = true;
+            this.rbtnLector.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.rbtnLector.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.rbtnLector.Location = new System.Drawing.Point(718, 103);
+            this.rbtnLector.Name = "rbtnLector";
+            this.rbtnLector.Size = new System.Drawing.Size(55, 17);
+            this.rbtnLector.TabIndex = 17;
+            this.rbtnLector.TabStop = true;
+            this.rbtnLector.Text = "Lector";
+            this.rbtnLector.UseVisualStyleBackColor = true;
+            // 
+            // rbtnLibro
+            // 
+            this.rbtnLibro.AutoSize = true;
+            this.rbtnLibro.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.rbtnLibro.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.rbtnLibro.Location = new System.Drawing.Point(779, 103);
+            this.rbtnLibro.Name = "rbtnLibro";
+            this.rbtnLibro.Size = new System.Drawing.Size(48, 17);
+            this.rbtnLibro.TabIndex = 18;
+            this.rbtnLibro.TabStop = true;
+            this.rbtnLibro.Text = "Libro";
+            this.rbtnLibro.UseVisualStyleBackColor = true;
+            // 
+            // rbtnAdministrador
+            // 
+            this.rbtnAdministrador.AutoSize = true;
+            this.rbtnAdministrador.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.rbtnAdministrador.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.rbtnAdministrador.Location = new System.Drawing.Point(841, 102);
+            this.rbtnAdministrador.Name = "rbtnAdministrador";
+            this.rbtnAdministrador.Size = new System.Drawing.Size(88, 17);
+            this.rbtnAdministrador.TabIndex = 19;
+            this.rbtnAdministrador.TabStop = true;
+            this.rbtnAdministrador.Text = "Administrador";
+            this.rbtnAdministrador.UseVisualStyleBackColor = true;
+            // 
+            // btnRetrazo
+            // 
+            this.btnRetrazo.Location = new System.Drawing.Point(535, 89);
+            this.btnRetrazo.Name = "btnRetrazo";
+            this.btnRetrazo.Size = new System.Drawing.Size(142, 36);
+            this.btnRetrazo.TabIndex = 20;
+            this.btnRetrazo.Text = "HISTORIAL CON RETRASO";
+            this.btnRetrazo.UseVisualStyleBackColor = true;
+            this.btnRetrazo.Click += new System.EventHandler(this.btnRetrazo_Click);
+            // 
             // frmPrestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 551);
+            this.Controls.Add(this.btnRetrazo);
+            this.Controls.Add(this.rbtnAdministrador);
+            this.Controls.Add(this.rbtnLibro);
+            this.Controls.Add(this.rbtnLector);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnVer);
             this.Controls.Add(this.btnRecibir);
             this.Controls.Add(this.btnNuevo);
@@ -187,6 +256,7 @@
             this.Load += new System.EventHandler(this.frmPrestamos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -205,5 +275,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDLector;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDLibro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Entregadoid;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.RadioButton rbtnLector;
+        private System.Windows.Forms.RadioButton rbtnLibro;
+        private System.Windows.Forms.RadioButton rbtnAdministrador;
+        private System.Windows.Forms.Button btnRetrazo;
     }
 }

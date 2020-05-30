@@ -60,7 +60,8 @@ namespace AdminLabrary.View.insertUpdateDelete
                     Lib.Año = Convert.ToDateTime(dtpAño.Text);
                     Lib.Id_autor = ID_Autor;
                     Lib.Id_Editorial = ID_Editorial;
-                    
+                    //Lib.Numero_edicion = txtNumero_de_Edicion.Text;
+
                     
                     db.Libros.Add(Lib);
                     db.SaveChanges();

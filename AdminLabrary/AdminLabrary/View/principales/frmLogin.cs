@@ -35,6 +35,8 @@ namespace AdminLabrary.View.principales
                 var lista = from admin in db.Administradores
                             where admin.Usuario == txtUsuario.Text
                             && admin.Contraseña == txtContraseña.Text
+                            && admin.estado ==0
+                            
                             select new 
                             {
                                 ID = admin.Id_Admin,

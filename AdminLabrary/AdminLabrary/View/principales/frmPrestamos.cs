@@ -70,7 +70,7 @@ namespace AdminLabrary.View.principales
         public  frmAlquileresCRUD alquiler = new frmAlquileresCRUD();
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            alquiler.limpiar();
             alquiler.indicador = 1;
             alquiler.ShowDialog();
 
@@ -95,7 +95,7 @@ namespace AdminLabrary.View.principales
             alquiler.ShowDialog();
         }
 
-        public frmBuscarAlquiler f = new frmBuscarAlquiler();
+        
         private void btnVer_Click(object sender, EventArgs e)
         {
             frmLogin.f.MostrarPanel(new frmBuscarAlquiler());

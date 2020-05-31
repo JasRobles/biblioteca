@@ -24,6 +24,7 @@ namespace AdminLabrary.Model
         public string Editorial { get; set; }
         public Nullable<System.DateTime> Fundada { get; set; }
         public string Direccion { get; set; }
+        public Nullable<int> estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Libros> Libros { get; set; }

@@ -13,6 +13,7 @@
           <Property Name="Usuario" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Contraseña" Type="varchar" MaxLength="30" />
           <Property Name="Id_Lector" Type="int" Nullable="false" />
+          <Property Name="estado" Type="int" />
         </EntityType>
         <EntityType Name="Alquileres">
           <Key>
@@ -35,6 +36,7 @@
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="fecha_nacimiento" Type="date" />
           <Property Name="Nacionalidad" Type="varchar" MaxLength="20" />
+          <Property Name="estado" Type="int" />
         </EntityType>
         <EntityType Name="Categorias">
           <Key>
@@ -42,6 +44,7 @@
           </Key>
           <Property Name="Id_categoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Categoria" Type="varchar" MaxLength="30" />
+          <Property Name="estado" Type="int" />
         </EntityType>
         <EntityType Name="Editoriales">
           <Key>
@@ -51,6 +54,7 @@
           <Property Name="Editorial" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Fundada" Type="date" />
           <Property Name="Direccion" Type="varchar" MaxLength="100" />
+          <Property Name="estado" Type="int" />
         </EntityType>
         <EntityType Name="Lectores">
           <Key>
@@ -59,6 +63,7 @@
           <Property Name="Id_Lector" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombres" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Apellidos" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="int" />
         </EntityType>
         <EntityType Name="Libros">
           <Key>
@@ -72,6 +77,7 @@
           <Property Name="Id_autor" Type="int" Nullable="false" />
           <Property Name="Id_Editorial" Type="int" Nullable="false" />
           <Property Name="Id_categoria" Type="int" Nullable="false" />
+          <Property Name="estado" Type="int" />
         </EntityType>
         <Association Name="FK__Administr__Id_Le__48CFD27E">
           <End Role="Lectores" Type="Self.Lectores" Multiplicity="1" />
@@ -214,17 +220,59 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BibliotecaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BibliotecaEntities4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administradores" EntityType="BibliotecaModel.Administradores" />
+          <EntitySet Name="Alquileres" EntityType="BibliotecaModel.Alquileres" />
+          <EntitySet Name="Autores" EntityType="BibliotecaModel.Autores" />
+          <EntitySet Name="Categorias" EntityType="BibliotecaModel.Categorias" />
+          <EntitySet Name="Editoriales" EntityType="BibliotecaModel.Editoriales" />
+          <EntitySet Name="Lectores" EntityType="BibliotecaModel.Lectores" />
+          <EntitySet Name="Libros" EntityType="BibliotecaModel.Libros" />
+          <AssociationSet Name="FK__Administr__Id_Le__48CFD27E" Association="BibliotecaModel.FK__Administr__Id_Le__48CFD27E">
+            <End Role="Lectores" EntitySet="Lectores" />
+            <End Role="Administradores" EntitySet="Administradores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Alquilere__Entre__4316F928" Association="BibliotecaModel.FK__Alquilere__Entre__4316F928">
+            <End Role="Administradores" EntitySet="Administradores" />
+            <End Role="Alquileres" EntitySet="Alquileres" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Alquilere__Recib__440B1D61" Association="BibliotecaModel.FK__Alquilere__Recib__440B1D61">
+            <End Role="Administradores" EntitySet="Administradores" />
+            <End Role="Alquileres" EntitySet="Alquileres" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Alquilere__Id_Le__47DBAE45" Association="BibliotecaModel.FK__Alquilere__Id_Le__47DBAE45">
+            <End Role="Lectores" EntitySet="Lectores" />
+            <End Role="Alquileres" EntitySet="Alquileres" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Alquilere__Id_li__49C3F6B7" Association="BibliotecaModel.FK__Alquilere__Id_li__49C3F6B7">
+            <End Role="Libros" EntitySet="Libros" />
+            <End Role="Alquileres" EntitySet="Alquileres" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Libros__Id_autor__46E78A0C" Association="BibliotecaModel.FK__Libros__Id_autor__46E78A0C">
+            <End Role="Autores" EntitySet="Autores" />
+            <End Role="Libros" EntitySet="Libros" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Libros__Id_categ__45F365D3" Association="BibliotecaModel.FK__Libros__Id_categ__45F365D3">
+            <End Role="Categorias" EntitySet="Categorias" />
+            <End Role="Libros" EntitySet="Libros" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Libros__Id_Edito__44FF419A" Association="BibliotecaModel.FK__Libros__Id_Edito__44FF419A">
+            <End Role="Editoriales" EntitySet="Editoriales" />
+            <End Role="Libros" EntitySet="Libros" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Administradores">
           <Key>
             <PropertyRef Name="Id_Admin" />
           </Key>
           <Property Name="Id_Admin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Usuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Usuario" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Contraseña" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Id_Lector" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Lectore" Relationship="Self.FK__Administr__Id_Le__48CFD27E" FromRole="Administradores" ToRole="Lectores" />
-          <NavigationProperty Name="Alquileres" Relationship="Self.FK__Alquilere__Entre__4316F928" FromRole="Administradores" ToRole="Alquileres" />
-          <NavigationProperty Name="Alquileres1" Relationship="Self.FK__Alquilere__Recib__440B1D61" FromRole="Administradores" ToRole="Alquileres" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="Lectores" Relationship="BibliotecaModel.FK__Administr__Id_Le__48CFD27E" FromRole="Administradores" ToRole="Lectores" />
+          <NavigationProperty Name="Alquileres" Relationship="BibliotecaModel.FK__Alquilere__Entre__4316F928" FromRole="Administradores" ToRole="Alquileres" />
+          <NavigationProperty Name="Alquileres1" Relationship="BibliotecaModel.FK__Alquilere__Recib__440B1D61" FromRole="Administradores" ToRole="Alquileres" />
         </EntityType>
         <EntityType Name="Alquileres">
           <Key>
@@ -238,69 +286,74 @@
           <Property Name="fecha_prevista_de_entrega" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="fecha_de_entrega" Type="DateTime" Precision="0" />
           <Property Name="Recibido" Type="Int32" />
-          <NavigationProperty Name="Administradore" Relationship="Self.FK__Alquilere__Entre__4316F928" FromRole="Alquileres" ToRole="Administradores" />
-          <NavigationProperty Name="Administradore1" Relationship="Self.FK__Alquilere__Recib__440B1D61" FromRole="Alquileres" ToRole="Administradores" />
-          <NavigationProperty Name="Lectore" Relationship="Self.FK__Alquilere__Id_Le__47DBAE45" FromRole="Alquileres" ToRole="Lectores" />
-          <NavigationProperty Name="Libro" Relationship="Self.FK__Alquilere__Id_li__49C3F6B7" FromRole="Alquileres" ToRole="Libros" />
+          <NavigationProperty Name="Administradores" Relationship="BibliotecaModel.FK__Alquilere__Entre__4316F928" FromRole="Alquileres" ToRole="Administradores" />
+          <NavigationProperty Name="Administradores1" Relationship="BibliotecaModel.FK__Alquilere__Recib__440B1D61" FromRole="Alquileres" ToRole="Administradores" />
+          <NavigationProperty Name="Lectores" Relationship="BibliotecaModel.FK__Alquilere__Id_Le__47DBAE45" FromRole="Alquileres" ToRole="Lectores" />
+          <NavigationProperty Name="Libros" Relationship="BibliotecaModel.FK__Alquilere__Id_li__49C3F6B7" FromRole="Alquileres" ToRole="Libros" />
         </EntityType>
         <EntityType Name="Autores">
           <Key>
             <PropertyRef Name="Id_autor" />
           </Key>
           <Property Name="Id_autor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
           <Property Name="Nacionalidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Libros" Relationship="Self.FK__Libros__Id_autor__46E78A0C" FromRole="Autores" ToRole="Libros" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="Libros" Relationship="BibliotecaModel.FK__Libros__Id_autor__46E78A0C" FromRole="Autores" ToRole="Libros" />
         </EntityType>
         <EntityType Name="Categorias">
           <Key>
             <PropertyRef Name="Id_categoria" />
           </Key>
           <Property Name="Id_categoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Categoria1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Libros" Relationship="Self.FK__Libros__Id_categ__45F365D3" FromRole="Categorias" ToRole="Libros" />
+          <Property Name="Categoria" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="Libros" Relationship="BibliotecaModel.FK__Libros__Id_categ__45F365D3" FromRole="Categorias" ToRole="Libros" />
         </EntityType>
         <EntityType Name="Editoriales">
           <Key>
             <PropertyRef Name="Id_Editorial" />
           </Key>
           <Property Name="Id_Editorial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Editorial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Editorial" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Fundada" Type="DateTime" Precision="0" />
           <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Libros" Relationship="Self.FK__Libros__Id_Edito__44FF419A" FromRole="Editoriales" ToRole="Libros" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="Libros" Relationship="BibliotecaModel.FK__Libros__Id_Edito__44FF419A" FromRole="Editoriales" ToRole="Libros" />
         </EntityType>
         <EntityType Name="Lectores">
           <Key>
             <PropertyRef Name="Id_Lector" />
           </Key>
           <Property Name="Id_Lector" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombres" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Administradores" Relationship="Self.FK__Administr__Id_Le__48CFD27E" FromRole="Lectores" ToRole="Administradores" />
-          <NavigationProperty Name="Alquileres" Relationship="Self.FK__Alquilere__Id_Le__47DBAE45" FromRole="Lectores" ToRole="Alquileres" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="Administradores" Relationship="BibliotecaModel.FK__Administr__Id_Le__48CFD27E" FromRole="Lectores" ToRole="Administradores" />
+          <NavigationProperty Name="Alquileres" Relationship="BibliotecaModel.FK__Alquilere__Id_Le__47DBAE45" FromRole="Lectores" ToRole="Alquileres" />
         </EntityType>
         <EntityType Name="Libros">
           <Key>
             <PropertyRef Name="Id_libro" />
           </Key>
           <Property Name="Id_libro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="cantidad" Type="Int32" Nullable="false" />
           <Property Name="Año" Type="DateTime" Precision="0" />
           <Property Name="Numero_edicion" Type="Int32" Nullable="false" />
           <Property Name="Id_autor" Type="Int32" Nullable="false" />
           <Property Name="Id_Editorial" Type="Int32" Nullable="false" />
           <Property Name="Id_categoria" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Alquileres" Relationship="Self.FK__Alquilere__Id_li__49C3F6B7" FromRole="Libros" ToRole="Alquileres" />
-          <NavigationProperty Name="Autore" Relationship="Self.FK__Libros__Id_autor__46E78A0C" FromRole="Libros" ToRole="Autores" />
-          <NavigationProperty Name="Categoria" Relationship="Self.FK__Libros__Id_categ__45F365D3" FromRole="Libros" ToRole="Categorias" />
-          <NavigationProperty Name="Editoriale" Relationship="Self.FK__Libros__Id_Edito__44FF419A" FromRole="Libros" ToRole="Editoriales" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="Alquileres" Relationship="BibliotecaModel.FK__Alquilere__Id_li__49C3F6B7" FromRole="Libros" ToRole="Alquileres" />
+          <NavigationProperty Name="Autores" Relationship="BibliotecaModel.FK__Libros__Id_autor__46E78A0C" FromRole="Libros" ToRole="Autores" />
+          <NavigationProperty Name="Categorias" Relationship="BibliotecaModel.FK__Libros__Id_categ__45F365D3" FromRole="Libros" ToRole="Categorias" />
+          <NavigationProperty Name="Editoriales" Relationship="BibliotecaModel.FK__Libros__Id_Edito__44FF419A" FromRole="Libros" ToRole="Editoriales" />
         </EntityType>
         <Association Name="FK__Administr__Id_Le__48CFD27E">
-          <End Role="Lectores" Type="BibliotecaModel.Lectores" Multiplicity="1" />
-          <End Role="Administradores" Type="BibliotecaModel.Administradores" Multiplicity="*" />
+          <End Type="BibliotecaModel.Lectores" Role="Lectores" Multiplicity="1" />
+          <End Type="BibliotecaModel.Administradores" Role="Administradores" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Lectores">
               <PropertyRef Name="Id_Lector" />
@@ -311,8 +364,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Alquilere__Entre__4316F928">
-          <End Role="Administradores" Type="BibliotecaModel.Administradores" Multiplicity="1" />
-          <End Role="Alquileres" Type="BibliotecaModel.Alquileres" Multiplicity="*" />
+          <End Type="BibliotecaModel.Administradores" Role="Administradores" Multiplicity="1" />
+          <End Type="BibliotecaModel.Alquileres" Role="Alquileres" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Administradores">
               <PropertyRef Name="Id_Admin" />
@@ -323,8 +376,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Alquilere__Recib__440B1D61">
-          <End Role="Administradores" Type="BibliotecaModel.Administradores" Multiplicity="0..1" />
-          <End Role="Alquileres" Type="BibliotecaModel.Alquileres" Multiplicity="*" />
+          <End Type="BibliotecaModel.Administradores" Role="Administradores" Multiplicity="0..1" />
+          <End Type="BibliotecaModel.Alquileres" Role="Alquileres" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Administradores">
               <PropertyRef Name="Id_Admin" />
@@ -335,8 +388,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Alquilere__Id_Le__47DBAE45">
-          <End Role="Lectores" Type="BibliotecaModel.Lectores" Multiplicity="1" />
-          <End Role="Alquileres" Type="BibliotecaModel.Alquileres" Multiplicity="*" />
+          <End Type="BibliotecaModel.Lectores" Role="Lectores" Multiplicity="1" />
+          <End Type="BibliotecaModel.Alquileres" Role="Alquileres" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Lectores">
               <PropertyRef Name="Id_Lector" />
@@ -347,8 +400,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Alquilere__Id_li__49C3F6B7">
-          <End Role="Libros" Type="BibliotecaModel.Libros" Multiplicity="1" />
-          <End Role="Alquileres" Type="BibliotecaModel.Alquileres" Multiplicity="*" />
+          <End Type="BibliotecaModel.Libros" Role="Libros" Multiplicity="1" />
+          <End Type="BibliotecaModel.Alquileres" Role="Alquileres" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Libros">
               <PropertyRef Name="Id_libro" />
@@ -359,8 +412,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Libros__Id_autor__46E78A0C">
-          <End Role="Autores" Type="BibliotecaModel.Autores" Multiplicity="1" />
-          <End Role="Libros" Type="BibliotecaModel.Libros" Multiplicity="*" />
+          <End Type="BibliotecaModel.Autores" Role="Autores" Multiplicity="1" />
+          <End Type="BibliotecaModel.Libros" Role="Libros" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Autores">
               <PropertyRef Name="Id_autor" />
@@ -371,8 +424,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Libros__Id_categ__45F365D3">
-          <End Role="Categorias" Type="BibliotecaModel.Categorias" Multiplicity="1" />
-          <End Role="Libros" Type="BibliotecaModel.Libros" Multiplicity="*" />
+          <End Type="BibliotecaModel.Categorias" Role="Categorias" Multiplicity="1" />
+          <End Type="BibliotecaModel.Libros" Role="Libros" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categorias">
               <PropertyRef Name="Id_categoria" />
@@ -383,8 +436,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Libros__Id_Edito__44FF419A">
-          <End Role="Editoriales" Type="BibliotecaModel.Editoriales" Multiplicity="1" />
-          <End Role="Libros" Type="BibliotecaModel.Libros" Multiplicity="*" />
+          <End Type="BibliotecaModel.Editoriales" Role="Editoriales" Multiplicity="1" />
+          <End Type="BibliotecaModel.Libros" Role="Libros" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Editoriales">
               <PropertyRef Name="Id_Editorial" />
@@ -394,47 +447,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BibliotecaEntities4" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Administradores" EntityType="BibliotecaModel.Administradores" />
-          <EntitySet Name="Alquileres" EntityType="BibliotecaModel.Alquileres" />
-          <EntitySet Name="Autores" EntityType="BibliotecaModel.Autores" />
-          <EntitySet Name="Categorias" EntityType="BibliotecaModel.Categorias" />
-          <EntitySet Name="Editoriales" EntityType="BibliotecaModel.Editoriales" />
-          <EntitySet Name="Lectores" EntityType="BibliotecaModel.Lectores" />
-          <EntitySet Name="Libros" EntityType="BibliotecaModel.Libros" />
-          <AssociationSet Name="FK__Administr__Id_Le__48CFD27E" Association="Self.FK__Administr__Id_Le__48CFD27E">
-            <End Role="Lectores" EntitySet="Lectores" />
-            <End Role="Administradores" EntitySet="Administradores" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Alquilere__Entre__4316F928" Association="Self.FK__Alquilere__Entre__4316F928">
-            <End Role="Administradores" EntitySet="Administradores" />
-            <End Role="Alquileres" EntitySet="Alquileres" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Alquilere__Recib__440B1D61" Association="Self.FK__Alquilere__Recib__440B1D61">
-            <End Role="Administradores" EntitySet="Administradores" />
-            <End Role="Alquileres" EntitySet="Alquileres" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Alquilere__Id_Le__47DBAE45" Association="Self.FK__Alquilere__Id_Le__47DBAE45">
-            <End Role="Lectores" EntitySet="Lectores" />
-            <End Role="Alquileres" EntitySet="Alquileres" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Alquilere__Id_li__49C3F6B7" Association="Self.FK__Alquilere__Id_li__49C3F6B7">
-            <End Role="Libros" EntitySet="Libros" />
-            <End Role="Alquileres" EntitySet="Alquileres" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Libros__Id_autor__46E78A0C" Association="Self.FK__Libros__Id_autor__46E78A0C">
-            <End Role="Autores" EntitySet="Autores" />
-            <End Role="Libros" EntitySet="Libros" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Libros__Id_categ__45F365D3" Association="Self.FK__Libros__Id_categ__45F365D3">
-            <End Role="Categorias" EntitySet="Categorias" />
-            <End Role="Libros" EntitySet="Libros" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Libros__Id_Edito__44FF419A" Association="Self.FK__Libros__Id_Edito__44FF419A">
-            <End Role="Editoriales" EntitySet="Editoriales" />
-            <End Role="Libros" EntitySet="Libros" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -444,75 +456,81 @@
           <EntitySetMapping Name="Administradores">
             <EntityTypeMapping TypeName="BibliotecaModel.Administradores">
               <MappingFragment StoreEntitySet="Administradores">
-                <ScalarProperty Name="Id_Admin" ColumnName="Id_Admin" />
-                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
-                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="Id_Lector" ColumnName="Id_Lector" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Id_Admin" ColumnName="Id_Admin" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Alquileres">
             <EntityTypeMapping TypeName="BibliotecaModel.Alquileres">
               <MappingFragment StoreEntitySet="Alquileres">
-                <ScalarProperty Name="Id_alquiler" ColumnName="Id_alquiler" />
-                <ScalarProperty Name="Id_Lector" ColumnName="Id_Lector" />
-                <ScalarProperty Name="Id_libro" ColumnName="Id_libro" />
-                <ScalarProperty Name="Entregado" ColumnName="Entregado" />
-                <ScalarProperty Name="fecha_salida" ColumnName="fecha_salida" />
-                <ScalarProperty Name="fecha_prevista_de_entrega" ColumnName="fecha_prevista_de_entrega" />
-                <ScalarProperty Name="fecha_de_entrega" ColumnName="fecha_de_entrega" />
                 <ScalarProperty Name="Recibido" ColumnName="Recibido" />
+                <ScalarProperty Name="fecha_de_entrega" ColumnName="fecha_de_entrega" />
+                <ScalarProperty Name="fecha_prevista_de_entrega" ColumnName="fecha_prevista_de_entrega" />
+                <ScalarProperty Name="fecha_salida" ColumnName="fecha_salida" />
+                <ScalarProperty Name="Entregado" ColumnName="Entregado" />
+                <ScalarProperty Name="Id_libro" ColumnName="Id_libro" />
+                <ScalarProperty Name="Id_Lector" ColumnName="Id_Lector" />
+                <ScalarProperty Name="Id_alquiler" ColumnName="Id_alquiler" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Autores">
             <EntityTypeMapping TypeName="BibliotecaModel.Autores">
               <MappingFragment StoreEntitySet="Autores">
-                <ScalarProperty Name="Id_autor" ColumnName="Id_autor" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id_autor" ColumnName="Id_autor" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Categorias">
             <EntityTypeMapping TypeName="BibliotecaModel.Categorias">
               <MappingFragment StoreEntitySet="Categorias">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
                 <ScalarProperty Name="Id_categoria" ColumnName="Id_categoria" />
-                <ScalarProperty Name="Categoria1" ColumnName="Categoria" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Editoriales">
             <EntityTypeMapping TypeName="BibliotecaModel.Editoriales">
               <MappingFragment StoreEntitySet="Editoriales">
-                <ScalarProperty Name="Id_Editorial" ColumnName="Id_Editorial" />
-                <ScalarProperty Name="Editorial" ColumnName="Editorial" />
-                <ScalarProperty Name="Fundada" ColumnName="Fundada" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Fundada" ColumnName="Fundada" />
+                <ScalarProperty Name="Editorial" ColumnName="Editorial" />
+                <ScalarProperty Name="Id_Editorial" ColumnName="Id_Editorial" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Lectores">
             <EntityTypeMapping TypeName="BibliotecaModel.Lectores">
               <MappingFragment StoreEntitySet="Lectores">
-                <ScalarProperty Name="Id_Lector" ColumnName="Id_Lector" />
-                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Id_Lector" ColumnName="Id_Lector" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Libros">
             <EntityTypeMapping TypeName="BibliotecaModel.Libros">
               <MappingFragment StoreEntitySet="Libros">
-                <ScalarProperty Name="Id_libro" ColumnName="Id_libro" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-                <ScalarProperty Name="Año" ColumnName="Año" />
-                <ScalarProperty Name="Numero_edicion" ColumnName="Numero_edicion" />
-                <ScalarProperty Name="Id_autor" ColumnName="Id_autor" />
-                <ScalarProperty Name="Id_Editorial" ColumnName="Id_Editorial" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="Id_categoria" ColumnName="Id_categoria" />
+                <ScalarProperty Name="Id_Editorial" ColumnName="Id_Editorial" />
+                <ScalarProperty Name="Id_autor" ColumnName="Id_autor" />
+                <ScalarProperty Name="Numero_edicion" ColumnName="Numero_edicion" />
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id_libro" ColumnName="Id_libro" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -22,18 +22,7 @@ namespace AdminLabrary.formularios.principales
             CargaDratos();
         }
 
-        private void fpLibros_Load(object sender, EventArgs e)
-        {
-
-
-            
-
-        }
-
-        private void librosDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
 
         private void frmLibros_Load(object sender, EventArgs e)
         {
@@ -51,11 +40,15 @@ namespace AdminLabrary.formularios.principales
                             where li.Id_categoria == ca.Id_categoria
                             && li.Id_autor == au.Id_autor
                             && li.Id_Editorial == ed.Id_Editorial
+                            && li.estado == 0
+                            && au.estado == 0
+                            && ca.estado == 0
+                            && ed.estado == 0
                             select new 
                             { ID = li.Id_libro, Nombre = li.Nombre,
                                 Cantidad =li.cantidad,Año=li.Año,Numero_edicion =li.Numero_edicion,
-                                Autor = au.Nombre,Editorial = ed.Editorial,Categoria = ca.Categoria1,
-                                idAutor = li.Id_autor,idEditorial = li.Id_Editorial, idCategoria = li.Id_categoria
+                                Autor = au.Nombre,Editorial = ed.Editorial,Categoria = ca.Categoria,
+                                idAutor = li.Id_autor,idEditorial = li.Id_Editorial, idCategoria = ca.Id_categoria
                             };
                 foreach (var i in lista)
                 {
@@ -70,9 +63,64 @@ namespace AdminLabrary.formularios.principales
         public frmLibrosCRUD Libros = new frmLibrosCRUD();
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+
+            Libros.limpiar();
+            Libros.indi = 0;
             Libros.ShowDialog();
 
         }
 
+        private void dgvLibros_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+           
+            btnEliminar.Enabled = false;
+            Libros.indi = 0;
+            btnEditar.Enabled = false;
+            seleccionar();
+
+            Libros.ShowDialog();
+        }
+        void seleccionar()
+        {
+            int Id = int.Parse(dgvLibros.CurrentRow.Cells[0].Value.ToString());
+            int Id_autor= int.Parse(dgvLibros.CurrentRow.Cells[8].Value.ToString());
+            int Id_Editorial = int.Parse(dgvLibros.CurrentRow.Cells[9].Value.ToString());
+            string Id_Categoria = (dgvLibros.CurrentRow.Cells[10].Value.ToString());
+            string autor = dgvLibros.CurrentRow.Cells[5].Value.ToString();
+            string editorial = dgvLibros.CurrentRow.Cells[6].Value.ToString();
+            string nombre = dgvLibros.CurrentRow.Cells[1].Value.ToString();
+            string cantidad = dgvLibros.CurrentRow.Cells[2].Value.ToString();
+            string año = dgvLibros.CurrentRow.Cells[3].Value.ToString();
+            string numero = dgvLibros.CurrentRow.Cells[4].Value.ToString();
+           
+            Libros.txtAutor.Text = autor;
+            Libros.txtEditorial.Text = editorial;
+            Libros.txtNombre.Text = nombre;
+            Libros.txtCantidad.Text = cantidad;
+            Libros.dtpAño.Text = año;
+            Libros.txtNumero_de_Edicion.Text = numero;
+            Libros.ID_Libro = Id;
+            Libros.ID_Autor = Id_autor;
+            Libros.ID_Editorial = Id_Editorial;
+            Libros.ID_Cate= Id_Categoria ;
+            Libros.id = int.Parse(Id_Categoria)-3;
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+          
+            btnEliminar.Enabled = false;
+            btnEditar.Enabled = false;
+            Libros.indi = 1;
+            seleccionar();
+            Libros.ShowDialog();
+        }
     }
 }

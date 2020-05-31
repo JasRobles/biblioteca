@@ -32,7 +32,8 @@ namespace AdminLabrary.View.insertUpdateDelete
             {
                 using (BibliotecaEntities4 db= new BibliotecaEntities4())
                 {
-                    categoria.Categoria1 = txtCategoria.Text;
+                    categoria.Categoria = txtCategoria.Text;
+                    categoria.estado = 0;
                     db.Categorias.Add(categoria);
                     db.SaveChanges();
                     limpiar();
@@ -49,7 +50,8 @@ namespace AdminLabrary.View.insertUpdateDelete
                 using (BibliotecaEntities4 db = new BibliotecaEntities4())
                 {
                     categoria = db.Categorias.Where(buscarId => buscarId.Id_categoria == ID).First();
-                    categoria.Categoria1 = txtCategoria.Text;
+                    categoria.Categoria = txtCategoria.Text;
+                    categoria.estado = 0;
                     db.Entry(categoria).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                     limpiar();
@@ -66,34 +68,19 @@ namespace AdminLabrary.View.insertUpdateDelete
         {
             using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
-                var lista = from i in db.Libros
-                            where i.Id_categoria == ID
-                            select new { };
-                if(lista.Count() == 0)
-                {
-                    categoria = db.Categorias.Find(ID);
-                    db.Categorias.Remove(categoria);
-                    db.SaveChanges();
-                    limpiar();
-                    frmPrincipal.categoria.CargarDatos();
-                    this.Close();
-
-                }
-                else
-                {
-                    MessageBox.Show("No se puede eliminar, verificar que \r" +
-                        "no exista un libro con esta categoria");
-                    this.Close();
-                }
+                categoria = db.Categorias.Where(buscarId => buscarId.Id_categoria == ID).First();
+                categoria.Categoria = txtCategoria.Text;
+                categoria.estado = 1;
+                db.Entry(categoria).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                limpiar();
+                frmPrincipal.categoria.CargarDatos();
+                this.Close();
             }
         }
 
-        private void txtCategoria_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void lblCategoria_Click(object sender, EventArgs e)
+        private void frmCategoriasCRUD_Load(object sender, EventArgs e)
         {
 
         }

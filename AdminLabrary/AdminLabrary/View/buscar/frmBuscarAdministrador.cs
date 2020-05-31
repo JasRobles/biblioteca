@@ -33,6 +33,7 @@ namespace AdminLabrary.View.buscar
                 string buscar = txtBuscar.Text;
                 var ListaA = from Adm in db.Administradores
                              where Adm.Usuario.Contains(buscar)
+                             && Adm.estado==0
                              select new
                              {
                                  ID = Adm.Id_Admin,

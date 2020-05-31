@@ -28,20 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.administradoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvAdmi = new System.Windows.Forms.DataGridView();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CONTRASEÑA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LECTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.administradoresBindingSource)).BeginInit();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdmi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,10 +46,10 @@
             // 
             this.dgvAdmi.AllowUserToAddRows = false;
             this.dgvAdmi.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvAdmi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvAdmi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAdmi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -69,14 +66,45 @@
             this.dgvAdmi.Location = new System.Drawing.Point(12, 140);
             this.dgvAdmi.Name = "dgvAdmi";
             this.dgvAdmi.ReadOnly = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvAdmi.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvAdmi.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAdmi.Size = new System.Drawing.Size(917, 374);
             this.dgvAdmi.TabIndex = 2;
             this.dgvAdmi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdmi_CellClick);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID ";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // USUARIO
+            // 
+            this.USUARIO.HeaderText = "USUARIO";
+            this.USUARIO.Name = "USUARIO";
+            this.USUARIO.ReadOnly = true;
+            // 
+            // CONTRASEÑA
+            // 
+            this.CONTRASEÑA.HeaderText = "CONTRASEÑA";
+            this.CONTRASEÑA.Name = "CONTRASEÑA";
+            this.CONTRASEÑA.ReadOnly = true;
+            // 
+            // LECTOR
+            // 
+            this.LECTOR.HeaderText = "LECTOR";
+            this.LECTOR.Name = "LECTOR";
+            this.LECTOR.ReadOnly = true;
+            // 
+            // IDLE
+            // 
+            this.IDLE.HeaderText = "IDLEC";
+            this.IDLE.Name = "IDLE";
+            this.IDLE.ReadOnly = true;
+            this.IDLE.Visible = false;
             // 
             // btnEliminar
             // 
@@ -110,37 +138,6 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID ";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // USUARIO
-            // 
-            this.USUARIO.HeaderText = "USUARIO";
-            this.USUARIO.Name = "USUARIO";
-            this.USUARIO.ReadOnly = true;
-            // 
-            // CONTRASEÑA
-            // 
-            this.CONTRASEÑA.HeaderText = "CONTRASEÑA";
-            this.CONTRASEÑA.Name = "CONTRASEÑA";
-            this.CONTRASEÑA.ReadOnly = true;
-            // 
-            // LECTOR
-            // 
-            this.LECTOR.HeaderText = "LECTOR";
-            this.LECTOR.Name = "LECTOR";
-            this.LECTOR.ReadOnly = true;
-            // 
-            // IDLE
-            // 
-            this.IDLE.HeaderText = "IDLEC";
-            this.IDLE.Name = "IDLE";
-            this.IDLE.ReadOnly = true;
-            this.IDLE.Visible = false;
-            // 
             // frmAdministradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,14 +151,12 @@
             this.Name = "frmAdministradores";
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.Carreras_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.administradoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdmi)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource administradoresBindingSource;
        
         private System.Windows.Forms.DataGridView dgvAdmi;
         private System.Windows.Forms.Button btnEliminar;

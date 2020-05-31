@@ -33,6 +33,7 @@ namespace AdminLabrary.View.buscar
                 string buscar = txtBuscar.Text;
                 var ListaE = from Edit in db.Editoriales
                              where Edit.Editorial.Contains(buscar)
+                             && Edit.estado ==0
                              select new
                              {
                                  ID = Edit.Id_Editorial,
@@ -47,17 +48,17 @@ namespace AdminLabrary.View.buscar
 
             }
         }
-        public int indicador;
+    
         void seleccionar()
         {
             string Id = dgvEditorial.CurrentRow.Cells[0].Value.ToString();
             string Nombre = dgvEditorial.CurrentRow.Cells[1].Value.ToString();
-            if (indicador == 1)
-            {
-                frmPrincipal.Lib.Libros.txtEditorial.Text = Nombre;
-                frmPrincipal.Lib.Libros.ID_Editorial= int.Parse(Id);
-                this.Close();
-            }
+
+            frmPrincipal.Lib.Libros.txtEditorial.Text = Nombre;
+            frmPrincipal.Lib.Libros.ID_Editorial = int.Parse(Id);
+            this.Close();
+
+
 
 
         }
@@ -78,6 +79,15 @@ namespace AdminLabrary.View.buscar
             {
                 seleccionar();
             }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        private void dgvEditorial_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

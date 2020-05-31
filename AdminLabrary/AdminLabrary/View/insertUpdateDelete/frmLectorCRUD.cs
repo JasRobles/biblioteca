@@ -38,6 +38,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                 {
                     lector.Nombres = txtNombre.Text;
                     lector.Apellidos = txtApellidos.Text;
+                    lector.estado = 0;
                     db.Lectores.Add(lector);
                     db.SaveChanges();
                     limpiar();
@@ -56,6 +57,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                     lector = db.Lectores.Where(buscarid => buscarid.Id_Lector == id).First();
                     lector.Nombres = txtNombre.Text;
                     lector.Apellidos = txtApellidos.Text;
+                    lector.estado = 0;
                     db.Entry(lector).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                     limpiar();
@@ -77,24 +79,16 @@ namespace AdminLabrary.View.insertUpdateDelete
             using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
                 int id = int.Parse(ID);
-                var lista = from i in db.Alquileres
-                            where i.Id_Lector == id
-                            select new { };
-                if (lista.Count() == 0)
-                {
-                    lector = db.Lectores.Find(id);
-                    db.Lectores.Remove(lector);
-                    db.SaveChanges();
-                    limpiar();
-                    frmPrincipal.lector.CargarDatos();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("No se puede eliminar, verificar \r" +
-                        "que no exista un alquiler con este lector");
-                }
-               
+                lector = db.Lectores.Where(buscarid => buscarid.Id_Lector == id).First();
+                lector.Nombres = txtNombre.Text;
+                lector.Apellidos = txtApellidos.Text;
+                lector.estado = 1;
+                db.Entry(lector).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                limpiar();
+                frmPrincipal.lector.CargarDatos();
+                this.Close();
+
             }
         }
 

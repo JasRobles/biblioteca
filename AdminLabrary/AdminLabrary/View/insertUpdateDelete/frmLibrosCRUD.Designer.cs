@@ -59,6 +59,7 @@
             this.btnEliminar.TabIndex = 40;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -69,6 +70,7 @@
             this.btnActualizar.TabIndex = 39;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnGuardar
             // 
@@ -94,6 +96,7 @@
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(56, 244);
             this.cmbCategoria.Name = "cmbCategoria";
@@ -110,6 +113,7 @@
             this.btnSeleccionarE.TabIndex = 35;
             this.btnSeleccionarE.Text = "Seleccionar Editorial";
             this.btnSeleccionarE.UseVisualStyleBackColor = false;
+            this.btnSeleccionarE.Click += new System.EventHandler(this.btnSeleccionarE_Click);
             // 
             // label8
             // 
@@ -122,10 +126,12 @@
             // 
             // txtEditorial
             // 
+            this.txtEditorial.Enabled = false;
             this.txtEditorial.Location = new System.Drawing.Point(405, 189);
             this.txtEditorial.Name = "txtEditorial";
             this.txtEditorial.Size = new System.Drawing.Size(207, 20);
             this.txtEditorial.TabIndex = 33;
+       
             // 
             // label7
             // 
@@ -147,10 +153,12 @@
             // 
             // txtAutor
             // 
+            this.txtAutor.Enabled = false;
             this.txtAutor.Location = new System.Drawing.Point(56, 182);
             this.txtAutor.Name = "txtAutor";
             this.txtAutor.Size = new System.Drawing.Size(207, 20);
             this.txtAutor.TabIndex = 30;
+            
             // 
             // label5
             // 
@@ -261,26 +269,25 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnSeleccionarA;
         private System.Windows.Forms.ComboBox cmbCategoria;
-        private System.Windows.Forms.Button btnSeleccionarE;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txtEditorial;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox txtAutor;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtNumero_de_Edicion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.DateTimePicker dtpAño;
+        public System.Windows.Forms.Button btnEliminar;
+        public System.Windows.Forms.Button btnActualizar;
+        public System.Windows.Forms.Button btnGuardar;
+        public System.Windows.Forms.Button btnSeleccionarA;
+        public System.Windows.Forms.Button btnSeleccionarE;
+        public System.Windows.Forms.TextBox txtNumero_de_Edicion;
+        public System.Windows.Forms.TextBox txtCantidad;
+        public System.Windows.Forms.TextBox txtNombre;
     }
 }

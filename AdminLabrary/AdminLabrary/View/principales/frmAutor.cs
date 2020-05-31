@@ -32,6 +32,7 @@ namespace AdminLabrary.formularios.principales
             using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
                 var lista = from autores in db.Autores
+                            where autores.estado ==0
                             select new
                             {
                                 ID = autores.Id_autor,
@@ -55,6 +56,7 @@ namespace AdminLabrary.formularios.principales
             autor.btnEliminar.Enabled = false;
             btnEditar.Enabled = false;
             btnEliminar.Enabled = false;
+            autor.limpiar();
             autor.ShowDialog();
 
         }

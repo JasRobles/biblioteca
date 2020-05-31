@@ -33,6 +33,7 @@ namespace AdminLabrary.View.buscar
                 string buscar = txtBuscar.Text;
                 var ListaA = from AUT in db.Autores
                              where AUT.Nombre.Contains(buscar)
+                             && AUT.estado ==0
                                 select new 
                                 {
                                     ID = AUT.Id_autor,
@@ -48,18 +49,16 @@ namespace AdminLabrary.View.buscar
 
         }
 
-        public int indicador;
+      
 
         void seleccionar()
         {
             string Id = dgvAutor.CurrentRow.Cells[0].Value.ToString();
             string Nombre = dgvAutor.CurrentRow.Cells[1].Value.ToString();
-            if (indicador == 1)
-            {
-                frmPrincipal.Lib.Libros.txtAutor.Text = Nombre;
-                frmPrincipal.Lib.Libros.ID_Autor = int.Parse(Id);
-                this.Close();
-            }
+            frmPrincipal.Lib.Libros.txtAutor.Text = Nombre;
+            frmPrincipal.Lib.Libros.ID_Autor = int.Parse(Id);
+           this.Close();
+            
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)

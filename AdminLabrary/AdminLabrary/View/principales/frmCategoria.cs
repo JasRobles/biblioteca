@@ -29,7 +29,8 @@ namespace AdminLabrary.formularios.principales
             using (BibliotecaEntities4 db= new BibliotecaEntities4())
             {
                 var lista = from cat in db.Categorias
-                            select new {ID = cat.Id_categoria,Categoria =cat.Categoria1 };
+                            where cat.estado ==0
+                            select new {ID = cat.Id_categoria,Categoria =cat.Categoria };
                 dgvCat.DataSource = lista.ToList();
                 
             }
@@ -56,9 +57,11 @@ namespace AdminLabrary.formularios.principales
             categoria.btnGuardar.Enabled = true;
             categoria.btnEditar.Enabled = false;
             categoria.btnEliminar.Enabled = false;
-            categoria.ShowDialog();
+            categoria.limpiar();
             btnEditar.Enabled = false;
             btnEliminar.Enabled = false;
+            categoria.ShowDialog();
+          
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

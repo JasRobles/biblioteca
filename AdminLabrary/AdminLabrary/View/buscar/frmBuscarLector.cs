@@ -26,7 +26,7 @@ namespace AdminLabrary.View.buscar
             filtro();
 
         }
-        void filtro()
+       public  void filtro()
         {
             if(indicador == 1) {
                 using (BibliotecaEntities4 db = new BibliotecaEntities4())
@@ -37,6 +37,7 @@ namespace AdminLabrary.View.buscar
                     var listaL = from LEC in db.Lectores
                                  where !(from adm in db.Administradores select adm.Id_Lector).Contains(LEC.Id_Lector)
                                  && LEC.Nombres.Contains(buscar)
+                                 && LEC.estado ==0
                                  select new
                                  {
                                      ID = LEC.Id_Lector,
@@ -59,6 +60,7 @@ namespace AdminLabrary.View.buscar
                     string buscar = txtBuscar.Text;
                     var listaL = from LEC in db.Lectores
                                  where LEC.Nombres.Contains(buscar)
+                                  && LEC.estado == 0
                                  select new
                                  {
                                      ID = LEC.Id_Lector,

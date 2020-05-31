@@ -24,6 +24,7 @@ namespace AdminLabrary.Model
         public int Id_Lector { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
+        public Nullable<int> estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Administradores> Administradores { get; set; }

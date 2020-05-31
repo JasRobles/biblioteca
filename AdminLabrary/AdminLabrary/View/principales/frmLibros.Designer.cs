@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvLibros = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Libro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,10 +52,10 @@
             // 
             this.dgvLibros.AllowUserToAddRows = false;
             this.dgvLibros.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvLibros.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvLibros.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLibros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -78,11 +78,11 @@
             this.dgvLibros.Location = new System.Drawing.Point(12, 140);
             this.dgvLibros.Name = "dgvLibros";
             this.dgvLibros.ReadOnly = true;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvLibros.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvLibros.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLibros.Size = new System.Drawing.Size(917, 374);
             this.dgvLibros.TabIndex = 1;
             this.dgvLibros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLibros_CellClick);
@@ -163,6 +163,7 @@
             // 
             // btnNuevo
             // 
+            this.btnNuevo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnNuevo.Location = new System.Drawing.Point(12, 82);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(142, 36);
@@ -173,6 +174,7 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEditar.Enabled = false;
             this.btnEditar.Location = new System.Drawing.Point(403, 82);
             this.btnEditar.Name = "btnEditar";
@@ -184,6 +186,7 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEliminar.Enabled = false;
             this.btnEliminar.Location = new System.Drawing.Point(787, 82);
             this.btnEliminar.Name = "btnEliminar";

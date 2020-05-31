@@ -30,16 +30,17 @@ namespace AdminLabrary.View.principales
 
             string u = txtUsuario.Text;
 
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
-                var lista = from admin in db.Administradores
+                var lista = from admin in db.Roles
                             where admin.Usuario == txtUsuario.Text
                             && admin.Contraseña == txtContraseña.Text
                             && admin.estado == 0
+                            && admin.Rol ==1
 
                             select new
                             {
-                                ID = admin.Id_Admin,
+                                ID = admin.Id_rol,
                                 Nombre = admin.Usuario,
                                 contaseña = admin.Contraseña
                             };

@@ -27,22 +27,31 @@ namespace AdminLabrary.View.buscar
         }
         void filtro()
         {
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
                 dgvAdministrador.Rows.Clear();
                 string buscar = txtBuscar.Text;
-                var ListaA = from Adm in db.Administradores
+                var ListaA = from Adm in db.Roles
                              where Adm.Usuario.Contains(buscar)
                              && Adm.estado==0
                              select new
                              {
-                                 ID = Adm.Id_Admin,
+                                 ID = Adm.Id_rol,
                                  Usuario = Adm.Usuario,
-                                 Contraseña = Adm.Contraseña
+                                 Contraseña = Adm.Contraseña,
+                                 rol = Adm.Rol
                              };
                 foreach (var iterar in ListaA)
                 {
-                    dgvAdministrador.Rows.Add(iterar.ID, iterar.Usuario, iterar.Contraseña);
+                    if(iterar.rol == 0)
+                    {
+                        dgvAdministrador.Rows.Add(iterar.ID, iterar.Usuario, iterar.Contraseña,"Lector");
+                    }
+                    else
+                    {
+                        dgvAdministrador.Rows.Add(iterar.ID, iterar.Usuario, iterar.Contraseña, "Admin");
+                    }
+                  
                 }
             }
         }

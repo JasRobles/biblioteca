@@ -29,7 +29,7 @@ namespace AdminLabrary.View.buscar
         void filtro()
         {
 
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
                 dgvLibro.Rows.Clear();
                 string buscar = txtBuscar.Text;

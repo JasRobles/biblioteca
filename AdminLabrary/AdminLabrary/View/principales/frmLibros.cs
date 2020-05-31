@@ -30,7 +30,7 @@ namespace AdminLabrary.formularios.principales
         }
         public void CargaDratos()
         {
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
                 dgvLibros.Rows.Clear();
                 var lista = from li in db.Libros

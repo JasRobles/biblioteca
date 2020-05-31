@@ -30,7 +30,7 @@ namespace AdminLabrary.View.principales
         public void CargarDatos()
         {
             dgvPrestamos.Rows.Clear();
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
                 if (rbtnLector.Checked == true)
                 {
@@ -38,10 +38,10 @@ namespace AdminLabrary.View.principales
                     var lista = from pre in db.Alquileres
                                 from li in db.Libros
                                 from le in db.Lectores
-                                from ad in db.Administradores
+                                from ad in db.Roles
                                 where pre.Id_Lector == le.Id_Lector
                                 && pre.Id_libro == li.Id_libro
-                                && pre.Entregado == ad.Id_Admin
+                                && pre.Entregado == ad.Id_rol
                                 && pre.Recibido == null
                                 && le.Nombres.Contains(buscar)
 
@@ -51,6 +51,7 @@ namespace AdminLabrary.View.principales
                                     ID = pre.Id_alquiler,
                                     Lector = le.Nombres,
                                     Libro = li.Nombre,
+                                    Cantidad =pre.cantidad,
                                     Entregado = ad.Usuario,
                                     Fecha_salida = pre.fecha_salida,
                                     Fecha_prevista_Entrega = pre.fecha_prevista_de_entrega,
@@ -61,7 +62,7 @@ namespace AdminLabrary.View.principales
 
                     foreach (var i in lista)
                     {
-                        dgvPrestamos.Rows.Add(i.ID, i.Lector, i.Libro, i.Entregado, i.Fecha_salida, i.Fecha_prevista_Entrega, i.IDLector, i.IDLibro, i.IDEntregado);
+                        dgvPrestamos.Rows.Add(i.ID, i.Lector, i.Libro,i.Cantidad, i.Entregado, i.Fecha_salida, i.Fecha_prevista_Entrega, i.IDLector, i.IDLibro, i.IDEntregado);
 
                     }
                 }
@@ -72,10 +73,10 @@ namespace AdminLabrary.View.principales
                         var lista = from pre in db.Alquileres
                                     from li in db.Libros
                                     from le in db.Lectores
-                                    from ad in db.Administradores
+                                    from ad in db.Roles
                                     where pre.Id_Lector == le.Id_Lector
                                     && pre.Id_libro == li.Id_libro
-                                    && pre.Entregado == ad.Id_Admin
+                                    && pre.Entregado == ad.Id_rol
                                     && pre.Recibido == null
                                     && li.Nombre.Contains(buscar)
 
@@ -85,6 +86,7 @@ namespace AdminLabrary.View.principales
                                         ID = pre.Id_alquiler,
                                         Lector = le.Nombres,
                                         Libro = li.Nombre,
+                                        Cantidad = pre.cantidad,
                                         Entregado = ad.Usuario,
                                         Fecha_salida = pre.fecha_salida,
                                         Fecha_prevista_Entrega = pre.fecha_prevista_de_entrega,
@@ -95,7 +97,7 @@ namespace AdminLabrary.View.principales
 
                         foreach (var i in lista)
                         {
-                            dgvPrestamos.Rows.Add(i.ID, i.Lector, i.Libro, i.Entregado, i.Fecha_salida, i.Fecha_prevista_Entrega, i.IDLector, i.IDLibro, i.IDEntregado);
+                            dgvPrestamos.Rows.Add(i.ID, i.Lector, i.Libro, i.Cantidad, i.Entregado, i.Fecha_salida, i.Fecha_prevista_Entrega, i.IDLector, i.IDLibro, i.IDEntregado);
 
                         }
                     }
@@ -107,10 +109,10 @@ namespace AdminLabrary.View.principales
                         var lista = from pre in db.Alquileres
                                     from li in db.Libros
                                     from le in db.Lectores
-                                    from ad in db.Administradores
+                                    from ad in db.Roles
                                     where pre.Id_Lector == le.Id_Lector
                                     && pre.Id_libro == li.Id_libro
-                                    && pre.Entregado == ad.Id_Admin
+                                    && pre.Entregado == ad.Id_rol
                                     && pre.Recibido == null
                                     && ad.Usuario.Contains(buscar)
 
@@ -120,6 +122,7 @@ namespace AdminLabrary.View.principales
                                         ID = pre.Id_alquiler,
                                         Lector = le.Nombres,
                                         Libro = li.Nombre,
+                                       Cantidad = pre.cantidad,
                                         Entregado = ad.Usuario,
                                         Fecha_salida = pre.fecha_salida,
                                         Fecha_prevista_Entrega = pre.fecha_prevista_de_entrega,
@@ -130,7 +133,7 @@ namespace AdminLabrary.View.principales
 
                         foreach (var i in lista)
                         {
-                            dgvPrestamos.Rows.Add(i.ID, i.Lector, i.Libro, i.Entregado, i.Fecha_salida, i.Fecha_prevista_Entrega, i.IDLector, i.IDLibro, i.IDEntregado);
+                            dgvPrestamos.Rows.Add(i.ID, i.Lector, i.Libro, i.Cantidad, i.Entregado, i.Fecha_salida, i.Fecha_prevista_Entrega, i.IDLector, i.IDLibro, i.IDEntregado);
 
                         }
                     }
@@ -143,7 +146,9 @@ namespace AdminLabrary.View.principales
         public frmAlquileresCRUD alquiler = new frmAlquileresCRUD();
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            alquiler.limpiar();
+            alquiler.txtCantidad.Enabled = true;
+            btnRecibir.Enabled = false;
             alquiler.indicador = 1;
             alquiler.ShowDialog();
 
@@ -157,11 +162,12 @@ namespace AdminLabrary.View.principales
         private void btnRecibir_Click(object sender, EventArgs e)
         {
             alquiler.txtLector.Text = dgvPrestamos.CurrentRow.Cells[1].Value.ToString();
-            alquiler.idLector = int.Parse(dgvPrestamos.CurrentRow.Cells[6].Value.ToString());
+            alquiler.idLector = int.Parse(dgvPrestamos.CurrentRow.Cells[7].Value.ToString());
             alquiler.txtLibro.Text = dgvPrestamos.CurrentRow.Cells[2].Value.ToString();
-            alquiler.IdLibro = int.Parse(dgvPrestamos.CurrentRow.Cells[7].Value.ToString());
-            alquiler.IdEntregado = int.Parse(dgvPrestamos.CurrentRow.Cells[8].Value.ToString());
-            alquiler.fecha_salida = Convert.ToDateTime(dgvPrestamos.CurrentRow.Cells[4].Value.ToString());
+            alquiler.txtCantidad.Text = dgvPrestamos.CurrentRow.Cells[3].Value.ToString();
+            alquiler.IdLibro = int.Parse(dgvPrestamos.CurrentRow.Cells[8].Value.ToString());
+            alquiler.IdEntregado = int.Parse(dgvPrestamos.CurrentRow.Cells[9].Value.ToString());
+            alquiler.fecha_salida = Convert.ToDateTime(dgvPrestamos.CurrentRow.Cells[5].Value.ToString());
             alquiler.fecha_pre = Convert.ToDateTime(dgvPrestamos.CurrentRow.Cells[5].Value.ToString());
             alquiler.idAlquiler = int.Parse(dgvPrestamos.CurrentRow.Cells[0].Value.ToString());
             alquiler.indicador = 2;
@@ -171,6 +177,7 @@ namespace AdminLabrary.View.principales
 
         private void btnVer_Click(object sender, EventArgs e)
         {
+            btnRecibir.Enabled = false;
             frmLogin.f.MostrarPanel(new frmBuscarAlquiler());
         }
 
@@ -181,6 +188,7 @@ namespace AdminLabrary.View.principales
 
         private void btnRetrazo_Click(object sender, EventArgs e)
         {
+            btnRecibir.Enabled = false;
             frmLogin.f.MostrarPanel(new frmHistorial());
         }
 

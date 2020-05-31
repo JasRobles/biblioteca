@@ -12,22 +12,22 @@ namespace AdminLabrary.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Administradores
+    public partial class Roles
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Administradores()
+        public Roles()
         {
             this.Alquileres = new HashSet<Alquileres>();
             this.Alquileres1 = new HashSet<Alquileres>();
         }
     
-        public int Id_Admin { get; set; }
+        public int Id_rol { get; set; }
         public string Usuario { get; set; }
         public string Contraseña { get; set; }
         public int Id_Lector { get; set; }
         public Nullable<int> estado { get; set; }
+        public int Rol { get; set; }
     
-        public virtual Lectores Lectores { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Alquileres> Alquileres { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

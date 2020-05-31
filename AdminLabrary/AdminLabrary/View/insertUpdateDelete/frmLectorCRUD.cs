@@ -34,7 +34,7 @@ namespace AdminLabrary.View.insertUpdateDelete
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (txtApellidos.Text !="" && txtNombre.Text != "") {
-                using (BibliotecaEntities4 db = new BibliotecaEntities4())
+                using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
                 {
                     lector.Nombres = txtNombre.Text;
                     lector.Apellidos = txtApellidos.Text;
@@ -52,7 +52,7 @@ namespace AdminLabrary.View.insertUpdateDelete
         {
             if (txtApellidos.Text != "" && txtNombre.Text != "")
             {
-                using (BibliotecaEntities4 db = new BibliotecaEntities4())
+                using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
                 {
                     int id = int.Parse(ID);
                     lector = db.Lectores.Where(buscarid => buscarid.Id_Lector == id).First();
@@ -77,7 +77,7 @@ namespace AdminLabrary.View.insertUpdateDelete
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
                 int id = int.Parse(ID);
                 lector = db.Lectores.Where(buscarid => buscarid.Id_Lector == id).First();

@@ -26,17 +26,17 @@ namespace AdminLabrary.View.buscar
 
         void filtro()
         {
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
                 dgvAlquiler.Rows.Clear();
                 string buscar = txtBuscar.Text;
                 var ListaA = from Alq in db.Alquileres
                              from Lec in db.Lectores
                              from Lib in db.Libros
-                             from admi in db.Administradores
-                             from admin in db.Administradores
-                             where Alq.Entregado == admi.Id_Admin
-                             where Alq.Recibido == admin.Id_Admin
+                             from admi in db.Roles
+                             from admin in db.Roles
+                             where Alq.Entregado == admi.Id_rol
+                             where Alq.Recibido == admin.Id_rol
                              where Lec.Id_Lector == Alq.Id_Lector
                              where Alq.Id_libro == Lib.Id_libro
                              where Alq.Recibido != null
@@ -47,15 +47,13 @@ namespace AdminLabrary.View.buscar
                                  Lector = Lec.Nombres,
                                  Libro = Lib.Nombre,
                                  entregado = admi.Usuario,
-                                 Fecha_Salida = Alq.fecha_salida,
-                                 Fecha_Prevista_Entrega = Alq.fecha_prevista_de_entrega,
+                                 Cantidad = Alq.cantidad,
                                  Fecha_Entrega = Alq.fecha_de_entrega,
                                  Recibido = admin.Usuario
                              };
                 foreach (var iterar in ListaA)
                 {
-                    dgvAlquiler.Rows.Add(iterar.ID, iterar.Lector, iterar.Libro,iterar.entregado, iterar.Fecha_Salida, 
-                        iterar.Fecha_Prevista_Entrega, iterar.Fecha_Entrega, iterar.Recibido);
+                    dgvAlquiler.Rows.Add(iterar.ID, iterar.Lector, iterar.Libro,iterar.Cantidad,iterar.entregado,  iterar.Fecha_Entrega, iterar.Recibido);
                 }
             }
         }

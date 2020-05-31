@@ -32,7 +32,7 @@ namespace AdminLabrary.View.insertUpdateDelete
         {
             if (txtEditorial.Text != "")
             {
-                using (BibliotecaEntities4 db = new BibliotecaEntities4())
+                using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
                 {
                     Edit.Editorial = txtEditorial.Text;
                     Edit.Fundada = Convert.ToDateTime(dtpFecha.Text);
@@ -52,7 +52,7 @@ namespace AdminLabrary.View.insertUpdateDelete
         {
             if (txtEditorial.Text != "")
             {
-                using (BibliotecaEntities4 db = new BibliotecaEntities4())
+                using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
                 {
                     Edit = db.Editoriales.Where(buscarId => buscarId.Id_Editorial == ID).First();
                     Edit.Editorial = txtEditorial.Text;
@@ -73,7 +73,7 @@ namespace AdminLabrary.View.insertUpdateDelete
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
                 Edit = db.Editoriales.Where(buscarId => buscarId.Id_Editorial == ID).First();
                 Edit.Editorial = txtEditorial.Text;

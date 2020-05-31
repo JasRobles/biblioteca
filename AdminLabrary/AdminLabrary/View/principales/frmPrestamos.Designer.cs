@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPrestamos = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LECTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LIBRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ENTREGADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FECHAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FECHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,10 +56,10 @@
             // 
             this.dgvPrestamos.AllowUserToAddRows = false;
             this.dgvPrestamos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvPrestamos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvPrestamos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPrestamos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -69,6 +70,7 @@
             this.ID,
             this.LECTOR,
             this.LIBRO,
+            this.CANTIDAD,
             this.ENTREGADO,
             this.FECHAS,
             this.FECHAP,
@@ -79,11 +81,11 @@
             this.dgvPrestamos.Location = new System.Drawing.Point(12, 140);
             this.dgvPrestamos.Name = "dgvPrestamos";
             this.dgvPrestamos.ReadOnly = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvPrestamos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvPrestamos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPrestamos.Size = new System.Drawing.Size(917, 399);
             this.dgvPrestamos.TabIndex = 2;
             this.dgvPrestamos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrestamos_CellClick);
@@ -98,6 +100,7 @@
             // 
             // LECTOR
             // 
+            this.LECTOR.FillWeight = 120F;
             this.LECTOR.HeaderText = "LECTOR";
             this.LECTOR.Name = "LECTOR";
             this.LECTOR.ReadOnly = true;
@@ -109,8 +112,16 @@
             this.LIBRO.Name = "LIBRO";
             this.LIBRO.ReadOnly = true;
             // 
+            // CANTIDAD
+            // 
+            this.CANTIDAD.FillWeight = 60F;
+            this.CANTIDAD.HeaderText = "CANTIDAD";
+            this.CANTIDAD.Name = "CANTIDAD";
+            this.CANTIDAD.ReadOnly = true;
+            // 
             // ENTREGADO
             // 
+            this.ENTREGADO.FillWeight = 60F;
             this.ENTREGADO.HeaderText = "ENTREGADO POR";
             this.ENTREGADO.Name = "ENTREGADO";
             this.ENTREGADO.ReadOnly = true;
@@ -150,6 +161,7 @@
             // 
             // btnRecibir
             // 
+            this.btnRecibir.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnRecibir.Enabled = false;
             this.btnRecibir.Location = new System.Drawing.Point(193, 89);
             this.btnRecibir.Name = "btnRecibir";
@@ -161,6 +173,7 @@
             // 
             // btnNuevo
             // 
+            this.btnNuevo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnNuevo.Location = new System.Drawing.Point(11, 89);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(142, 36);
@@ -171,6 +184,7 @@
             // 
             // btnVer
             // 
+            this.btnVer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnVer.Location = new System.Drawing.Point(365, 89);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(142, 36);
@@ -181,6 +195,7 @@
             // 
             // txtBuscar
             // 
+            this.txtBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtBuscar.Location = new System.Drawing.Point(718, 70);
             this.txtBuscar.Name = "txtBuscar";
@@ -190,6 +205,7 @@
             // 
             // rbtnLector
             // 
+            this.rbtnLector.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rbtnLector.AutoSize = true;
             this.rbtnLector.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.rbtnLector.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
@@ -203,6 +219,7 @@
             // 
             // rbtnLibro
             // 
+            this.rbtnLibro.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rbtnLibro.AutoSize = true;
             this.rbtnLibro.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.rbtnLibro.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
@@ -216,6 +233,7 @@
             // 
             // rbtnAdministrador
             // 
+            this.rbtnAdministrador.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rbtnAdministrador.AutoSize = true;
             this.rbtnAdministrador.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.rbtnAdministrador.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
@@ -229,6 +247,7 @@
             // 
             // btnRetrazo
             // 
+            this.btnRetrazo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnRetrazo.Location = new System.Drawing.Point(535, 89);
             this.btnRetrazo.Name = "btnRetrazo";
             this.btnRetrazo.Size = new System.Drawing.Size(142, 36);
@@ -266,19 +285,20 @@
         private System.Windows.Forms.Button btnRecibir;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.RadioButton rbtnLector;
+        private System.Windows.Forms.RadioButton rbtnLibro;
+        private System.Windows.Forms.RadioButton rbtnAdministrador;
+        private System.Windows.Forms.Button btnRetrazo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn LECTOR;
         private System.Windows.Forms.DataGridViewTextBoxColumn LIBRO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CANTIDAD;
         private System.Windows.Forms.DataGridViewTextBoxColumn ENTREGADO;
         private System.Windows.Forms.DataGridViewTextBoxColumn FECHAS;
         private System.Windows.Forms.DataGridViewTextBoxColumn FECHAP;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDLector;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDLibro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Entregadoid;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.RadioButton rbtnLector;
-        private System.Windows.Forms.RadioButton rbtnLibro;
-        private System.Windows.Forms.RadioButton rbtnAdministrador;
-        private System.Windows.Forms.Button btnRetrazo;
     }
 }

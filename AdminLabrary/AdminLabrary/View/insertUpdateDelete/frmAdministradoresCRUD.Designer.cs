@@ -39,6 +39,8 @@
             this.lblLector = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.btnVerC = new System.Windows.Forms.Button();
+            this.rbtnLector = new System.Windows.Forms.RadioButton();
+            this.rbtnAdmi = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // btnEliminar
@@ -52,7 +54,7 @@
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(322, 218);
+            this.btnEliminar.Location = new System.Drawing.Point(323, 227);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(128, 31);
             this.btnEliminar.TabIndex = 13;
@@ -71,7 +73,7 @@
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(155, 218);
+            this.btnEditar.Location = new System.Drawing.Point(155, 227);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(133, 31);
             this.btnEditar.TabIndex = 12;
@@ -90,7 +92,7 @@
             this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(10, 218);
+            this.btnGuardar.Location = new System.Drawing.Point(3, 227);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(115, 31);
             this.btnGuardar.TabIndex = 11;
@@ -195,12 +197,40 @@
             this.btnVerC.UseVisualStyleBackColor = false;
             this.btnVerC.Click += new System.EventHandler(this.btnVerC_Click);
             // 
+            // rbtnLector
+            // 
+            this.rbtnLector.AutoSize = true;
+            this.rbtnLector.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rbtnLector.ForeColor = System.Drawing.SystemColors.Control;
+            this.rbtnLector.Location = new System.Drawing.Point(36, 191);
+            this.rbtnLector.Name = "rbtnLector";
+            this.rbtnLector.Size = new System.Drawing.Size(72, 24);
+            this.rbtnLector.TabIndex = 18;
+            this.rbtnLector.TabStop = true;
+            this.rbtnLector.Text = "Lector";
+            this.rbtnLector.UseVisualStyleBackColor = false;
+            // 
+            // rbtnAdmi
+            // 
+            this.rbtnAdmi.AutoSize = true;
+            this.rbtnAdmi.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rbtnAdmi.ForeColor = System.Drawing.SystemColors.Control;
+            this.rbtnAdmi.Location = new System.Drawing.Point(175, 191);
+            this.rbtnAdmi.Name = "rbtnAdmi";
+            this.rbtnAdmi.Size = new System.Drawing.Size(134, 24);
+            this.rbtnAdmi.TabIndex = 19;
+            this.rbtnAdmi.TabStop = true;
+            this.rbtnAdmi.Text = "Administarador";
+            this.rbtnAdmi.UseVisualStyleBackColor = false;
+            // 
             // frmAdministradoresCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(461, 270);
+            this.Controls.Add(this.rbtnAdmi);
+            this.Controls.Add(this.rbtnLector);
             this.Controls.Add(this.btnVerC);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.txtLector);
@@ -236,5 +266,7 @@
         private System.Windows.Forms.Label lblLector;
         public System.Windows.Forms.Button btnSeleccionar;
         public System.Windows.Forms.Button btnVerC;
+        public System.Windows.Forms.RadioButton rbtnLector;
+        public System.Windows.Forms.RadioButton rbtnAdmi;
     }
 }

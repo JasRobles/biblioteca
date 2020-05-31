@@ -66,6 +66,7 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEliminar.Enabled = false;
             this.btnEliminar.Location = new System.Drawing.Point(788, 98);
             this.btnEliminar.Name = "btnEliminar";
@@ -77,6 +78,7 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEditar.Enabled = false;
             this.btnEditar.Location = new System.Drawing.Point(404, 98);
             this.btnEditar.Name = "btnEditar";
@@ -88,6 +90,7 @@
             // 
             // btnNuevo
             // 
+            this.btnNuevo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnNuevo.Location = new System.Drawing.Point(13, 98);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(142, 36);

@@ -17,17 +17,17 @@ namespace AdminLabrary.View.buscar
         public frmBuscarAutor()
         {
             InitializeComponent();
-            filtro();
+            
         }
 
         private void frmBuscarAutor_Load(object sender, EventArgs e)
         {
-
+            filtro();
         }
 
         void filtro()
         {
-            using(BibliotecaEntities4 db = new BibliotecaEntities4())
+            using(BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
                 dgvAutor.Rows.Clear();
                 string buscar = txtBuscar.Text;

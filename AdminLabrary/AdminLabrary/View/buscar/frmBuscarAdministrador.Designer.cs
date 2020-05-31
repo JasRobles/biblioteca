@@ -33,6 +33,7 @@
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdministrador)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,11 +46,12 @@
             this.dgvAdministrador.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Usuario,
-            this.Contraseña});
+            this.Contraseña,
+            this.Rol});
             this.dgvAdministrador.Location = new System.Drawing.Point(1, 64);
             this.dgvAdministrador.Name = "dgvAdministrador";
             this.dgvAdministrador.ReadOnly = true;
-            this.dgvAdministrador.Size = new System.Drawing.Size(655, 266);
+            this.dgvAdministrador.Size = new System.Drawing.Size(753, 266);
             this.dgvAdministrador.TabIndex = 10;
             this.dgvAdministrador.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdministrador_CellDoubleClick);
             this.dgvAdministrador.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvAdministrador_KeyDown);
@@ -79,12 +81,19 @@
             this.Contraseña.HeaderText = "Contraseña";
             this.Contraseña.Name = "Contraseña";
             this.Contraseña.ReadOnly = true;
+            this.Contraseña.Visible = false;
+            // 
+            // Rol
+            // 
+            this.Rol.HeaderText = "Rol";
+            this.Rol.Name = "Rol";
+            this.Rol.ReadOnly = true;
             // 
             // frmBuscarAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 345);
+            this.ClientSize = new System.Drawing.Size(766, 345);
             this.Controls.Add(this.dgvAdministrador);
             this.Controls.Add(this.txtBuscar);
             this.Name = "frmBuscarAdministrador";
@@ -103,5 +112,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contraseña;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
     }
 }

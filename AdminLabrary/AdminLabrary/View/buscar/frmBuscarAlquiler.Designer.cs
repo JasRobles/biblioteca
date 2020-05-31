@@ -33,9 +33,8 @@
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lector = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Libro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Entregado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha_Salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha_Prevista_Entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_Entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Recibido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlquiler)).BeginInit();
@@ -54,9 +53,8 @@
             this.Id,
             this.Lector,
             this.Libro,
+            this.Cantidad,
             this.Entregado,
-            this.Fecha_Salida,
-            this.Fecha_Prevista_Entrega,
             this.Fecha_Entrega,
             this.Recibido});
             this.dgvAlquiler.Location = new System.Drawing.Point(12, 67);
@@ -96,26 +94,18 @@
             this.Libro.Name = "Libro";
             this.Libro.ReadOnly = true;
             // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
             // Entregado
             // 
             this.Entregado.FillWeight = 60F;
             this.Entregado.HeaderText = "Entregado";
             this.Entregado.Name = "Entregado";
             this.Entregado.ReadOnly = true;
-            // 
-            // Fecha_Salida
-            // 
-            this.Fecha_Salida.FillWeight = 80F;
-            this.Fecha_Salida.HeaderText = "Fecha_Salida";
-            this.Fecha_Salida.Name = "Fecha_Salida";
-            this.Fecha_Salida.ReadOnly = true;
-            // 
-            // Fecha_Prevista_Entrega
-            // 
-            this.Fecha_Prevista_Entrega.FillWeight = 80F;
-            this.Fecha_Prevista_Entrega.HeaderText = "Fecha Prevista Entrega";
-            this.Fecha_Prevista_Entrega.Name = "Fecha_Prevista_Entrega";
-            this.Fecha_Prevista_Entrega.ReadOnly = true;
             // 
             // Fecha_Entrega
             // 
@@ -154,9 +144,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lector;
         private System.Windows.Forms.DataGridViewTextBoxColumn Libro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Entregado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Salida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Prevista_Entrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Entrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn Recibido;
     }

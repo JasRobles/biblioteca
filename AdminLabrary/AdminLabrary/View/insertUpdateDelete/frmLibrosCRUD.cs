@@ -52,7 +52,7 @@ namespace AdminLabrary.View.insertUpdateDelete
 
         void CargarCombo()
         {
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
 
                 var lista = from ca in db.Categorias
@@ -76,7 +76,7 @@ namespace AdminLabrary.View.insertUpdateDelete
             if (txtNombre.Text != "" && txtAutor.Text != "" && txtCantidad.Text != "" 
                 && txtEditorial.Text != "" && txtNumero_de_Edicion.Text != "")
             {
-                using (BibliotecaEntities4 db = new BibliotecaEntities4())
+                using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
                 {
                     Lib.Nombre = txtNombre.Text;
                     Lib.cantidad = int.Parse(txtCantidad.Text);
@@ -150,7 +150,7 @@ namespace AdminLabrary.View.insertUpdateDelete
             if (txtNombre.Text != "" && txtAutor.Text != "" && txtCantidad.Text != ""
                && txtEditorial.Text != "" && txtNumero_de_Edicion.Text != "")
             {
-                using (BibliotecaEntities4 db = new BibliotecaEntities4())
+                using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
                 {
                     Lib = db.Libros.Where(buscarid => buscarid.Id_libro== ID_Libro).First();
                     Lib.Nombre = txtNombre.Text;
@@ -177,7 +177,7 @@ namespace AdminLabrary.View.insertUpdateDelete
             if (txtNombre.Text != "" && txtAutor.Text != "" && txtCantidad.Text != ""
                && txtEditorial.Text != "" && txtNumero_de_Edicion.Text != "")
             {
-                using (BibliotecaEntities4 db = new BibliotecaEntities4())
+                using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
                 {
                     Lib = db.Libros.Where(buscarid => buscarid.Id_libro == ID_Libro).First();
                     Lib.Nombre = txtNombre.Text;

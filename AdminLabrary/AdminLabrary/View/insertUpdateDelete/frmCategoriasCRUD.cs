@@ -30,7 +30,7 @@ namespace AdminLabrary.View.insertUpdateDelete
         {
             if (txtCategoria.Text!= "")
             {
-                using (BibliotecaEntities4 db= new BibliotecaEntities4())
+                using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
                 {
                     categoria.Categoria = txtCategoria.Text;
                     categoria.estado = 0;
@@ -48,7 +48,7 @@ namespace AdminLabrary.View.insertUpdateDelete
         {
             if (txtCategoria.Text != "")
             {
-                using (BibliotecaEntities4 db = new BibliotecaEntities4())
+                using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
                 {
                     categoria = db.Categorias.Where(buscarId => buscarId.Id_categoria == ID).First();
                     categoria.Categoria = txtCategoria.Text;
@@ -67,7 +67,7 @@ namespace AdminLabrary.View.insertUpdateDelete
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
                 categoria = db.Categorias.Where(buscarId => buscarId.Id_categoria == ID).First();
                 categoria.Categoria = txtCategoria.Text;

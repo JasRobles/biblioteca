@@ -26,17 +26,17 @@ namespace AdminLabrary.View.buscar
         public void filtro()
         {
             dgvAlquiler.Rows.Clear();
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
                 string buscar = txtBuscar.Text;
                 
                 var lista = from al in db.Alquileres
                             from lec in db.Lectores
                             from li in db.Libros
-                            from adm in db.Administradores
+                            from adm in db.Roles
                             where al.Id_Lector == lec.Id_Lector
                             && al.Id_libro == li.Id_libro
-                            && al.Entregado == adm.Id_Admin
+                            && al.Entregado == adm.Id_rol
                             && lec.Nombres.Contains(buscar)
                             
                             

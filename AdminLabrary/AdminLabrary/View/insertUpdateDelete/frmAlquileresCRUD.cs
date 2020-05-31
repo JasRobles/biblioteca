@@ -69,11 +69,12 @@ namespace AdminLabrary.View.insertUpdateDelete
         {
             if (txtLector.Text != "" && txtLibro.Text != "")
             {
-                using (BibliotecaEntities4 db = new BibliotecaEntities4())
+                using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
                 {
                     alqu.Id_Lector = idLector;
                     alqu.Id_libro = IdLibro;
                     alqu.Entregado = idAdmin;
+                    alqu.cantidad = int.Parse(txtCantidad.Text);
                     alqu.fecha_salida = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
                     DateTime fecha = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
                     alqu.fecha_prevista_de_entrega = fecha.AddDays(8);
@@ -91,17 +92,18 @@ namespace AdminLabrary.View.insertUpdateDelete
             }
             else
             {
-                MessageBox.Show(idAdmin.ToString()+ idLector.ToString()+ IdLibro.ToString());
+                MessageBox.Show(idAdmin.ToString() + idLector.ToString() + IdLibro.ToString());
             }
         }
 
         private void btnRecibir_Click(object sender, EventArgs e)
         {
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
                 alqu = db.Alquileres.Where(buscarID => buscarID.Id_alquiler == idAlquiler).First();
                 alqu.Id_Lector = idLector;
                 alqu.Id_libro = IdLibro;
+                alqu.cantidad = int.Parse(txtCantidad.Text);
                 alqu.Entregado = IdEntregado;
                 alqu.fecha_salida = fecha_salida;
                 alqu.fecha_prevista_de_entrega = fecha_pre;
@@ -113,18 +115,20 @@ namespace AdminLabrary.View.insertUpdateDelete
             }
             limpiar();
             frmPrincipal.prestamos.CargarDatos();
+            this.Close();
         }
-       public void limpiar()
+        public void limpiar()
         {
-          
-                txtLector.Text = "";
-                txtLibro.Text = "";
-                IdEntregado = 0;
-                idAlquiler = 0;
-                IdLibro = 0;
-                idLector = 0;
-                this.Close();
-             
+
+            txtLector.Text = "";
+            txtLibro.Text = "";
+            txtCantidad.Text = "";
+            IdEntregado = 0;
+            idAlquiler = 0;
+            IdLibro = 0;
+            idLector = 0;
+           
+
         }
     }
 }

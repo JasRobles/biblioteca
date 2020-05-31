@@ -22,9 +22,10 @@ namespace AdminLabrary.View.insertUpdateDelete
 
         public int IDLector;
         public int IDAdmin;
-        Administradores admi = new Administradores();
+        Roles rol = new Roles();
         private void frmAdministradoresCRUD_Load(object sender, EventArgs e)
         {
+            
             txtContraseña.UseSystemPasswordChar = true;
 
         }
@@ -40,53 +41,109 @@ namespace AdminLabrary.View.insertUpdateDelete
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
-                admi.Usuario = txtUsuario.Text;
-                admi.Contraseña = txtContraseña.Text;
-                admi.Id_Lector = IDLector;
-                admi.estado = 0;
-                db.Administradores.Add(admi);
-                db.SaveChanges();
-                Limpiar();
-                frmPrincipal.admin.CargarDatos();
-                this.Close();
+                if(rbtnLector.Checked == true)
+                {
+                    rol.Usuario = txtUsuario.Text;
+                    rol.Contraseña = txtContraseña.Text;
+                    rol.Id_Lector = IDLector;
+                    rol.Rol = 0;
+                    rol.estado = 0;
+                    db.Roles.Add(rol);
+                    db.SaveChanges();
+                    Limpiar();
+                    frmPrincipal.admin.CargarDatos();
+                    this.Close();
+                }
+                else
+                {
+                    rol.Usuario = txtUsuario.Text;
+                    rol.Contraseña = txtContraseña.Text;
+                    rol.Id_Lector = IDLector;
+                    rol.Rol = 1;
+                    rol.estado = 0;
+                    db.Roles.Add(rol);
+                    db.SaveChanges();
+                    Limpiar();
+                    frmPrincipal.admin.CargarDatos();
+                    this.Close();
+                }
+               
 
             }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
-                admi = db.Administradores.Where(buscarID => buscarID.Id_Admin == IDAdmin).First();
-                admi.Usuario = txtUsuario.Text;
-                admi.Contraseña = txtContraseña.Text;
-                admi.Id_Lector = IDLector;
-                admi.estado = 0;
-                db.Entry(admi).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
-                Limpiar();
-                frmPrincipal.admin.CargarDatos();
-                this.Close();
+                if (rbtnLector.Checked == true)
+                {
+                    rol = db.Roles.Where(buscarID => buscarID.Id_rol == IDAdmin).First();
+                    rol.Usuario = txtUsuario.Text;
+                    rol.Contraseña = txtContraseña.Text;
+                    rol.Id_Lector = IDLector;
+                    rol.Rol = 1;
+                    rol.estado = 0;
+                    db.Entry(rol).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    Limpiar();
+                    frmPrincipal.admin.CargarDatos();
+                    this.Close();
+                }
+                else
+                {
+                    rol = db.Roles.Where(buscarID => buscarID.Id_rol == IDAdmin).First();
+                    rol.Usuario = txtUsuario.Text;
+                    rol.Contraseña = txtContraseña.Text;
+                    rol.Id_Lector = IDLector;
+                    rol.Rol = 1;
+                    rol.estado = 0;
+                    db.Entry(rol).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    Limpiar();
+                    frmPrincipal.admin.CargarDatos();
+                    this.Close();
+                }
+               
             }
 
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
-                admi = db.Administradores.Where(buscarID => buscarID.Id_Admin == IDAdmin).First();
-                admi.Usuario = txtUsuario.Text;
-                admi.Contraseña = txtContraseña.Text;
-                admi.Id_Lector = IDLector;
-                admi.estado = 1;
-                db.Entry(admi).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
-                Limpiar();
-                frmPrincipal.admin.CargarDatos();
-                this.Close();
+                if (rbtnLector.Checked == true)
+                {
+                    rol = db.Roles.Where(buscarID => buscarID.Id_rol == IDAdmin).First();
+                    rol.Usuario = txtUsuario.Text;
+                    rol.Contraseña = txtContraseña.Text;
+                    rol.Id_Lector = IDLector;
+                    rol.Rol = 1;
+                    rol.estado = 1;
+                    db.Entry(rol).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    Limpiar();
+                    frmPrincipal.admin.CargarDatos();
+                    this.Close();
+                }
+                else
+                {
+                    rol = db.Roles.Where(buscarID => buscarID.Id_rol == IDAdmin).First();
+                    rol.Usuario = txtUsuario.Text;
+                    rol.Contraseña = txtContraseña.Text;
+                    rol.Id_Lector = IDLector;
+                    rol.Rol = 1;
+                    rol.estado = 1;
+                    db.Entry(rol).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    Limpiar();
+                    frmPrincipal.admin.CargarDatos();
+                    this.Close();
+                }
+
             }
         }
 

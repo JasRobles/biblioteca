@@ -35,7 +35,7 @@ namespace AdminLabrary.View.insertUpdateDelete
         {
             if (txtNombre.Text != "" && txtNacionalidad.Text!= "")
             {
-                using (BibliotecaEntities4 db = new BibliotecaEntities4())
+                using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
                 {
                     autor.Nombre = txtNombre.Text;
                     autor.Nacionalidad = txtNacionalidad.Text;
@@ -55,7 +55,7 @@ namespace AdminLabrary.View.insertUpdateDelete
         {
             if (txtNombre.Text != "" && txtNacionalidad.Text != "")
             {
-                using (BibliotecaEntities4 db = new BibliotecaEntities4())
+                using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
                 {
                     autor = db.Autores.Where(buscarID => buscarID.Id_autor == ID).First();
                     autor.Nombre = txtNombre.Text;
@@ -74,7 +74,7 @@ namespace AdminLabrary.View.insertUpdateDelete
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            using (BibliotecaEntities4 db = new BibliotecaEntities4())
+            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
                 autor = db.Autores.Where(buscarID => buscarID.Id_autor == ID).First();
                 autor.Nombre = txtNombre.Text;

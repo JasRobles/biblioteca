@@ -23,6 +23,7 @@ namespace AdminLabrary.View.principales
 
         private void frmPrestamos_Load(object sender, EventArgs e)
         {
+            rbtnLector.Checked = true;
             CargarDatos();
         }
 
@@ -30,21 +31,23 @@ namespace AdminLabrary.View.principales
         {
             dgvPrestamos.Rows.Clear();
             using (BibliotecaEntities4 db = new BibliotecaEntities4())
-                
             {
-                var lista = from pre in db.Alquileres
-                            from li in db.Libros
-                            from le in db.Lectores
-                            from ad in db.Administradores
-                            where pre.Id_Lector == le.Id_Lector
-                            && pre.Id_libro == li.Id_libro
-                            && pre.Entregado == ad.Id_Admin
-                            && pre.Recibido == null
-                         
+                if (rbtnLector.Checked == true)
+                {
+                    string buscar = txtBuscar.Text;
+                    var lista = from pre in db.Alquileres
+                                from li in db.Libros
+                                from le in db.Lectores
+                                from ad in db.Administradores
+                                where pre.Id_Lector == le.Id_Lector
+                                && pre.Id_libro == li.Id_libro
+                                && pre.Entregado == ad.Id_Admin
+                                && pre.Recibido == null
+                                && le.Nombres.Contains(buscar)
 
 
-                            select new    
-                            {
+                                select new
+                                {
                                     ID = pre.Id_alquiler,
                                     Lector = le.Nombres,
                                     Libro = li.Nombre,
@@ -56,21 +59,91 @@ namespace AdminLabrary.View.principales
                                     IDEntregado = pre.Entregado
                                 };
 
-                foreach(var i in lista)
+                    foreach (var i in lista)
+                    {
+                        dgvPrestamos.Rows.Add(i.ID, i.Lector, i.Libro, i.Entregado, i.Fecha_salida, i.Fecha_prevista_Entrega, i.IDLector, i.IDLibro, i.IDEntregado);
+
+                    }
+                }
+                else if (rbtnLibro.Checked == true)
                 {
-                    dgvPrestamos.Rows.Add(i.ID, i.Lector,i.Libro,i.Entregado,i.Fecha_salida,i.Fecha_prevista_Entrega,i.IDLector,i.IDLibro,i.IDEntregado);
+                    {
+                        string buscar = txtBuscar.Text;
+                        var lista = from pre in db.Alquileres
+                                    from li in db.Libros
+                                    from le in db.Lectores
+                                    from ad in db.Administradores
+                                    where pre.Id_Lector == le.Id_Lector
+                                    && pre.Id_libro == li.Id_libro
+                                    && pre.Entregado == ad.Id_Admin
+                                    && pre.Recibido == null
+                                    && li.Nombre.Contains(buscar)
+
+
+                                    select new
+                                    {
+                                        ID = pre.Id_alquiler,
+                                        Lector = le.Nombres,
+                                        Libro = li.Nombre,
+                                        Entregado = ad.Usuario,
+                                        Fecha_salida = pre.fecha_salida,
+                                        Fecha_prevista_Entrega = pre.fecha_prevista_de_entrega,
+                                        IDLector = pre.Id_Lector,
+                                        IDLibro = pre.Id_libro,
+                                        IDEntregado = pre.Entregado
+                                    };
+
+                        foreach (var i in lista)
+                        {
+                            dgvPrestamos.Rows.Add(i.ID, i.Lector, i.Libro, i.Entregado, i.Fecha_salida, i.Fecha_prevista_Entrega, i.IDLector, i.IDLibro, i.IDEntregado);
+
+                        }
+                    }
+                }
+                else if (rbtnAdministrador.Checked == true)
+                {
+                    {
+                        string buscar = txtBuscar.Text;
+                        var lista = from pre in db.Alquileres
+                                    from li in db.Libros
+                                    from le in db.Lectores
+                                    from ad in db.Administradores
+                                    where pre.Id_Lector == le.Id_Lector
+                                    && pre.Id_libro == li.Id_libro
+                                    && pre.Entregado == ad.Id_Admin
+                                    && pre.Recibido == null
+                                    && ad.Usuario.Contains(buscar)
+
+
+                                    select new
+                                    {
+                                        ID = pre.Id_alquiler,
+                                        Lector = le.Nombres,
+                                        Libro = li.Nombre,
+                                        Entregado = ad.Usuario,
+                                        Fecha_salida = pre.fecha_salida,
+                                        Fecha_prevista_Entrega = pre.fecha_prevista_de_entrega,
+                                        IDLector = pre.Id_Lector,
+                                        IDLibro = pre.Id_libro,
+                                        IDEntregado = pre.Entregado
+                                    };
+
+                        foreach (var i in lista)
+                        {
+                            dgvPrestamos.Rows.Add(i.ID, i.Lector, i.Libro, i.Entregado, i.Fecha_salida, i.Fecha_prevista_Entrega, i.IDLector, i.IDLibro, i.IDEntregado);
+
+                        }
+                    }
 
                 }
-
-
             }
 
         }
 
-        public  frmAlquileresCRUD alquiler = new frmAlquileresCRUD();
+        public frmAlquileresCRUD alquiler = new frmAlquileresCRUD();
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            alquiler.limpiar();
+
             alquiler.indicador = 1;
             alquiler.ShowDialog();
 
@@ -95,10 +168,25 @@ namespace AdminLabrary.View.principales
             alquiler.ShowDialog();
         }
 
-        
+
         private void btnVer_Click(object sender, EventArgs e)
         {
             frmLogin.f.MostrarPanel(new frmBuscarAlquiler());
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
+
+        private void btnRetrazo_Click(object sender, EventArgs e)
+        {
+            frmLogin.f.MostrarPanel(new frmHistorial());
+        }
+
+        private void dgvPrestamos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

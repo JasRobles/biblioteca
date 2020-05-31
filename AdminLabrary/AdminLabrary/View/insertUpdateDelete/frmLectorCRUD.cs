@@ -43,6 +43,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                     db.SaveChanges();
                     limpiar();
                     frmPrincipal.lector.CargarDatos();
+                    this.Close();
                 }
             }
         }

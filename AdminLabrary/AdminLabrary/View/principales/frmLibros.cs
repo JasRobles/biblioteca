@@ -63,9 +63,13 @@ namespace AdminLabrary.formularios.principales
         public frmLibrosCRUD Libros = new frmLibrosCRUD();
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            Libros.btnGuardar.Enabled = true;
+            Libros.btnActualizar.Enabled = false;
+            Libros.btnEliminar.Enabled = false;
             Libros.limpiar();
             Libros.indi = 0;
+            btnEliminar.Enabled = false;
+            btnEditar.Enabled = false;
             Libros.ShowDialog();
 
         }
@@ -78,7 +82,9 @@ namespace AdminLabrary.formularios.principales
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-           
+            Libros.btnGuardar.Enabled = false;
+            Libros.btnActualizar.Enabled = true;
+            Libros.btnEliminar.Enabled = false;
             btnEliminar.Enabled = false;
             Libros.indi = 0;
             btnEditar.Enabled = false;

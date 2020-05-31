@@ -19,38 +19,38 @@ namespace AdminLabrary.View.principales
         public frmLogin()
         {
             InitializeComponent();
-            txtContraseña.PasswordChar = '#';
-          
+            txtContraseña.PasswordChar = '*';
+
         }
 
         public static frmPrincipal f = new frmPrincipal();
         public void btnIniciarsesion_Click(object sender, EventArgs e)
-           
+
         {
-            
-        string u = txtUsuario.Text;
+
+            string u = txtUsuario.Text;
 
             using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
                 var lista = from admin in db.Administradores
                             where admin.Usuario == txtUsuario.Text
                             && admin.Contraseña == txtContraseña.Text
-                            && admin.estado ==0
-                            
-                            select new 
+                            && admin.estado == 0
+
+                            select new
                             {
                                 ID = admin.Id_Admin,
                                 Nombre = admin.Usuario,
                                 contaseña = admin.Contraseña
                             };
 
-               
+
                 if (lista.Count() > 0)
                 {
-                    
+
                     string usu = txtUsuario.Text;
                     f.lblUsuarioARecibir.Text = usu;
-                    foreach( var i in lista)
+                    foreach (var i in lista)
                     {
                         frmPrincipal.prestamos.alquiler.idAdmin = i.ID;
                     }
@@ -63,7 +63,7 @@ namespace AdminLabrary.View.principales
                     txtUsuario.Text = "";
                     txtContraseña.Text = "";
 
-                    MessageBox.Show("Usuario o contraseña incorrecto","Notificacion",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Usuario o contraseña incorrecto", "Notificacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
 
@@ -71,14 +71,14 @@ namespace AdminLabrary.View.principales
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

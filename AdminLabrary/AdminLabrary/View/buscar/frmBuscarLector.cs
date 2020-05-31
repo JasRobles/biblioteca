@@ -83,7 +83,7 @@ namespace AdminLabrary.View.buscar
                         }
                         if (cantidad < 3)
                         {
-                            dgvLecto.Rows.Add(i.ID, i.Nombres, i.Apellidos);
+                            dgvLecto.Rows.Add(i.ID, i.Nombres, i.Apellidos,cantidad);
                         }
                     }
 
@@ -111,6 +111,8 @@ namespace AdminLabrary.View.buscar
             {
                 string idl = dgvLecto.CurrentRow.Cells[0].Value.ToString();
                 string Nombrel = dgvLecto.CurrentRow.Cells[1].Value.ToString();
+                frmPrincipal.prestamos.alquiler.cantidad = 3- int.Parse(dgvLecto.CurrentRow.Cells[3].Value.ToString());
+                frmPrincipal.prestamos.alquiler.txtCantidad.Text =(3-int.Parse(dgvLecto.CurrentRow.Cells[3].Value.ToString()) ).ToString();
                 frmPrincipal.prestamos.alquiler.txtLector.Text = Nombrel;
                 frmPrincipal.prestamos.alquiler.idLector = int.Parse(idl);
                 this.Close();

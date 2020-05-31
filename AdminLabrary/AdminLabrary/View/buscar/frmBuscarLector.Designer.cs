@@ -33,6 +33,7 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOMBRES = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.APELLIDOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLecto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@
             this.dgvLecto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.NOMBRES,
-            this.APELLIDOS});
+            this.APELLIDOS,
+            this.Cantidad});
             this.dgvLecto.Location = new System.Drawing.Point(1, 74);
             this.dgvLecto.Name = "dgvLecto";
             this.dgvLecto.ReadOnly = true;
@@ -79,6 +81,13 @@
             this.APELLIDOS.HeaderText = "APELLIDOS";
             this.APELLIDOS.Name = "APELLIDOS";
             this.APELLIDOS.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "CANTIDAD";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Visible = false;
             // 
             // frmBuscarLector
             // 
@@ -106,5 +115,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRES;
         private System.Windows.Forms.DataGridViewTextBoxColumn APELLIDOS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
     }
 }

@@ -74,7 +74,7 @@ namespace AdminLabrary.View.insertUpdateDelete
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text != "" && txtAutor.Text != "" && txtCantidad.Text != "" 
-                && txtEditorial.Text != "" && txtNumero_de_Edicion.Text != "")
+                && txtEditorial.Text != "" && txtNumero_de_Edicion.Text != "" && int.Parse(txtCantidad.Text) > 0)
             {
                 using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
                 {
@@ -148,7 +148,7 @@ namespace AdminLabrary.View.insertUpdateDelete
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text != "" && txtAutor.Text != "" && txtCantidad.Text != ""
-               && txtEditorial.Text != "" && txtNumero_de_Edicion.Text != "")
+               && txtEditorial.Text != "" && txtNumero_de_Edicion.Text != "" && int.Parse(txtCantidad.Text) > 0)
             {
                 using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
                 {

@@ -21,6 +21,7 @@ namespace AdminLabrary.View.insertUpdateDelete
         public int IdLibro;
         public int idLector;
         public int idAdmin;
+        public int cantidad;
         public int indicador = 1;
         public DateTime fecha_salida;
         public DateTime fecha_pre;
@@ -67,50 +68,90 @@ namespace AdminLabrary.View.insertUpdateDelete
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtLector.Text != "" && txtLibro.Text != "")
-            {
-                using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
+              if (int.Parse(txtCantidad.Text) <= cantidad) {
+                if (txtLector.Text != "" && txtLibro.Text != "" && int.Parse(txtCantidad.Text) > 0)
                 {
-                    alqu.Id_Lector = idLector;
-                    alqu.Id_libro = IdLibro;
-                    alqu.Entregado = idAdmin;
-                    alqu.cantidad = int.Parse(txtCantidad.Text);
-                    alqu.fecha_salida = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
-                    DateTime fecha = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
-                    alqu.fecha_prevista_de_entrega = fecha.AddDays(8);
-                    db.Alquileres.Add(alqu);
-                    db.SaveChanges();
-                    frmPrincipal.prestamos.CargarDatos();
-                    txtLector.Text = "";
-                    txtLibro.Text = "";
-                    IdEntregado = 0;
-                    idAlquiler = 0;
-                    IdLibro = 0;
-                    idLector = 0;
-                    this.Close();
+                    using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
+                    {
+                        alqu.Id_Lector = idLector;
+                        alqu.Id_libro = IdLibro;
+                        alqu.Entregado = idAdmin;
+                        alqu.cantidad = int.Parse(txtCantidad.Text);
+                        alqu.fecha_salida = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
+                        DateTime fecha = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
+                        alqu.fecha_prevista_de_entrega = fecha.AddDays(8);
+                        db.Alquileres.Add(alqu);
+                        db.SaveChanges();
+                        frmPrincipal.prestamos.CargarDatos();
+                        txtLector.Text = "";
+                        txtLibro.Text = "";
+                        IdEntregado = 0;
+                        idAlquiler = 0;
+                        IdLibro = 0;
+                        idLector = 0;
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(idAdmin.ToString() + idLector.ToString() + IdLibro.ToString());
                 }
             }
             else
             {
-                MessageBox.Show(idAdmin.ToString() + idLector.ToString() + IdLibro.ToString());
+                MessageBox.Show("La cantidad ingresada sobrepasa al limite permitido.\r" +
+                    "El limite es: "+cantidad.ToString());
             }
+           
         }
 
         private void btnRecibir_Click(object sender, EventArgs e)
         {
             using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
-                alqu = db.Alquileres.Where(buscarID => buscarID.Id_alquiler == idAlquiler).First();
-                alqu.Id_Lector = idLector;
-                alqu.Id_libro = IdLibro;
-                alqu.cantidad = int.Parse(txtCantidad.Text);
-                alqu.Entregado = IdEntregado;
-                alqu.fecha_salida = fecha_salida;
-                alqu.fecha_prevista_de_entrega = fecha_pre;
-                alqu.fecha_de_entrega = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
-                alqu.Recibido = idAdmin;
-                db.Entry(alqu).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
+                if (int.Parse(txtCantidad.Text) > cantidad || int.Parse(txtCantidad.Text) > 0)
+                {
+                    MessageBox.Show("Cantidad incorrecta");
+                }
+                else if (int.Parse(txtCantidad.Text) < cantidad && int.Parse(txtCantidad.Text)>0)
+                {
+                    alqu = db.Alquileres.Where(buscarID => buscarID.Id_alquiler == idAlquiler).First();
+                    alqu.Id_Lector = idLector;
+                    alqu.Id_libro = IdLibro;
+                    alqu.cantidad = int.Parse(txtCantidad.Text);
+                    alqu.Entregado = IdEntregado;
+                    alqu.fecha_salida = fecha_salida;
+                    alqu.fecha_prevista_de_entrega = fecha_pre;
+                    alqu.fecha_de_entrega = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
+                    alqu.Recibido = idAdmin;
+                    db.Entry(alqu).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    Alquileres alqui = new Alquileres();
+                    alqui.Id_Lector = idLector;
+                    alqui.Id_libro = IdLibro;
+                    alqui.cantidad = cantidad -int.Parse(txtCantidad.Text);
+                    alqui.Entregado = IdEntregado;
+                    alqui.fecha_salida = fecha_salida;
+                    alqui.fecha_prevista_de_entrega = fecha_pre;
+                    db.Alquileres.Add(alqui);
+                    db.SaveChanges();
+                }
+                else if (int.Parse(txtCantidad.Text) == cantidad && int.Parse(txtCantidad.Text) > 0)
+                {
+                    alqu = db.Alquileres.Where(buscarID => buscarID.Id_alquiler == idAlquiler).First();
+                    alqu.Id_Lector = idLector;
+                    alqu.Id_libro = IdLibro;
+                    alqu.cantidad = int.Parse(txtCantidad.Text);
+                    alqu.Entregado = IdEntregado;
+                    alqu.fecha_salida = fecha_salida;
+                    alqu.fecha_prevista_de_entrega = fecha_pre;
+                    alqu.fecha_de_entrega = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
+                    alqu.Recibido = idAdmin;
+                    db.Entry(alqu).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+
+               
 
             }
             limpiar();
@@ -129,6 +170,11 @@ namespace AdminLabrary.View.insertUpdateDelete
             idLector = 0;
            
 
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -40,15 +40,15 @@
             this.Panel10 = new System.Windows.Forms.Panel();
             this.btnEditorial = new System.Windows.Forms.Button();
             this.btnCategoria = new System.Windows.Forms.Button();
-            this.btnAdmin = new System.Windows.Forms.Button();
             this.btnLibros = new System.Windows.Forms.Button();
             this.btnLectores = new System.Windows.Forms.Button();
             this.btnPrestamos = new System.Windows.Forms.Button();
             this.btnAutor = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.PictureBox();
-            this.PanelMenu = new System.Windows.Forms.Panel();
             this.btnRoles = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.PanelMenu = new System.Windows.Forms.Panel();
             this.pPrincipal = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
@@ -167,7 +167,7 @@
             this.PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox5.Image")));
             this.PictureBox5.Location = new System.Drawing.Point(9, 0);
             this.PictureBox5.Name = "PictureBox5";
-            this.PictureBox5.Size = new System.Drawing.Size(214, 164);
+            this.PictureBox5.Size = new System.Drawing.Size(196, 164);
             this.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBox5.TabIndex = 18;
             this.PictureBox5.TabStop = false;
@@ -194,7 +194,7 @@
             this.btnEditorial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditorial.Location = new System.Drawing.Point(18, 452);
             this.btnEditorial.Name = "btnEditorial";
-            this.btnEditorial.Size = new System.Drawing.Size(204, 56);
+            this.btnEditorial.Size = new System.Drawing.Size(167, 56);
             this.btnEditorial.TabIndex = 2;
             this.btnEditorial.Text = "  Editorial";
             this.btnEditorial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -216,35 +216,13 @@
             this.btnCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategoria.Location = new System.Drawing.Point(17, 384);
             this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(206, 62);
+            this.btnCategoria.Size = new System.Drawing.Size(168, 62);
             this.btnCategoria.TabIndex = 4;
             this.btnCategoria.Text = "  Categoria";
             this.btnCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCategoria.UseVisualStyleBackColor = false;
             this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmin.Image")));
-            this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmin.Location = new System.Drawing.Point(16, 322);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(206, 56);
-            this.btnAdmin.TabIndex = 8;
-            this.btnAdmin.Text = "Administradores";
-            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdmin.UseVisualStyleBackColor = false;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdministrador_Click);
             // 
             // btnLibros
             // 
@@ -260,7 +238,7 @@
             this.btnLibros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLibros.Location = new System.Drawing.Point(16, 263);
             this.btnLibros.Name = "btnLibros";
-            this.btnLibros.Size = new System.Drawing.Size(206, 53);
+            this.btnLibros.Size = new System.Drawing.Size(189, 53);
             this.btnLibros.TabIndex = 14;
             this.btnLibros.Text = "  Libros";
             this.btnLibros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -282,7 +260,7 @@
             this.btnLectores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLectores.Location = new System.Drawing.Point(17, 634);
             this.btnLectores.Name = "btnLectores";
-            this.btnLectores.Size = new System.Drawing.Size(208, 52);
+            this.btnLectores.Size = new System.Drawing.Size(168, 52);
             this.btnLectores.TabIndex = 6;
             this.btnLectores.Text = "  Lectores";
             this.btnLectores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -304,7 +282,7 @@
             this.btnPrestamos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrestamos.Location = new System.Drawing.Point(16, 139);
             this.btnPrestamos.Name = "btnPrestamos";
-            this.btnPrestamos.Size = new System.Drawing.Size(206, 56);
+            this.btnPrestamos.Size = new System.Drawing.Size(189, 56);
             this.btnPrestamos.TabIndex = 17;
             this.btnPrestamos.Text = "  Prestamos";
             this.btnPrestamos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -326,7 +304,7 @@
             this.btnAutor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAutor.Location = new System.Drawing.Point(18, 514);
             this.btnAutor.Name = "btnAutor";
-            this.btnAutor.Size = new System.Drawing.Size(204, 52);
+            this.btnAutor.Size = new System.Drawing.Size(167, 52);
             this.btnAutor.TabIndex = 17;
             this.btnAutor.Text = "  Autor";
             this.btnAutor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -334,18 +312,82 @@
             this.btnAutor.UseVisualStyleBackColor = false;
             this.btnAutor.Click += new System.EventHandler(this.btnAutor_Click);
             // 
+            // btnAdmin
+            // 
+            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmin.Image")));
+            this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdmin.Location = new System.Drawing.Point(16, 322);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(189, 56);
+            this.btnAdmin.TabIndex = 8;
+            this.btnAdmin.Text = "Administradores";
+            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdministrador_Click);
+            // 
             // btnMenu
             // 
             this.btnMenu.BackColor = System.Drawing.Color.Transparent;
             this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(188, 6);
+            this.btnMenu.Location = new System.Drawing.Point(173, 6);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(32, 33);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMenu.TabIndex = 15;
             this.btnMenu.TabStop = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // btnRoles
+            // 
+            this.btnRoles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRoles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRoles.FlatAppearance.BorderSize = 0;
+            this.btnRoles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnRoles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btnRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoles.ForeColor = System.Drawing.Color.White;
+            this.btnRoles.Image = ((System.Drawing.Image)(resources.GetObject("btnRoles.Image")));
+            this.btnRoles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRoles.Location = new System.Drawing.Point(18, 572);
+            this.btnRoles.Name = "btnRoles";
+            this.btnRoles.Size = new System.Drawing.Size(167, 56);
+            this.btnRoles.TabIndex = 19;
+            this.btnRoles.Text = "Roles";
+            this.btnRoles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRoles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRoles.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(16, 201);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(189, 56);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Solicitudes";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // PanelMenu
             // 
@@ -367,51 +409,9 @@
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.Location = new System.Drawing.Point(0, 32);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(226, 694);
+            this.PanelMenu.Size = new System.Drawing.Size(236, 629);
             this.PanelMenu.TabIndex = 4;
             this.PanelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelMenu_Paint);
-            // 
-            // btnRoles
-            // 
-            this.btnRoles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRoles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRoles.FlatAppearance.BorderSize = 0;
-            this.btnRoles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnRoles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btnRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoles.ForeColor = System.Drawing.Color.White;
-            this.btnRoles.Image = ((System.Drawing.Image)(resources.GetObject("btnRoles.Image")));
-            this.btnRoles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRoles.Location = new System.Drawing.Point(18, 572);
-            this.btnRoles.Name = "btnRoles";
-            this.btnRoles.Size = new System.Drawing.Size(205, 56);
-            this.btnRoles.TabIndex = 19;
-            this.btnRoles.Text = "Roles";
-            this.btnRoles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRoles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRoles.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(16, 201);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(206, 56);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Solicitudes";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // pPrincipal
             // 
@@ -420,10 +420,10 @@
             this.pPrincipal.BackColor = System.Drawing.Color.White;
             this.pPrincipal.Controls.Add(this.pictureBox1);
             this.pPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pPrincipal.Location = new System.Drawing.Point(226, 32);
+            this.pPrincipal.Location = new System.Drawing.Point(236, 32);
             this.pPrincipal.Name = "pPrincipal";
-            this.pPrincipal.Size = new System.Drawing.Size(956, 694);
-            this.pPrincipal.TabIndex = 18;
+            this.pPrincipal.Size = new System.Drawing.Size(946, 629);
+            this.pPrincipal.TabIndex = 19;
             // 
             // pictureBox1
             // 
@@ -434,7 +434,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(39, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(914, 626);
+            this.pictureBox1.Size = new System.Drawing.Size(904, 561);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
@@ -444,12 +444,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1182, 726);
+            this.ClientSize = new System.Drawing.Size(1182, 661);
             this.Controls.Add(this.pPrincipal);
             this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.PanelBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -481,15 +480,15 @@
         internal System.Windows.Forms.Panel Panel10;
         internal System.Windows.Forms.Button btnEditorial;
         internal System.Windows.Forms.Button btnCategoria;
-        internal System.Windows.Forms.Button btnAdmin;
         internal System.Windows.Forms.Button btnLibros;
         internal System.Windows.Forms.Button btnLectores;
         internal System.Windows.Forms.Button btnPrestamos;
         internal System.Windows.Forms.Button btnAutor;
+        internal System.Windows.Forms.Button btnAdmin;
         internal System.Windows.Forms.PictureBox btnMenu;
-        internal System.Windows.Forms.Panel PanelMenu;
-        internal System.Windows.Forms.Button button2;
         internal System.Windows.Forms.Button btnRoles;
+        internal System.Windows.Forms.Button button2;
+        internal System.Windows.Forms.Panel PanelMenu;
         private System.Windows.Forms.Panel pPrincipal;
         internal System.Windows.Forms.PictureBox pictureBox1;
     }

@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBuscarAlquiler));
             this.dgvAlquiler = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lector = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Libro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Entregado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha_Salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha_Prevista_Entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_Entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Recibido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlquiler)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvAlquiler
@@ -56,8 +57,9 @@
             this.Id,
             this.Lector,
             this.Libro,
-            this.Cantidad,
             this.Entregado,
+            this.Fecha_Salida,
+            this.Fecha_Prevista_Entrega,
             this.Fecha_Entrega,
             this.Recibido});
             this.dgvAlquiler.Location = new System.Drawing.Point(12, 67);
@@ -89,18 +91,26 @@
             this.Libro.Name = "Libro";
             this.Libro.ReadOnly = true;
             // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
             // Entregado
             // 
             this.Entregado.FillWeight = 60F;
             this.Entregado.HeaderText = "Entregado";
             this.Entregado.Name = "Entregado";
             this.Entregado.ReadOnly = true;
+            // 
+            // Fecha_Salida
+            // 
+            this.Fecha_Salida.FillWeight = 80F;
+            this.Fecha_Salida.HeaderText = "Fecha_Salida";
+            this.Fecha_Salida.Name = "Fecha_Salida";
+            this.Fecha_Salida.ReadOnly = true;
+            // 
+            // Fecha_Prevista_Entrega
+            // 
+            this.Fecha_Prevista_Entrega.FillWeight = 80F;
+            this.Fecha_Prevista_Entrega.HeaderText = "Fecha Prevista Entrega";
+            this.Fecha_Prevista_Entrega.Name = "Fecha_Prevista_Entrega";
+            this.Fecha_Prevista_Entrega.ReadOnly = true;
             // 
             // Fecha_Entrega
             // 
@@ -118,36 +128,59 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtBuscar.Location = new System.Drawing.Point(899, 12);
+            this.txtBuscar.Location = new System.Drawing.Point(12, 29);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(152, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(244, 20);
             this.txtBuscar.TabIndex = 11;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
-            // pictureBox1
+            // radioButton1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1021, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(283, 29);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.TabIndex = 13;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(283, 44);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(85, 17);
+            this.radioButton2.TabIndex = 14;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(283, 12);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(85, 17);
+            this.radioButton3.TabIndex = 15;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "radioButton3";
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // frmBuscarAlquiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1063, 345);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.dgvAlquiler);
             this.Controls.Add(this.txtBuscar);
             this.Name = "frmBuscarAlquiler";
             this.Text = "frmBuscarAlquiler";
             this.Load += new System.EventHandler(this.frmBuscarAlquiler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlquiler)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,10 +193,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lector;
         private System.Windows.Forms.DataGridViewTextBoxColumn Libro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Entregado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Salida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Prevista_Entrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Entrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn Recibido;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
     }
 }

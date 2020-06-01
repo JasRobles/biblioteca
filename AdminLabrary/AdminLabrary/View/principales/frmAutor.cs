@@ -29,7 +29,7 @@ namespace AdminLabrary.formularios.principales
 
         public void CargarDatos()
         {
-            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
+            using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
                 var lista = from autores in db.Autores
                             where autores.estado ==0

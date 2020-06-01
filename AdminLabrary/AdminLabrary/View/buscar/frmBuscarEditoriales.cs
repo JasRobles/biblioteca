@@ -27,7 +27,7 @@ namespace AdminLabrary.View.buscar
 
         void filtro()
         {
-            using(BibliotecaprogramEntities db = new BibliotecaprogramEntities())
+            using(BibliotecaEntities4 db = new BibliotecaEntities4())
             {
                 dgvEditorial.Rows.Clear();
                 string buscar = txtBuscar.Text;

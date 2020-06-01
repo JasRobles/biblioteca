@@ -79,5 +79,10 @@ namespace AdminLabrary.View.buscar
             seleccionar();
 
         }
+
+        private void dgvAutor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -115,7 +115,7 @@ namespace AdminLabrary.formularios.principales
             Libros.ID_Autor = Id_autor;
             Libros.ID_Editorial = Id_Editorial;
             Libros.ID_Cate= Id_Categoria ;
-            Libros.id = int.Parse(Id_Categoria)-3;
+            Libros.id = int.Parse(Id_Categoria)-2;
 
         }
 

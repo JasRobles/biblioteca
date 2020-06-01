@@ -26,17 +26,16 @@ namespace AdminLabrary.formularios.principales
         }
         public void CargarDatos()
         {
-            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
+            using (BibliotecaEntities4 db = new BibliotecaEntities4())
             {
                 dgvAdmi.Rows.Clear();
-                var lista = from ad in db.Roles
+                var lista = from ad in db.Administradores
                             from lec in db.Lectores
                             where ad.Id_Lector == lec.Id_Lector
                             && ad.estado==0
-                            && ad.Rol == 1
                             select new
                             {
-                                ID = ad.Id_rol,
+                                ID = ad.Id_Admin,
                                 Nombre = lec.Nombres,
                                 Usuario = ad.Usuario,
                                 Contraseña = ad.Contraseña,
@@ -72,8 +71,7 @@ namespace AdminLabrary.formularios.principales
             admin.txtContraseña.Enabled = false;
             admin.txtUsuario.Enabled = false;
             btnEditar.Enabled = false;
-            btnEliminar.Enabled = false;
-            admin.rbtnAdmi.Checked = true;
+            btnEliminar.Enabled = false; 
             Seleccionar();
             admin.ShowDialog();
 
@@ -87,7 +85,6 @@ namespace AdminLabrary.formularios.principales
             admin.btnGuardar.Enabled = false;
             btnEditar.Enabled = false;
             btnEliminar.Enabled = false;
-            admin.rbtnAdmi.Checked = true;
             Seleccionar();
             admin.ShowDialog();
 

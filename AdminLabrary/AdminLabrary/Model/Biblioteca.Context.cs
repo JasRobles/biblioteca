@@ -13,10 +13,10 @@ namespace AdminLabrary.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BibliotecaprogramEntities : DbContext
+    public partial class BibliotecaEntities4 : DbContext
     {
-        public BibliotecaprogramEntities()
-            : base("name=BibliotecaprogramEntities")
+        public BibliotecaEntities4()
+            : base("name=BibliotecaEntities4")
         {
         }
     
@@ -25,13 +25,12 @@ namespace AdminLabrary.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Administradores> Administradores { get; set; }
         public virtual DbSet<Alquileres> Alquileres { get; set; }
         public virtual DbSet<Autores> Autores { get; set; }
         public virtual DbSet<Categorias> Categorias { get; set; }
         public virtual DbSet<Editoriales> Editoriales { get; set; }
         public virtual DbSet<Lectores> Lectores { get; set; }
         public virtual DbSet<Libros> Libros { get; set; }
-        public virtual DbSet<Roles> Roles { get; set; }
-        public virtual DbSet<solicitudes> solicitudes { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace AdminLabrary.formularios.principales
         }
         public void CargarDatos()
         {
-            using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
+            using (BibliotecaEntities4 db= new BibliotecaEntities4())
             {
                 var lista = from cat in db.Categorias
                             where cat.estado ==0

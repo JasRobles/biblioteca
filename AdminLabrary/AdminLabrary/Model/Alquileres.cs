@@ -17,16 +17,15 @@ namespace AdminLabrary.Model
         public int Id_alquiler { get; set; }
         public int Id_Lector { get; set; }
         public int Id_libro { get; set; }
-        public int cantidad { get; set; }
         public int Entregado { get; set; }
         public System.DateTime fecha_salida { get; set; }
         public System.DateTime fecha_prevista_de_entrega { get; set; }
         public Nullable<System.DateTime> fecha_de_entrega { get; set; }
         public Nullable<int> Recibido { get; set; }
     
-        public virtual Roles Roles { get; set; }
+        public virtual Administradores Administradores { get; set; }
+        public virtual Administradores Administradores1 { get; set; }
         public virtual Lectores Lectores { get; set; }
         public virtual Libros Libros { get; set; }
-        public virtual Roles Roles1 { get; set; }
     }
 }

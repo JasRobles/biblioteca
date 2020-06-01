@@ -24,18 +24,18 @@ namespace AdminLabrary.formularios.principales
             InitializeComponent();
             frmLogin f = new frmLogin();
 
-
-
-
+            
+          
+          
         }
 
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
-
+            
 
             MostrarPanel(new frmAutor());
-
-
+          
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,19 +44,19 @@ namespace AdminLabrary.formularios.principales
         }
 
         private Form activeForm = null;
-
+   
 
         public void MostrarPanel(Form Panel)
         {
             if (activeForm != null)
-                activeForm = Panel;
+            activeForm = Panel;
             Panel.TopLevel = false;
             Panel.FormBorderStyle = FormBorderStyle.None;
             Panel.Dock = DockStyle.Fill;
             pPrincipal.Controls.Add(Panel);
             pPrincipal.Tag = Panel;
             Panel.BringToFront();
-            Panel.Show();
+            Panel.Show(); 
         }
 
 
@@ -65,19 +65,19 @@ namespace AdminLabrary.formularios.principales
         {
 
             MostrarPanel(Editorial);
-
+        
         }
 
-
+      
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            DialogResult resu = MessageBox.Show("¿Desea salir de la aplicacion?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            DialogResult resu = MessageBox.Show("¿Desea salir de la aplicacion?","Alerta",MessageBoxButtons.YesNo,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button2);
             if (resu == DialogResult.Yes)
             {
                 Application.Exit();
             }
-
+            
         }
 
 
@@ -105,7 +105,7 @@ namespace AdminLabrary.formularios.principales
 
         {
             this.WindowState = FormWindowState.Minimized;
-
+            
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -141,7 +141,7 @@ namespace AdminLabrary.formularios.principales
         public static frmAdministradores admin = new frmAdministradores();
         private void btnAdministrador_Click(object sender, EventArgs e)
         {
-            MostrarPanel(admin);
+         MostrarPanel(admin);
         }
 
 
@@ -150,14 +150,14 @@ namespace AdminLabrary.formularios.principales
         {
 
             MostrarPanel(lector);
-
+           
         }
         public static frmCategoria categoria = new frmCategoria();
         private void btnCategoria_Click(object sender, EventArgs e)
         {
 
             MostrarPanel(categoria);
-
+            
         }
         public static frmLibros Lib = new frmLibros();
         private void btnLibros_Click(object sender, EventArgs e)
@@ -165,13 +165,13 @@ namespace AdminLabrary.formularios.principales
             Lib.CargaDratos();
 
             MostrarPanel(Lib);
-
+            
         }
-        public static frmPrestamos prestamos = new frmPrestamos();
+       public static frmPrestamos prestamos = new frmPrestamos();
         private void btnPrestamos_Click(object sender, EventArgs e)
         {
             MostrarPanel(prestamos);
-
+            
 
         }
 
@@ -181,7 +181,7 @@ namespace AdminLabrary.formularios.principales
             MostrarPanel(Autor);
         }
 
-
+        
         private void btnMenu_Click(object sender, EventArgs e)
         {
             PanelMenu.Hide();
@@ -207,4 +207,5 @@ namespace AdminLabrary.formularios.principales
     }
 
 }
+
 

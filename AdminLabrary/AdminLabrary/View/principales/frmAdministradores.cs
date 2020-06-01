@@ -58,7 +58,7 @@ namespace AdminLabrary.formularios.principales
             admin.btnEliminar.Enabled = false;
             admin.btnSeleccionar.Enabled = true;
             admin.btnGuardar.Enabled = true;
-          
+            admin.rbtnLector.Checked = true;
             admin.Limpiar();
             admin.ShowDialog();
         }

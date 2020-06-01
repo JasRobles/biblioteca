@@ -78,8 +78,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                         alqu.Entregado = idAdmin;
                         alqu.cantidad = int.Parse(txtCantidad.Text);
                         alqu.fecha_salida = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
-                        DateTime fecha = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
-                        alqu.fecha_prevista_de_entrega = fecha.AddDays(8);
+                        alqu.fecha_prevista_de_entrega = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")).AddDays(8);
                         db.Alquileres.Add(alqu);
                         db.SaveChanges();
                         frmPrincipal.prestamos.CargarDatos();
@@ -107,9 +106,10 @@ namespace AdminLabrary.View.insertUpdateDelete
 
         private void btnRecibir_Click(object sender, EventArgs e)
         {
+           
             using (BibliotecaprogramEntities db = new BibliotecaprogramEntities())
             {
-                if (int.Parse(txtCantidad.Text) > cantidad || int.Parse(txtCantidad.Text) > 0)
+                if (int.Parse(txtCantidad.Text) > cantidad || int.Parse(txtCantidad.Text) < 0)
                 {
                     MessageBox.Show("Cantidad incorrecta");
                 }
@@ -118,7 +118,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                     alqu = db.Alquileres.Where(buscarID => buscarID.Id_alquiler == idAlquiler).First();
                     alqu.Id_Lector = idLector;
                     alqu.Id_libro = IdLibro;
-                    alqu.cantidad = int.Parse(txtCantidad.Text);
+                    alqu.cantidad = cantidad;
                     alqu.Entregado = IdEntregado;
                     alqu.fecha_salida = fecha_salida;
                     alqu.fecha_prevista_de_entrega = fecha_pre;
@@ -132,7 +132,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                     alqui.cantidad = cantidad -int.Parse(txtCantidad.Text);
                     alqui.Entregado = IdEntregado;
                     alqui.fecha_salida = fecha_salida;
-                    alqui.fecha_prevista_de_entrega = fecha_pre;
+                    alqui.fecha_prevista_de_entrega = fecha_salida.AddDays(8);
                     db.Alquileres.Add(alqui);
                     db.SaveChanges();
                 }

@@ -84,7 +84,7 @@ namespace AdminLabrary.View.insertUpdateDelete
                     rol.Usuario = txtUsuario.Text;
                     rol.Contraseña = txtContraseña.Text;
                     rol.Id_Lector = IDLector;
-                    rol.Rol = 1;
+                    rol.Rol = 0;
                     rol.estado = 0;
                     db.Entry(rol).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
